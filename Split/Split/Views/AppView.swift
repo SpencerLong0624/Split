@@ -17,13 +17,12 @@ struct AppView: View {
 
       NewBillView()
       .tabItem {
-        Label("Activity", systemImage: "rectangle.stack.badge.plus")
+        Label("New Bill", systemImage: "rectangle.stack.badge.plus")
       }
     }
     .onAppear() {
       UITabBar.appearance().backgroundColor = UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255)
     }
-    .accentColor(.white)
   }
 }
 

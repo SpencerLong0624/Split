@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewBillView: View {
     var body: some View {
-        Text("Hi, World!")
+        Text("Hello, World!")
     }
 }
 

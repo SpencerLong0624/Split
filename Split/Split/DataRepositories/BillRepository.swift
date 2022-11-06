@@ -34,4 +34,34 @@ class BillRepository: ObservableObject {
         } ?? []
       }
   }
+  
+  // MARK: CRUD methods
+  func add(_ bill: Bill) {
+    do {
+      let newBill = bill
+      _ = try store.collection(path).addDocument(from: newBill)
+    } catch {
+      fatalError("Unable to add bill: \(error.localizedDescription).")
+    }
+  }
+
+  func update(_ bill: Bill) {
+    guard let billId = bill.id else { return }
+    
+    do {
+      try store.collection(path).document(billId).setData(from: bill)
+    } catch {
+      fatalError("Unable to update bill: \(error.localizedDescription).")
+    }
+  }
+
+  func remove(_ bill: Bill) {
+    guard let billId = bill.id else { return }
+    
+    store.collection(path).document(billId).delete { error in
+      if let error = error {
+        print("Unable to remove bill: \(error.localizedDescription)")
+      }
+    }
+  }
 }

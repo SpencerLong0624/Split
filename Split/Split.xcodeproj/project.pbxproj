@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		000FE3232915F38F002D7D4A /* SplitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3222915F38F002D7D4A /* SplitApp.swift */; };
-		000FE3252915F38F002D7D4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3242915F38F002D7D4A /* ContentView.swift */; };
 		000FE3272915F38F002D7D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000FE3262915F38F002D7D4A /* Assets.xcassets */; };
 		000FE32A2915F38F002D7D4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000FE3292915F38F002D7D4A /* Preview Assets.xcassets */; };
 		000FE3352915FA35002D7D4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 000FE3342915FA35002D7D4A /* GoogleService-Info.plist */; };
@@ -56,12 +55,15 @@
 		000FE38C291609D7002D7D4A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE38B291609D7002D7D4A /* ActivityView.swift */; };
 		000FE38E29160F3A002D7D4A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE38D29160F3A002D7D4A /* AppView.swift */; };
 		000FE39029160F7A002D7D4A /* NewBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE38F29160F7A002D7D4A /* NewBillView.swift */; };
+		000FE39229175105002D7D4A /* BillDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE39129175105002D7D4A /* BillDetailsView.swift */; };
+		000FE396291752C1002D7D4A /* BillRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE395291752C1002D7D4A /* BillRowView.swift */; };
+		000FE39829175337002D7D4A /* BillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE39729175337002D7D4A /* BillViewModel.swift */; };
+		000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3992917578A002D7D4A /* ActivityViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		000FE31F2915F38F002D7D4A /* Split.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Split.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		000FE3222915F38F002D7D4A /* SplitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitApp.swift; sourceTree = "<group>"; };
-		000FE3242915F38F002D7D4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		000FE3262915F38F002D7D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		000FE3292915F38F002D7D4A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		000FE3342915FA35002D7D4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -82,6 +84,10 @@
 		000FE38B291609D7002D7D4A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		000FE38D29160F3A002D7D4A /* AppView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		000FE38F29160F7A002D7D4A /* NewBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBillView.swift; sourceTree = "<group>"; };
+		000FE39129175105002D7D4A /* BillDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailsView.swift; sourceTree = "<group>"; };
+		000FE395291752C1002D7D4A /* BillRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillRowView.swift; sourceTree = "<group>"; };
+		000FE39729175337002D7D4A /* BillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewModel.swift; sourceTree = "<group>"; };
+		000FE3992917578A002D7D4A /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,11 +149,9 @@
 			children = (
 				000FE3222915F38F002D7D4A /* SplitApp.swift */,
 				000FE36D291602CA002D7D4A /* DataRepositories */,
+				000FE39429175186002D7D4A /* View Model */,
 				000FE36E291602D2002D7D4A /* Models */,
-				000FE3242915F38F002D7D4A /* ContentView.swift */,
-				000FE38D29160F3A002D7D4A /* AppView.swift */,
-				000FE38B291609D7002D7D4A /* ActivityView.swift */,
-				000FE38F29160F7A002D7D4A /* NewBillView.swift */,
+				000FE3932917510D002D7D4A /* Views */,
 				000FE3262915F38F002D7D4A /* Assets.xcassets */,
 				000FE3342915FA35002D7D4A /* GoogleService-Info.plist */,
 				000FE3282915F38F002D7D4A /* Preview Content */,
@@ -189,6 +193,27 @@
 				000FE38929160478002D7D4A /* BillList.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		000FE3932917510D002D7D4A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				000FE38D29160F3A002D7D4A /* AppView.swift */,
+				000FE38B291609D7002D7D4A /* ActivityView.swift */,
+				000FE395291752C1002D7D4A /* BillRowView.swift */,
+				000FE39129175105002D7D4A /* BillDetailsView.swift */,
+				000FE38F29160F7A002D7D4A /* NewBillView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		000FE39429175186002D7D4A /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				000FE3992917578A002D7D4A /* ActivityViewModel.swift */,
+				000FE39729175337002D7D4A /* BillViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,13 +322,16 @@
 				000FE38429160432002D7D4A /* User.swift in Sources */,
 				000FE38829160464002D7D4A /* Bill.swift in Sources */,
 				000FE38E29160F3A002D7D4A /* AppView.swift in Sources */,
-				000FE3252915F38F002D7D4A /* ContentView.swift in Sources */,
 				000FE37829160385002D7D4A /* UserItemRepository.swift in Sources */,
 				000FE380291603F0002D7D4A /* BillItem.swift in Sources */,
+				000FE39829175337002D7D4A /* BillViewModel.swift in Sources */,
 				000FE38229160403002D7D4A /* Friend.swift in Sources */,
+				000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */,
 				000FE37A291603A5002D7D4A /* BillListRepository.swift in Sources */,
+				000FE39229175105002D7D4A /* BillDetailsView.swift in Sources */,
 				000FE37229160330002D7D4A /* FriendRepository.swift in Sources */,
 				000FE38A29160478002D7D4A /* BillList.swift in Sources */,
+				000FE396291752C1002D7D4A /* BillRowView.swift in Sources */,
 				000FE38C291609D7002D7D4A /* ActivityView.swift in Sources */,
 				000FE39029160F7A002D7D4A /* NewBillView.swift in Sources */,
 				000FE3232915F38F002D7D4A /* SplitApp.swift in Sources */,
