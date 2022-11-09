@@ -59,6 +59,13 @@
 		000FE396291752C1002D7D4A /* BillRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE395291752C1002D7D4A /* BillRowView.swift */; };
 		000FE39829175337002D7D4A /* BillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE39729175337002D7D4A /* BillViewModel.swift */; };
 		000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3992917578A002D7D4A /* ActivityViewModel.swift */; };
+		AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B1291C31DB001A937B /* AddItemView.swift */; };
+		AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B3291C323C001A937B /* Manually_AddItem.swift */; };
+		AF6717B6291C3259001A937B /* Scan_ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B5291C3259001A937B /* Scan_ItemView.swift */; };
+		AF6717B8291C3289001A937B /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B7291C3289001A937B /* Scanner.swift */; };
+		AF6717BA291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B9291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift */; };
+		AF6717BC291C32F0001A937B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BB291C32F0001A937B /* ImagePicker.swift */; };
+		AF6717BE291C3337001A937B /* ReceiptScanner_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +95,13 @@
 		000FE395291752C1002D7D4A /* BillRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillRowView.swift; sourceTree = "<group>"; };
 		000FE39729175337002D7D4A /* BillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewModel.swift; sourceTree = "<group>"; };
 		000FE3992917578A002D7D4A /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
+		AF6717B1291C31DB001A937B /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		AF6717B3291C323C001A937B /* Manually_AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manually_AddItem.swift; sourceTree = "<group>"; };
+		AF6717B5291C3259001A937B /* Scan_ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan_ItemView.swift; sourceTree = "<group>"; };
+		AF6717B7291C3289001A937B /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		AF6717B9291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker_Coordinator_ViewController.swift; sourceTree = "<group>"; };
+		AF6717BB291C32F0001A937B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanner_Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +145,7 @@
 		000FE3162915F38F002D7D4A = {
 			isa = PBXGroup;
 			children = (
+				AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */,
 				000FE3212915F38F002D7D4A /* Split */,
 				000FE3202915F38F002D7D4A /* Products */,
 			);
@@ -191,6 +206,7 @@
 				000FE38529160450002D7D4A /* SettleBill.swift */,
 				000FE38729160464002D7D4A /* Bill.swift */,
 				000FE38929160478002D7D4A /* BillList.swift */,
+				AF6717BB291C32F0001A937B /* ImagePicker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +219,9 @@
 				000FE395291752C1002D7D4A /* BillRowView.swift */,
 				000FE39129175105002D7D4A /* BillDetailsView.swift */,
 				000FE38F29160F7A002D7D4A /* NewBillView.swift */,
+				AF6717B1291C31DB001A937B /* AddItemView.swift */,
+				AF6717B3291C323C001A937B /* Manually_AddItem.swift */,
+				AF6717B5291C3259001A937B /* Scan_ItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +231,8 @@
 			children = (
 				000FE3992917578A002D7D4A /* ActivityViewModel.swift */,
 				000FE39729175337002D7D4A /* BillViewModel.swift */,
+				AF6717B7291C3289001A937B /* Scanner.swift */,
+				AF6717B9291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -325,20 +346,27 @@
 				000FE37829160385002D7D4A /* UserItemRepository.swift in Sources */,
 				000FE380291603F0002D7D4A /* BillItem.swift in Sources */,
 				000FE39829175337002D7D4A /* BillViewModel.swift in Sources */,
+				AF6717B8291C3289001A937B /* Scanner.swift in Sources */,
 				000FE38229160403002D7D4A /* Friend.swift in Sources */,
 				000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */,
 				000FE37A291603A5002D7D4A /* BillListRepository.swift in Sources */,
 				000FE39229175105002D7D4A /* BillDetailsView.swift in Sources */,
 				000FE37229160330002D7D4A /* FriendRepository.swift in Sources */,
+				AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */,
+				AF6717BA291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift in Sources */,
 				000FE38A29160478002D7D4A /* BillList.swift in Sources */,
 				000FE396291752C1002D7D4A /* BillRowView.swift in Sources */,
 				000FE38C291609D7002D7D4A /* ActivityView.swift in Sources */,
+				AF6717BC291C32F0001A937B /* ImagePicker.swift in Sources */,
 				000FE39029160F7A002D7D4A /* NewBillView.swift in Sources */,
 				000FE3232915F38F002D7D4A /* SplitApp.swift in Sources */,
 				000FE37E291603D9002D7D4A /* UserItem.swift in Sources */,
 				000FE38629160450002D7D4A /* SettleBill.swift in Sources */,
+				AF6717B6291C3259001A937B /* Scan_ItemView.swift in Sources */,
+				AF6717BE291C3337001A937B /* ReceiptScanner_Helper.swift in Sources */,
 				000FE37629160369002D7D4A /* BillItemRepository.swift in Sources */,
 				000FE37C291603C2002D7D4A /* SettleBillRepository.swift in Sources */,
+				AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */,
 				000FE3742916034A002D7D4A /* BillRepository.swift in Sources */,
 				000FE37029160304002D7D4A /* UserRepository.swift in Sources */,
 			);
