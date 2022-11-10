@@ -24,3 +24,9 @@ struct BillItem: Identifiable, Codable {
     case price
   }
 }
+
+extension BillItem {
+    var priceString: String {
+        String(price)
+    }
+}

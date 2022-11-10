@@ -67,6 +67,7 @@
 		AF6717BC291C32F0001A937B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BB291C32F0001A937B /* ImagePicker.swift */; };
 		AF6717BE291C3337001A937B /* ReceiptScanner_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */; };
 		AFDE9E46291CA10D0014ECBB /* Scanned_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */; };
+		E6CD5AA6291CEAB80039A3AB /* AddOneItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		AF6717BB291C32F0001A937B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanner_Helper.swift; sourceTree = "<group>"; };
 		AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanned_View.swift; sourceTree = "<group>"; };
+		E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOneItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				000FE38D29160F3A002D7D4A /* AppView.swift */,
+				E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */,
 				000FE38B291609D7002D7D4A /* ActivityView.swift */,
 				000FE395291752C1002D7D4A /* BillRowView.swift */,
 				000FE39129175105002D7D4A /* BillDetailsView.swift */,
@@ -372,6 +375,7 @@
 				000FE37C291603C2002D7D4A /* SettleBillRepository.swift in Sources */,
 				AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */,
 				000FE3742916034A002D7D4A /* BillRepository.swift in Sources */,
+				E6CD5AA6291CEAB80039A3AB /* AddOneItemView.swift in Sources */,
 				000FE37029160304002D7D4A /* UserRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
