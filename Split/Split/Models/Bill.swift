@@ -31,6 +31,7 @@ struct Bill: Identifiable, Comparable, Codable {
   var date: String
   var description: String
   var title: String
+  var items: [String]
   
   // MARK: Codable
   enum CodingKeys: String, CodingKey {
@@ -40,6 +41,7 @@ struct Bill: Identifiable, Comparable, Codable {
     case date
     case description
     case title
+    case items
   }
   
   // MARK: Comparable

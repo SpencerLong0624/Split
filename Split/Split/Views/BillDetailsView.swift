@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BillDetailsView: View {
   var bill: Bill
+  var counter : Int = 0
   
   var body: some View {
     VStack {
@@ -25,6 +26,17 @@ struct BillDetailsView: View {
         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
         .foregroundColor(.secondary)
         .padding(20)
+      Text("Items:")
+        .font(.title3)
+        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+        .padding(5)
+      ForEach(bill.items.indices, id: \.self) {
+        if counter % 2 == 0 {
+          Text("Name: " + self.bill.items[$0])
+        } else {
+          Text("Price: " + self.bill.items[$0])
+        }
+        }
     }.navigationBarTitle("Bill Details")
   }
 }
