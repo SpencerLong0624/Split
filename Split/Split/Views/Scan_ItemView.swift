@@ -37,12 +37,12 @@ struct ReceiptScanView: View {
                  }.padding()
                    .accentColor(.red)
                 
-                
-                if(selectedImage != nil){
-                   Button("Submit Picture for Scan"){
-                      scanner.request(selectedImage!)
+                //This view call is not correct as of now. I am working on it 
+                if(selectedImage != nil) {
+                   NavigationLink(destination: Scanned_View(scanned_output: scanner.request(selectedImage!))) {
+                      Text("Submit Picture for Scan")
+                         .foregroundColor(Color.green)
                    }
-                   .accentColor(.green)
                 }
                
             

@@ -66,6 +66,7 @@
 		AF6717BA291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B9291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift */; };
 		AF6717BC291C32F0001A937B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BB291C32F0001A937B /* ImagePicker.swift */; };
 		AF6717BE291C3337001A937B /* ReceiptScanner_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */; };
+		AFDE9E46291CA10D0014ECBB /* Scanned_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		AF6717B9291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker_Coordinator_ViewController.swift; sourceTree = "<group>"; };
 		AF6717BB291C32F0001A937B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanner_Helper.swift; sourceTree = "<group>"; };
+		AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanned_View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				AF6717B1291C31DB001A937B /* AddItemView.swift */,
 				AF6717B3291C323C001A937B /* Manually_AddItem.swift */,
 				AF6717B5291C3259001A937B /* Scan_ItemView.swift */,
+				AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				000FE38429160432002D7D4A /* User.swift in Sources */,
+				AFDE9E46291CA10D0014ECBB /* Scanned_View.swift in Sources */,
 				000FE38829160464002D7D4A /* Bill.swift in Sources */,
 				000FE38E29160F3A002D7D4A /* AppView.swift in Sources */,
 				000FE37829160385002D7D4A /* UserItemRepository.swift in Sources */,
