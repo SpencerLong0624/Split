@@ -79,7 +79,6 @@ struct Manually_AddItem: View {
                 items_array.append(bill_item.price)
               }
               let bill : Bill = Bill(bill_owers: [], bill_payers: [], date: billDate, description: billDescription, title: billTitle, items: items_array)
-              NSLog("MADE IT HERE")
               activityViewModel.add(bill) })
           }
         }
@@ -97,6 +96,9 @@ struct Manually_AddItem: View {
               .swipeActions(allowsFullSwipe: false) {
                 Button(role: .destructive) {
                     print("Deleting Item")
+                  if let index = billItems.bill_items.firstIndex(of: Item) {
+                    billItems.bill_items.remove(at: index)
+                  }
                  } label: {
                      Label("Delete", systemImage: "trash.fill")
                  }
