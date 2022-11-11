@@ -26,6 +26,8 @@ struct Manually_AddItem: View {
   var billDate: String
   @ObservedObject var billItems : BillItems
   
+  @State var editIsActive = false
+  
   func deleteItem(at offsets: IndexSet) {
     billItems.bill_items.remove(atOffsets: offsets)
   }
@@ -83,8 +85,27 @@ struct Manually_AddItem: View {
           }
           ForEach(billItems.bill_items) { Item in
             BillItemRowView(item: Item)
+              .swipeActions(allowsFullSwipe: false) {
+                Button(role: .destructive) {
+                    print("Deleting Item")
+                 } label: {
+                     Label("Delete", systemImage: "trash.fill")
+                 }
+                                
+                Button {
+                  editIsActive.toggle()
+                } label: {
+                  Label("Edit", systemImage: "dots")
+                    .labelStyle(TitleOnlyLabelStyle())
+                }
+                .tint(.blue)
+              }
           }
-          .onDelete(perform: deleteItem)
+          NavigationLink(destination: AddOneItemView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: $billItems.bill_items), isActive: $editIsActive) {
+            Label("Edit", systemImage: "dots")
+              .labelStyle(TitleOnlyLabelStyle())
+          }
+          .hidden()
         }
         
       }

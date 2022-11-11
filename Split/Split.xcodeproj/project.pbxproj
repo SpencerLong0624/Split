@@ -68,6 +68,7 @@
 		AF6717BE291C3337001A937B /* ReceiptScanner_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */; };
 		AFDE9E46291CA10D0014ECBB /* Scanned_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */; };
 		E6240C47291D98DA004287FE /* BillItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6240C46291D98DA004287FE /* BillItemRowView.swift */; };
+		E66AD681291EBD9B00E355D4 /* EditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66AD680291EBD9B00E355D4 /* EditItem.swift */; };
 		E6CD5AA6291CEAB80039A3AB /* AddOneItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanner_Helper.swift; sourceTree = "<group>"; };
 		AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanned_View.swift; sourceTree = "<group>"; };
 		E6240C46291D98DA004287FE /* BillItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemRowView.swift; sourceTree = "<group>"; };
+		E66AD680291EBD9B00E355D4 /* EditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItem.swift; sourceTree = "<group>"; };
 		E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOneItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,6 +233,7 @@
 				E6240C46291D98DA004287FE /* BillItemRowView.swift */,
 				AF6717B5291C3259001A937B /* ReceiptScanView.swift */,
 				AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */,
+				E66AD680291EBD9B00E355D4 /* EditItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				000FE39829175337002D7D4A /* BillViewModel.swift in Sources */,
 				AF6717B8291C3289001A937B /* Scanner.swift in Sources */,
 				000FE38229160403002D7D4A /* Friend.swift in Sources */,
+				E66AD681291EBD9B00E355D4 /* EditItem.swift in Sources */,
 				000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */,
 				000FE37A291603A5002D7D4A /* BillListRepository.swift in Sources */,
 				000FE39229175105002D7D4A /* BillDetailsView.swift in Sources */,
