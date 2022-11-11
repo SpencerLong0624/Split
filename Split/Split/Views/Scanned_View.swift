@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct Scanned_View: View {
-   var scanned_output : String
+   var scanned_output : [String]
    
-   init (scanned_output : String) {
+   init(scanned_output: [String]) {
       self.scanned_output = scanned_output
    }
-   
+  
     var body: some View {
-       Text("Output of the scanner goes here")
+       Text(scanned_output.joined(separator: ", "))
     }
 }
 
