@@ -12,6 +12,10 @@ struct ReceiptScanView: View {
    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
      @State private var selectedImage: UIImage?
      @State private var isImagePickerDisplay = false
+  
+  var billTitle: String
+  var billDescription: String
+  var billDate: String
      
      var body: some View {
            VStack {
@@ -49,9 +53,3 @@ struct ReceiptScanView: View {
              }
      }
  }
-
-struct ReceiptScanView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReceiptScanView()
-    }
-}

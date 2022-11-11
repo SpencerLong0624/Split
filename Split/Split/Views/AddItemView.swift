@@ -8,39 +8,36 @@
 import SwiftUI
 
 struct AddItemView: View {
+  var billTitle: String
+  var billDescription: String
+  var billDate: Date
+  @State var billItems = BillItems()
+
+  func DateToString(date: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "MM/dd/YYYY"
+    return dateFormatter.string(from: self.billDate)
+  }
+  
+  
    var body: some View {
         VStack {
-          Spacer()
-            .frame(minHeight: 10, idealHeight: 100, maxHeight: 400)
-            .fixedSize()
           Text("How do you want to enter items?")
             .font(.subheadline)
             .fontWeight(.bold)
-          Spacer()
-            .frame(minHeight: 10, idealHeight: 100, maxHeight: 600)
-            .fixedSize()
-        NavigationLink(destination: Manually_AddItem()) {
+            .frame(maxHeight: .infinity, alignment: .leading)
+          NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate), billItems: billItems)) {
            Text("Add Items Manually")
               .foregroundColor(Color.green)
            
         }
-           Spacer()
-            .frame(minHeight: 10, idealHeight: 100, maxHeight: 600)
-            .fixedSize()
-        NavigationLink(destination: ReceiptScanView()) {
+        .frame(maxHeight: .infinity, alignment: .center)
+        NavigationLink(destination: ReceiptScanView(billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate))) {
            Text("Scan Receipts")
               .foregroundColor(Color.green)
            
         }
-          Spacer()
-            .frame(minHeight: 10, idealHeight: 100, maxHeight: 600)
-            .fixedSize()
+        .frame(maxHeight: .infinity, alignment: .trailing)
      }
    }
-}
-
-struct AddItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddItemView()
-    }
 }

@@ -8,25 +8,28 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct BillItem: Identifiable, Codable {
-    
+struct BillItem: Identifiable {
+
   // MARK: Fields
-  @DocumentID var id: String?
-  var bill_id: String
+  var id = UUID()
   var name: String
-  var price: Int
+  var price: String
   
-  // MARK: Codable
-  enum CodingKeys: String, CodingKey {
-    case id
-    case bill_id
-    case name
-    case price
-  }
 }
 
 extension BillItem {
     var priceString: String {
         String(price)
     }
+}
+
+class BillItems : ObservableObject {
+  @Published var bill_items : [BillItem]
+  
+  init(){
+          self.bill_items = [
+            BillItem(name: "milk", price: "1.00"),
+            BillItem(name: "cheese", price: "2.00"),
+            BillItem(name: "rice", price: "3.00")]
+      }
 }

@@ -61,12 +61,13 @@
 		000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3992917578A002D7D4A /* ActivityViewModel.swift */; };
 		AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B1291C31DB001A937B /* AddItemView.swift */; };
 		AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B3291C323C001A937B /* Manually_AddItem.swift */; };
-		AF6717B6291C3259001A937B /* Scan_ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B5291C3259001A937B /* Scan_ItemView.swift */; };
+		AF6717B6291C3259001A937B /* ReceiptScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B5291C3259001A937B /* ReceiptScanView.swift */; };
 		AF6717B8291C3289001A937B /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B7291C3289001A937B /* Scanner.swift */; };
 		AF6717BA291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B9291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift */; };
 		AF6717BC291C32F0001A937B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BB291C32F0001A937B /* ImagePicker.swift */; };
 		AF6717BE291C3337001A937B /* ReceiptScanner_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */; };
 		AFDE9E46291CA10D0014ECBB /* Scanned_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */; };
+		E6240C47291D98DA004287FE /* BillItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6240C46291D98DA004287FE /* BillItemRowView.swift */; };
 		E6CD5AA6291CEAB80039A3AB /* AddOneItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,12 +100,13 @@
 		000FE3992917578A002D7D4A /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		AF6717B1291C31DB001A937B /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		AF6717B3291C323C001A937B /* Manually_AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manually_AddItem.swift; sourceTree = "<group>"; };
-		AF6717B5291C3259001A937B /* Scan_ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan_ItemView.swift; sourceTree = "<group>"; };
+		AF6717B5291C3259001A937B /* ReceiptScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanView.swift; sourceTree = "<group>"; };
 		AF6717B7291C3289001A937B /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		AF6717B9291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker_Coordinator_ViewController.swift; sourceTree = "<group>"; };
 		AF6717BB291C32F0001A937B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanner_Helper.swift; sourceTree = "<group>"; };
 		AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanned_View.swift; sourceTree = "<group>"; };
+		E6240C46291D98DA004287FE /* BillItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemRowView.swift; sourceTree = "<group>"; };
 		E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOneItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,7 +228,8 @@
 				000FE38F29160F7A002D7D4A /* NewBillView.swift */,
 				AF6717B1291C31DB001A937B /* AddItemView.swift */,
 				AF6717B3291C323C001A937B /* Manually_AddItem.swift */,
-				AF6717B5291C3259001A937B /* Scan_ItemView.swift */,
+				E6240C46291D98DA004287FE /* BillItemRowView.swift */,
+				AF6717B5291C3259001A937B /* ReceiptScanView.swift */,
 				AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */,
 			);
 			path = Views;
@@ -368,8 +371,9 @@
 				000FE39029160F7A002D7D4A /* NewBillView.swift in Sources */,
 				000FE3232915F38F002D7D4A /* SplitApp.swift in Sources */,
 				000FE37E291603D9002D7D4A /* UserItem.swift in Sources */,
+				E6240C47291D98DA004287FE /* BillItemRowView.swift in Sources */,
 				000FE38629160450002D7D4A /* SettleBill.swift in Sources */,
-				AF6717B6291C3259001A937B /* Scan_ItemView.swift in Sources */,
+				AF6717B6291C3259001A937B /* ReceiptScanView.swift in Sources */,
 				AF6717BE291C3337001A937B /* ReceiptScanner_Helper.swift in Sources */,
 				000FE37629160369002D7D4A /* BillItemRepository.swift in Sources */,
 				000FE37C291603C2002D7D4A /* SettleBillRepository.swift in Sources */,

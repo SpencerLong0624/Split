@@ -30,7 +30,7 @@ struct NewBillView: View {
                   DatePicker("Pick a date", selection: $date,displayedComponents: [.date])
                              .padding()
                   
-                  NavigationLink(destination: AddItemView()) {
+                 NavigationLink(destination: AddItemView(billTitle: title, billDescription: description, billDate: date)) {
                      Text("Create Expense")
                         .foregroundColor(Color.green)
                      
