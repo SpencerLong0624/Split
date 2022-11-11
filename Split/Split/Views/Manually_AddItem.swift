@@ -21,70 +21,61 @@ struct GreenButton: ButtonStyle {
 
 struct Manually_AddItem: View {
   
-  private var curBillItems: [BillItem] =
-  [
-    BillItem(bill_id: "1", name: "milk", price: 1),
-    BillItem(bill_id: "1", name: "rice", price: 2)
-  ]
+  var billTitle: String
+  var billDescription: String
+  var billDate: String
+  @ObservedObject var billItems : BillItems
   
     var body: some View {
-      VStack(alignment: .leading) {
+      VStack {
         HStack {
-          Text("Bill Title")
+          Text("\(billTitle)")
             .font(.title)
+            .frame(maxWidth: .infinity, alignment: .leading)
+          Text("\(billDate)")
+            .frame(maxWidth: .infinity, alignment: .trailing)
           Spacer()
-            .frame(minWidth: 50, idealWidth: 210, maxWidth: 210)
-            .fixedSize()
-          Text("Date")
+            .frame(width: 10)
         }
-        Text("Bill Description")
+        Text("\(billDescription)")
+          .frame(maxWidth: .infinity, alignment: .leading)
         Divider()
           .frame(width: 360, height: 1)
           .overlay(.black)
         Text("Friends")
           .font(.title)
+          .frame(maxWidth: .infinity, alignment: .leading)
         Spacer()
           .frame(minHeight: 20, idealHeight: 20, maxHeight: 20)
           .fixedSize()
         Text("Items")
           .font(.title)
-        HStack {
-          Spacer().frame(width: UIScreen.main.bounds.width/2 - 70, height: 0)
-          NavigationLink(destination: AddOneItemView()) {
+          .frame(maxWidth: .infinity, alignment: .leading)
+        if billItems.bill_items.isEmpty == true {
+          NavigationLink(destination: AddOneItemView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: $billItems.bill_items)) {
             Text("Add Item")
           }
           .buttonStyle(GreenButton())
-          Spacer().frame(width: UIScreen.main.bounds.width/2 - 70, height: 0)
-        }
-        Form {
-          // need billitems to follow Identifiable Protocol because right now ForEach cannot differntiate unique bill items
-          LabeledContent("Item", value: "Price ($)")
-          ForEach(curBillItems, id: \.bill_id) { item in
-            LabeledContent(
-              item.name,
-              value: item.priceString
-            )
+        } else {
+          HStack {
+            NavigationLink(destination: AddOneItemView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: $billItems.bill_items)) {
+              Text("Add Item")
+            }
+            .buttonStyle(GreenButton())
+            NavigationLink(destination: AddOneItemView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: $billItems.bill_items)) {
+              Text("Finalize Items")
+            }
+            .buttonStyle(GreenButton())
           }
         }
+        List{
+          ForEach(billItems.bill_items) { Item in
+            BillItemRowView(item: Item)
+            .accentColor(.blue)
+          }
+        }
+        
       }
       .padding(.leading)
     }
 }
-
-struct Manually_AddItem_Previews: PreviewProvider {
-    static var previews: some View {
-        Manually_AddItem()
-    }
-}
-
-
-// May  be useful for adding bar title on top
-//          .navigationBarTitleDisplayMode(.inline)
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    VStack {
-//                      Text("Title").font(.title)
-//                        Text("Subtitle").font(.subheadline)
-//                    }
-//                }
-//            }
