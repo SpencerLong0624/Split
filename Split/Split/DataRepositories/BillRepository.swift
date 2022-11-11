@@ -25,7 +25,7 @@ class BillRepository: ObservableObject {
     store.collection(path)
       .addSnapshotListener { querySnapshot, error in
         if let error = error {
-          print("Error getting books: \(error.localizedDescription)")
+          print("Error getting bills: \(error.localizedDescription)")
           return
         }
 

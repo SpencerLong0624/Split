@@ -50,13 +50,13 @@ struct Bill: Identifiable, Comparable, Codable {
   }
   
   static func <(lhs: Bill, rhs: Bill) -> Bool {
-    if Int(lhs.date[0...2])! < Int(rhs.date[0...2])! {
+    if lhs.date[0...2] < rhs.date[0...2] {
       return true
     } else if Int(lhs.date[0...2]) == Int(rhs.date[0...2]) {
-      if Int(lhs.date[3...5])! < Int(rhs.date[3...5])! {
+      if lhs.date[3...5] < rhs.date[3...5] {
         return true
-      } else if Int(lhs.date[3...5]) == Int(rhs.date[3...5]) {
-        if Int(lhs.date[6...8])! < Int(rhs.date[3...8])! {
+      } else if lhs.date[3...5] == rhs.date[3...5] {
+        if lhs.date[6...8] < rhs.date[3...8] {
           return false
         } else {
           return false

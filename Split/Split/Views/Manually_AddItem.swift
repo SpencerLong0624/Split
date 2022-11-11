@@ -25,6 +25,7 @@ struct Manually_AddItem: View {
   var billDescription: String
   var billDate: String
   @ObservedObject var billItems : BillItems
+  @ObservedObject var activityViewModel = ActivityViewModel()
   
   @State var editIsActive = false
   
@@ -68,10 +69,18 @@ struct Manually_AddItem: View {
               Text("Add Item")
             }
             .buttonStyle(GreenButton())
-            NavigationLink(destination: AddOneItemView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: $billItems.bill_items)) {
+            NavigationLink(destination: ActivityView()) {
               Text("Finalize Items")
             }
             .buttonStyle(GreenButton())
+            .simultaneousGesture(TapGesture().onEnded { var items_array : [String] = []
+              for bill_item in billItems.bill_items {
+                items_array.append(bill_item.name)
+                items_array.append(bill_item.price)
+              }
+              let bill : Bill = Bill(bill_owers: [], bill_payers: [], date: billDate, description: billDescription, title: billTitle, items: items_array)
+              NSLog("MADE IT HERE")
+              activityViewModel.add(bill) })
           }
         }
         List{
