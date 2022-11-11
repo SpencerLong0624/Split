@@ -26,6 +26,10 @@ struct Manually_AddItem: View {
   var billDate: String
   @ObservedObject var billItems : BillItems
   
+  func deleteItem(at offsets: IndexSet) {
+    billItems.bill_items.remove(atOffsets: offsets)
+  }
+  
     var body: some View {
       VStack {
         HStack {
@@ -69,10 +73,18 @@ struct Manually_AddItem: View {
           }
         }
         List{
+          HStack {
+            Text("Item Name")
+              .fontWeight(.bold)
+              .frame(maxWidth: .infinity, alignment: .leading)
+            Text("Price ($)")
+              .fontWeight(.bold)
+              .frame(maxWidth: .infinity, alignment: .trailing)
+          }
           ForEach(billItems.bill_items) { Item in
             BillItemRowView(item: Item)
-            .accentColor(.blue)
           }
+          .onDelete(perform: deleteItem)
         }
         
       }
