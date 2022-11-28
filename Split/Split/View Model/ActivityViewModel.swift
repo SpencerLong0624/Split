@@ -14,6 +14,7 @@ class ActivityViewModel: ObservableObject {
 
   @Published var billRepository = BillRepository()
   @Published var activity: [Bill] = []
+  @Published var filteredBillViewModels: [BillViewModel] = []
   
   init() {
     billRepository.$bills.map { bills in
@@ -25,5 +26,11 @@ class ActivityViewModel: ObservableObject {
 
   func add(_ bill: Bill) {
     billRepository.add(bill)
+  }
+
+  func search(searchText: String) {
+    self.filteredBillViewModels = self.billViewModels.filter { billViewModel in
+      return billViewModel.bill.title.lowercased().contains(searchText.lowercased())
+    }
   }
 }

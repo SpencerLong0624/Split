@@ -53,6 +53,8 @@ extension View {
 struct ActivityView: View {
   // @EnvironmentObject var library: Library
   @ObservedObject var activityViewModel = ActivityViewModel()
+  @State var searchField: String = ""
+  @State var displayedBills : [BillViewModel] = []
   
   init() {
 
@@ -63,11 +65,21 @@ struct ActivityView: View {
   }
   
   var body: some View {
+    let binding = Binding<String>(get: {
+      self.searchField
+    }, set: {
+      self.searchField = $0
+      self.activityViewModel.search(searchText: self.searchField)
+      self.displayBills()
+    })
+    
     NavigationView {
       VStack {
+        (
+          TextField("Search", text: binding)
+        )
         List{
-          let billViewModels = activityViewModel.billViewModels.sorted(by: { $0.bill < $1.bill })
-          ForEach(billViewModels) { billViewModel in
+          ForEach(displayedBills) { billViewModel in
             BillRowView(bill: billViewModel.bill)
             .accentColor(.blue)
           }
@@ -76,8 +88,21 @@ struct ActivityView: View {
       }
       .padding(.top, 1.0)
       .background(Color(red: 0.949, green: 0.949, blue: 0.97, opacity: 1.0))
+      .onAppear(perform: loadData)
     }
     .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
+  }
+  
+  func loadData() {
+    self.displayedBills = self.activityViewModel.billViewModels
+  }
+  
+  func displayBills() {
+    if searchField == "" {
+      self.displayedBills = self.activityViewModel.billViewModels
+    } else {
+      self.displayedBills = self.activityViewModel.filteredBillViewModels
+    }
   }
 }
 
