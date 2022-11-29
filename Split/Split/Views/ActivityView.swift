@@ -53,7 +53,8 @@ extension View {
 struct ActivityView: View {
   // @EnvironmentObject var library: Library
   @ObservedObject var activityViewModel = ActivityViewModel()
-  @State var searchField: String = ""
+  @State var searchField: String = "Search"
+  @State var filterField : String = "Filter by Date Ascending"
   @State var displayedBills : [BillViewModel] = []
   
   init() {
@@ -75,13 +76,23 @@ struct ActivityView: View {
     
     NavigationView {
       VStack {
-        (
-          TextField("Search", text: binding)
-        )
-        List{
+        TextField("search", text: binding)
+        Button(self.filterField) {
+          if filterField == "Filter by Date Ascending" {
+            self.displayedBills = self.displayedBills.sorted {return $0.bill.date < $1.bill.date }
+            self.filterField = "Filter by Date Descending"
+          } else {
+            self.displayedBills = self.displayedBills.sorted {return $0.bill.date > $1.bill.date }
+            self.filterField = "Filter by Date Ascending"
+          }
+        }
+        .padding()
+        .foregroundColor(.white)
+        .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+        .clipShape(Capsule())
+        List {
           ForEach(displayedBills) { billViewModel in
             BillRowView(bill: billViewModel.bill)
-            .accentColor(.blue)
           }
         }
         .navigationBarTitle("Activity")
