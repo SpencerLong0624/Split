@@ -2,27 +2,31 @@
 //  SplitApp.swift
 //  Split
 //
-//  Created by Anthony A Lees on 11/4/22.
+//  Created by Muhammad Uzair Umar on 11/6/22.
 //
 
+
 import SwiftUI
-import FirebaseCore
+import Firebase
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
-
     return true
   }
 }
 
 @main
 struct SplitApp: App {
+  // register app delegate for Firebase setup
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
   var body: some Scene {
-      WindowGroup {
-          AppView()
+    WindowGroup {
+      NavigationView {
+        AppView().environmentObject(AuthViewModel())
       }
+    }
   }
 }
