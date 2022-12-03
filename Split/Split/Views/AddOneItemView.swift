@@ -47,10 +47,10 @@ struct AddOneItemView: View {
             NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject)) {
               Text("Add Item")
              }
-            .onTapGesture {
+            .simultaneousGesture(TapGesture().onEnded {
                addItemToArray()
                billItemsObject.bill_items = billItems
-           }
+           })
           }
         }
       }
