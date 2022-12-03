@@ -28,6 +28,7 @@ struct Manually_AddItem: View {
   @ObservedObject var activityViewModel = ActivityViewModel()
   
   @State var editIsActive = false
+  @State var curItem = BillItem(name: "", price: "")
   
   func deleteItem(at offsets: IndexSet) {
     billItems.bill_items.remove(atOffsets: offsets)

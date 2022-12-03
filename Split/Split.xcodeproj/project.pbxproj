@@ -59,7 +59,6 @@
 		000FE396291752C1002D7D4A /* BillRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE395291752C1002D7D4A /* BillRowView.swift */; };
 		000FE39829175337002D7D4A /* BillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE39729175337002D7D4A /* BillViewModel.swift */; };
 		000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3992917578A002D7D4A /* ActivityViewModel.swift */; };
-		009277AA293BCFD30099580B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009277A9293BCFD30099580B /* UserViewModel.swift */; };
 		AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B1291C31DB001A937B /* AddItemView.swift */; };
 		AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B3291C323C001A937B /* Manually_AddItem.swift */; };
 		AF6717B6291C3259001A937B /* ReceiptScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B5291C3259001A937B /* ReceiptScanView.swift */; };
@@ -68,6 +67,10 @@
 		AF6717BC291C32F0001A937B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BB291C32F0001A937B /* ImagePicker.swift */; };
 		AF6717BE291C3337001A937B /* ReceiptScanner_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */; };
 		AFDE9E46291CA10D0014ECBB /* Scanned_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */; };
+		AFE6ABE129370D9400300A06 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6ABE029370D9400300A06 /* AuthViewModel.swift */; };
+		AFE6ABE329370DB900300A06 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6ABE229370DB900300A06 /* LoginView.swift */; };
+		AFE6ABE529370DC300300A06 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6ABE429370DC300300A06 /* HomeScreenView.swift */; };
+		AFE6ABE729370DCC00300A06 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6ABE629370DCC00300A06 /* AccountView.swift */; };
 		E6240C47291D98DA004287FE /* BillItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6240C46291D98DA004287FE /* BillItemRowView.swift */; };
 		E66AD681291EBD9B00E355D4 /* EditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66AD680291EBD9B00E355D4 /* EditItem.swift */; };
 		E6CD5AA6291CEAB80039A3AB /* AddOneItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */; };
@@ -100,7 +103,6 @@
 		000FE395291752C1002D7D4A /* BillRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillRowView.swift; sourceTree = "<group>"; };
 		000FE39729175337002D7D4A /* BillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewModel.swift; sourceTree = "<group>"; };
 		000FE3992917578A002D7D4A /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
-		009277A9293BCFD30099580B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		AF6717B1291C31DB001A937B /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		AF6717B3291C323C001A937B /* Manually_AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manually_AddItem.swift; sourceTree = "<group>"; };
 		AF6717B5291C3259001A937B /* ReceiptScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,10 @@
 		AF6717BB291C32F0001A937B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanner_Helper.swift; sourceTree = "<group>"; };
 		AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanned_View.swift; sourceTree = "<group>"; };
+		AFE6ABE029370D9400300A06 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		AFE6ABE229370DB900300A06 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AFE6ABE429370DC300300A06 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		AFE6ABE629370DCC00300A06 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		E6240C46291D98DA004287FE /* BillItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemRowView.swift; sourceTree = "<group>"; };
 		E66AD680291EBD9B00E355D4 /* EditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItem.swift; sourceTree = "<group>"; };
 		E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOneItemView.swift; sourceTree = "<group>"; };
@@ -236,6 +242,9 @@
 				AF6717B5291C3259001A937B /* ReceiptScanView.swift */,
 				AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */,
 				E66AD680291EBD9B00E355D4 /* EditItem.swift */,
+				AFE6ABE229370DB900300A06 /* LoginView.swift */,
+				AFE6ABE429370DC300300A06 /* HomeScreenView.swift */,
+				AFE6ABE629370DCC00300A06 /* AccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,7 +256,7 @@
 				000FE39729175337002D7D4A /* BillViewModel.swift */,
 				AF6717B7291C3289001A937B /* Scanner.swift */,
 				AF6717B9291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift */,
-				009277A9293BCFD30099580B /* UserViewModel.swift */,
+				AFE6ABE029370D9400300A06 /* AuthViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -358,17 +367,20 @@
 				000FE38429160432002D7D4A /* User.swift in Sources */,
 				AFDE9E46291CA10D0014ECBB /* Scanned_View.swift in Sources */,
 				000FE38829160464002D7D4A /* Bill.swift in Sources */,
+				AFE6ABE529370DC300300A06 /* HomeScreenView.swift in Sources */,
 				000FE38E29160F3A002D7D4A /* AppView.swift in Sources */,
 				000FE37829160385002D7D4A /* UserItemRepository.swift in Sources */,
 				000FE380291603F0002D7D4A /* BillItem.swift in Sources */,
 				000FE39829175337002D7D4A /* BillViewModel.swift in Sources */,
 				AF6717B8291C3289001A937B /* Scanner.swift in Sources */,
+				AFE6ABE329370DB900300A06 /* LoginView.swift in Sources */,
 				000FE38229160403002D7D4A /* Friend.swift in Sources */,
 				E66AD681291EBD9B00E355D4 /* EditItem.swift in Sources */,
 				000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */,
 				000FE37A291603A5002D7D4A /* BillListRepository.swift in Sources */,
 				000FE39229175105002D7D4A /* BillDetailsView.swift in Sources */,
 				000FE37229160330002D7D4A /* FriendRepository.swift in Sources */,
+				AFE6ABE729370DCC00300A06 /* AccountView.swift in Sources */,
 				AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */,
 				AF6717BA291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift in Sources */,
 				000FE38A29160478002D7D4A /* BillList.swift in Sources */,
@@ -379,6 +391,7 @@
 				000FE3232915F38F002D7D4A /* SplitApp.swift in Sources */,
 				000FE37E291603D9002D7D4A /* UserItem.swift in Sources */,
 				E6240C47291D98DA004287FE /* BillItemRowView.swift in Sources */,
+				AFE6ABE129370D9400300A06 /* AuthViewModel.swift in Sources */,
 				000FE38629160450002D7D4A /* SettleBill.swift in Sources */,
 				AF6717B6291C3259001A937B /* ReceiptScanView.swift in Sources */,
 				AF6717BE291C3337001A937B /* ReceiptScanner_Helper.swift in Sources */,
@@ -386,7 +399,6 @@
 				000FE37C291603C2002D7D4A /* SettleBillRepository.swift in Sources */,
 				AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */,
 				000FE3742916034A002D7D4A /* BillRepository.swift in Sources */,
-				009277AA293BCFD30099580B /* UserViewModel.swift in Sources */,
 				E6CD5AA6291CEAB80039A3AB /* AddOneItemView.swift in Sources */,
 				000FE37029160304002D7D4A /* UserRepository.swift in Sources */,
 			);
