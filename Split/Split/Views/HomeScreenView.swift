@@ -7,10 +7,7 @@ struct HomeScreenView: View {
      
      
     TabView {
-       
-   
-       
-       
+    
       ActivityView()
       .tabItem {
         Label("Activity", systemImage: "arrow.left.arrow.right")

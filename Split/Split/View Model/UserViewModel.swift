@@ -22,6 +22,11 @@ class UserViewModel: ObservableObject, Identifiable {
       .assign(to: \.id, on: self)
       .store(in: &cancellables)
   }
+   
+   func add(_ user: User) {
+     userRepository.add(user)
+   }
+
 
   func update(user: User) {
     userRepository.update(user)
