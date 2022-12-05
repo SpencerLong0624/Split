@@ -11,16 +11,23 @@ struct NewBillView: View {
    @State private var title = ""
    @State private var description = ""
    @State private var date = Date()
+   @State private var userFriends = []
    
    var body: some View {
 
       NavigationView {
          VStack{
+//           NavigationLink
             Form{
-               
-               Section(header: Text("Friends")){
-                  Text("No Friends added")
-               }
+              if userFriends.isEmpty {
+                Section(header: Text("Friends")){
+                   Text("No Friends added")
+                }
+              } else {
+                Section(header: Text("Friends")){
+                   Text("Friends")
+                }
+              }
             }
             Form {
                
