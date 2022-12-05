@@ -12,21 +12,18 @@ struct AddFriend: View {
     Friend(active: true, user_id1: "me", user_id2: "Anthony"),
     Friend(active: true, user_id1: "me", user_id2: "Uzair")
   ]
+  
+  @ObservedObject var addFriendViewModel: AddFriendViewModel
+  
     var body: some View {
       VStack {
         Form {
           Section(header: Text(" My Friends")) {
             ForEach(dummyFriends) {
-              friend in AddFriendRowView(friend: friend)
+              friend in AddFriendRowView(friend: friend, addFriendViewModel: addFriendViewModel)
             }
           }
         }
       }
-    }
-}
-
-struct AddFriend_Previews: PreviewProvider {
-    static var previews: some View {
-        AddFriend()
     }
 }

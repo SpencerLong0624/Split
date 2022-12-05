@@ -11,7 +11,7 @@ struct NewBillView: View {
    @State private var title = ""
    @State private var description = ""
    @State private var date = Date()
-   @State private var userFriends: [Friend] = []
+   @ObservedObject var addFriendViewModel = AddFriendViewModel()
    
    var body: some View {
 
@@ -19,24 +19,24 @@ struct NewBillView: View {
          VStack{
 
             Form {
-              if userFriends.isEmpty {
+              if addFriendViewModel.addedFriends.isEmpty {
                 Section(header: Text("Friends")){
-                  NavigationLink(destination: AddFriend()) {
-                      Text("Add Friend to Bill")
-                         .foregroundColor(Color.green)
-                      
+                  NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel)) {
+                      Text("Add Friends to Bill")
+                      .fontWeight(.bold)
+                      .foregroundColor(.black)
                    }
                    Text("No Friends added")
                 }
               } else {
                 Section(header: Text("Friends")){
-                  NavigationLink(destination: AddFriend()) {
-                      Text("Add Friend to Bill")
-                         .foregroundColor(Color.green)
-                      
+                  NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel)) {
+                    Text("Add Friends to Bill")
+                      .fontWeight(.bold)
+                      .foregroundColor(.black)
                    }
-                  ForEach(userFriends){
-                    friend in FriendRowView(friend: friend)
+                  ForEach(addFriendViewModel.addedFriends){
+                    friendRole in FriendRowView(friendRole: friendRole)
                   }
                 }
               }
