@@ -11,14 +11,14 @@ struct NewBillView: View {
    @State private var title = ""
    @State private var description = ""
    @State private var date = Date()
-   @State private var userFriends = []
+  @State private var userFriends: [Friend] = []
    
    var body: some View {
 
       NavigationView {
          VStack{
 
-            Form{
+            Form {
               if userFriends.isEmpty {
                 Section(header: Text("Friends")){
                   NavigationLink(destination: AddFriend()) {
@@ -35,11 +35,13 @@ struct NewBillView: View {
                          .foregroundColor(Color.green)
                       
                    }
-                  ForEach(userFriends) { friend in FriendRowView(friend: friend)
+                  ForEach(userFriends){
+                    friend in FriendRowView(friend: friend)
                   }
                 }
               }
             }
+           
             Form {
                
                Section(header: Text("Expense Information")){

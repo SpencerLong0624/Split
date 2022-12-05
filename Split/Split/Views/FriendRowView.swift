@@ -8,13 +8,8 @@
 import SwiftUI
 
 struct FriendRowView: View {
+  var friend: Friend
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct FriendRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendRowView()
+      Text("\(friend.user_id2)")
     }
 }

@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 struct Friend: Identifiable, Codable {
     
   // MARK: Fields
-  @DocumentID var id: String?
+  var id = UUID()
   var active: Bool
   var user_id1: String
   var user_id2: String

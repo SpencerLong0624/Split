@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct AddFriend: View {
+  @State private var dummyFriends: [Friend] = [
+    Friend(active: true, user_id1: "me", user_id2: "Anthony"),
+    Friend(active: true, user_id1: "me", user_id2: "Uzair")
+  ]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      VStack {
+        Form {
+          Section(header: Text(" My Friends")) {
+            ForEach(dummyFriends) {
+              friend in FriendRowView(friend: friend)
+            }
+          }
+        }
+      }
     }
 }
 
