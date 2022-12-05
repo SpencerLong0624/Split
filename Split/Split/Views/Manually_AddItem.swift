@@ -28,7 +28,8 @@ struct Manually_AddItem: View {
   @ObservedObject var activityViewModel = ActivityViewModel()
   
   @State var editIsActive = false
-  @State var curItem = BillItem(name: "", price: "")
+  @State var changedItem: BillItem = BillItem(name: "", price: "")
+  @State var changedItemIndex = 0
   
   func deleteItem(at offsets: IndexSet) {
     billItems.bill_items.remove(atOffsets: offsets)
@@ -47,9 +48,9 @@ struct Manually_AddItem: View {
         }
         Text("\(billDescription)")
           .frame(maxWidth: .infinity, alignment: .leading)
-        Divider()
-          .frame(width: 360, height: 1)
-          .overlay(.black)
+        HStack{
+          line
+        }
         Text("Friends")
           .font(.title)
           .frame(maxWidth: .infinity, alignment: .leading)
@@ -105,6 +106,10 @@ struct Manually_AddItem: View {
                  }
                                 
                 Button {
+                  changedItem = Item
+                  if let index = billItems.bill_items.firstIndex(of: Item) {
+                    changedItemIndex = index
+                  }
                   editIsActive.toggle()
                 } label: {
                   Label("Edit", systemImage: "dots")
@@ -113,7 +118,7 @@ struct Manually_AddItem: View {
                 .tint(.blue)
               }
           }
-          NavigationLink(destination: AddOneItemView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: $billItems.bill_items), isActive: $editIsActive) {
+          NavigationLink(destination: EditItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, curItem: changedItem, curItemIndex: changedItemIndex, billItems: $billItems.bill_items), isActive: $editIsActive) {
             Label("Edit", systemImage: "dots")
               .labelStyle(TitleOnlyLabelStyle())
           }
@@ -123,4 +128,8 @@ struct Manually_AddItem: View {
       }
       .padding(.leading)
     }
+  
+  var line: some View {
+      VStack { Divider().background() }.padding()
+  }
 }

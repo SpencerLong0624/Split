@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct EditItem: View {
-  
   var billTitle: String
   var billDescription: String
   var billDate: String
-  @State var curItem : BillItem
+  var curItem: BillItem
+  var curItemIndex: Int
   
+  @Binding var billItems: [BillItem]
   @State var billItemsObject : BillItems = BillItems()
     
   @State private var itemName: String = ""
   @State private var itemPrice: String = ""
   
   func changeItem() {
-    curItem.name = itemName
-    curItem.price = itemPrice
+    billItems.remove(at: curItemIndex)
+    billItems.insert(BillItem(name: itemName, price: itemPrice), at: curItemIndex)
   }
   
     var body: some View {
@@ -42,17 +43,18 @@ struct EditItem: View {
           .overlay(.black)
         Form {
           Section(header: Text("Item Information")){
-            TextField("Enter a Title: ", text: $itemName)
-            TextField("Enter a price: $", text: $itemPrice)
+            TextField("Current Value is: \(curItem.name)", text: $itemName)
+            TextField("Current Value is: \(curItem.price)", text: $itemPrice)
           }
 
           Section(){
             NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject)) {
-              Text("Add Item")
+              Text("Edit Item")
              }
-            .onTapGesture {
+            .simultaneousGesture(TapGesture().onEnded {
                changeItem()
-           }
+               billItemsObject.bill_items = billItems
+           })
           }
         }
       }
