@@ -16,6 +16,7 @@ struct EditItem: View {
   
   @Binding var billItems: [BillItem]
   @State var billItemsObject : BillItems = BillItems()
+  @ObservedObject var addFriendViewModel: AddFriendViewModel
     
   @State private var itemName: String = ""
   @State private var itemPrice: String = ""
@@ -43,12 +44,12 @@ struct EditItem: View {
           .overlay(.black)
         Form {
           Section(header: Text("Item Information")){
-            TextField("Current Value is: \(curItem.name)", text: $itemName)
+            TextField("Current Item Name is: \(curItem.name)", text: $itemName)
             TextField("Current Value is: \(curItem.price)", text: $itemPrice)
           }
 
           Section(){
-            NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject)) {
+            NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject, addFriendViewModel: addFriendViewModel)) {
               Text("Edit Item")
              }
             .simultaneousGesture(TapGesture().onEnded {

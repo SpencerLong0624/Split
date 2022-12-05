@@ -23,16 +23,16 @@ class BillRepository: ObservableObject {
   
   func get() {
     store.collection(path)
-      .addSnapshotListener { querySnapshot, error in
-        if let error = error {
-          print("Error getting bills: \(error.localizedDescription)")
-          return
-        }
-
-        self.bills = querySnapshot?.documents.compactMap { document in
-          try? document.data(as: Bill.self)
-        } ?? []
+    .addSnapshotListener { querySnapshot, error in
+      if let error = error {
+        print("Error getting bills: \(error.localizedDescription)")
+        return
       }
+
+      self.bills = querySnapshot?.documents.compactMap { document in
+        try? document.data(as: Bill.self)
+      } ?? []
+    }
   }
   
   // MARK: CRUD methods

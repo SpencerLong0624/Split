@@ -23,15 +23,15 @@ class FriendRepository: ObservableObject {
   
   func get() {
     store.collection(path)
-      .addSnapshotListener { querySnapshot, error in
-        if let error = error {
-          print("Error getting books: \(error.localizedDescription)")
-          return
-        }
-
-        self.friends = querySnapshot?.documents.compactMap { document in
-          try? document.data(as: Friend.self)
-        } ?? []
+    .addSnapshotListener { querySnapshot, error in
+      if let error = error {
+        print("Error getting books: \(error.localizedDescription)")
+        return
       }
+
+      self.friends = querySnapshot?.documents.compactMap { document in
+        try? document.data(as: Friend.self)
+      } ?? []
+    }
   }
 }

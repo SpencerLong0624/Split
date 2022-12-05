@@ -74,7 +74,7 @@ struct ActivityView: View {
       self.displayBills()
     })
     
-    NavigationView {
+    NavigationStack {
       VStack {
         TextField("search", text: binding)
         Button(self.filterField) {

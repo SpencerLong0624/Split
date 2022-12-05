@@ -12,6 +12,7 @@ struct AddItemView: View {
   var billDescription: String
   var billDate: Date
   @State var billItems = BillItems()
+  @ObservedObject var addFriendViewModel: AddFriendViewModel
 
   func DateToString(date: Date) -> String {
     let dateFormatter = DateFormatter()
@@ -26,13 +27,13 @@ struct AddItemView: View {
             .font(.subheadline)
             .fontWeight(.bold)
             .frame(maxHeight: .infinity, alignment: .leading)
-          NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate), billItems: billItems)) {
+          NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate), billItems: billItems, addFriendViewModel: addFriendViewModel)) {
            Text("Add Items Manually")
               .foregroundColor(Color.green)
            
         }
         .frame(maxHeight: .infinity, alignment: .center)
-        NavigationLink(destination: ReceiptScanView(billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate))) {
+        NavigationLink(destination: ReceiptScanView(addFriendViewModel: addFriendViewModel, billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate))) {
            Text("Scan Receipts")
               .foregroundColor(Color.green)
            

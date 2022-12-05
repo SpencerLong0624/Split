@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-struct GreenButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-        .padding(9.0)
-          .background(Color.green)
-          .foregroundColor(.white)
-          .clipShape(Capsule())
-          .scaleEffect(configuration.isPressed ? 1.2 : 1)
-          .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
-    }
-}
-
 struct Manually_AddItem: View {
   
   var billTitle: String
@@ -26,6 +14,7 @@ struct Manually_AddItem: View {
   var billDate: String
   @ObservedObject var billItems : BillItems
   @ObservedObject var activityViewModel = ActivityViewModel()
+  @ObservedObject var addFriendViewModel: AddFriendViewModel
   
   @State var editIsActive = false
   @State var changedItem: BillItem = BillItem(name: "", price: "")
@@ -43,31 +32,30 @@ struct Manually_AddItem: View {
             .frame(maxWidth: .infinity, alignment: .leading)
           Text("\(billDate)")
             .frame(maxWidth: .infinity, alignment: .trailing)
-          Spacer()
-            .frame(width: 10)
         }
         Text("\(billDescription)")
           .frame(maxWidth: .infinity, alignment: .leading)
         HStack{
           line
+          Text("Friends")
+          line
         }
-        Text("Friends")
-          .font(.title)
-          .frame(maxWidth: .infinity, alignment: .leading)
         Spacer()
           .frame(minHeight: 20, idealHeight: 20, maxHeight: 20)
           .fixedSize()
-        Text("Items")
-          .font(.title)
-          .frame(maxWidth: .infinity, alignment: .leading)
+        HStack{
+          line
+          Text("Items")
+          line
+        }
         if billItems.bill_items.isEmpty == true {
-          NavigationLink(destination: AddOneItemView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: $billItems.bill_items)) {
+          NavigationLink(destination: AddOneItemView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: $billItems.bill_items, addFriendViewModel: addFriendViewModel)) {
             Text("Add Item")
           }
           .buttonStyle(GreenButton())
         } else {
           HStack {
-            NavigationLink(destination: AddOneItemView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: $billItems.bill_items)) {
+            NavigationLink(destination: AddOneItemView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: $billItems.bill_items, addFriendViewModel: addFriendViewModel)) {
               Text("Add Item")
             }
             .buttonStyle(GreenButton())
@@ -118,7 +106,7 @@ struct Manually_AddItem: View {
                 .tint(.blue)
               }
           }
-          NavigationLink(destination: EditItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, curItem: changedItem, curItemIndex: changedItemIndex, billItems: $billItems.bill_items), isActive: $editIsActive) {
+          NavigationLink(destination: EditItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, curItem: changedItem, curItemIndex: changedItemIndex, billItems: $billItems.bill_items, addFriendViewModel: addFriendViewModel), isActive: $editIsActive) {
             Label("Edit", systemImage: "dots")
               .labelStyle(TitleOnlyLabelStyle())
           }
@@ -132,4 +120,16 @@ struct Manually_AddItem: View {
   var line: some View {
       VStack { Divider().background() }.padding()
   }
+}
+
+struct GreenButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+        .padding(9.0)
+          .background(Color.green)
+          .foregroundColor(.white)
+          .clipShape(Capsule())
+          .scaleEffect(configuration.isPressed ? 1.2 : 1)
+          .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+    }
 }

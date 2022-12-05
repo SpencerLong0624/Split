@@ -10,8 +10,10 @@ import SwiftUI
 struct ReceiptScanView: View {
    @ObservedObject var scanner = Scanner()
    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
-     @State private var selectedImage: UIImage?
-     @State private var isImagePickerDisplay = false
+   @State private var selectedImage: UIImage?
+   @State private var isImagePickerDisplay = false
+  
+  @ObservedObject var addFriendViewModel: AddFriendViewModel
   
   var billTitle: String
   var billDescription: String

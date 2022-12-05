@@ -15,7 +15,7 @@ struct NewBillView: View {
    
    var body: some View {
 
-      NavigationView {
+      NavigationStack {
          VStack{
 
             Form {
@@ -50,7 +50,8 @@ struct NewBillView: View {
                   DatePicker("Pick a date", selection: $date,displayedComponents: [.date])
                              .padding()
                   
-                 NavigationLink(destination: AddItemView(billTitle: title, billDescription: description, billDate: date)) {
+                 NavigationLink(destination: AddItemView(billTitle: title, billDescription: description, billDate: date,
+                     addFriendViewModel: addFriendViewModel)) {
                      Text("Create Expense")
                         .foregroundColor(Color.green)
                      

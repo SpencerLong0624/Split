@@ -18,9 +18,9 @@ class BillViewModel: ObservableObject, Identifiable {
   init(bill: Bill) {
     self.bill = bill
     $bill
-      .compactMap { $0.id }
-      .assign(to: \.id, on: self)
-      .store(in: &cancellables)
+    .compactMap { $0.id }
+    .assign(to: \.id, on: self)
+    .store(in: &cancellables)
   }
 
   func update(bill: Bill) {

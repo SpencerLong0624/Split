@@ -18,14 +18,14 @@ class UserViewModel: ObservableObject, Identifiable {
   init(user: User) {
     self.user = user
     $user
-      .compactMap { $0.id }
-      .assign(to: \.id, on: self)
-      .store(in: &cancellables)
+    .compactMap { $0.id }
+    .assign(to: \.id, on: self)
+    .store(in: &cancellables)
   }
    
-   func add(_ user: User) {
-     userRepository.add(user)
-   }
+  func add(_ user: User) {
+    userRepository.add(user)
+  }
 
 
   func update(user: User) {

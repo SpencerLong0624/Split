@@ -23,15 +23,15 @@ class UserItemRepository: ObservableObject {
   
   func get() {
     store.collection(path)
-      .addSnapshotListener { querySnapshot, error in
-        if let error = error {
-          print("Error getting books: \(error.localizedDescription)")
-          return
-        }
-
-        self.user_items = querySnapshot?.documents.compactMap { document in
-          try? document.data(as: UserItem.self)
-        } ?? []
+    .addSnapshotListener { querySnapshot, error in
+      if let error = error {
+        print("Error getting books: \(error.localizedDescription)")
+        return
       }
+
+      self.user_items = querySnapshot?.documents.compactMap { document in
+        try? document.data(as: UserItem.self)
+      } ?? []
+    }
   }
 }

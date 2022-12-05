@@ -13,6 +13,7 @@ struct AddOneItemView: View {
   var billDate: String
   @Binding var billItems: [BillItem]
   @State var billItemsObject : BillItems = BillItems()
+  @ObservedObject var addFriendViewModel: AddFriendViewModel
   
   @State private var itemName: String = ""
   @State private var itemPrice: String = ""
@@ -44,7 +45,7 @@ struct AddOneItemView: View {
           }
           
           Section(){
-            NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject)) {
+            NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject, addFriendViewModel: addFriendViewModel)) {
               Text("Add Item")
              }
             .simultaneousGesture(TapGesture().onEnded {

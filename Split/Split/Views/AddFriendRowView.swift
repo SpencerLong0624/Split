@@ -20,48 +20,27 @@ struct AddFriendRowView: View {
   }
   
   var body: some View {
-//    if (addFriendViewModel.addedFriends.contains(where: friendRole(friend: friend, role: "Bill Payer") in addFriendViewModel.addedFriends) {
-//      HStack(spacing: 0) {
-//        Text("\(friend.user_id2)")
-//          .frame(maxWidth: .infinity, alignment: .leading)
-//        Button("Bill Payer", action: addBillPayer)
-//          .buttonStyle(BorderlessButtonStyle())
-//          .padding()
-//          .clipShape(Capsule())
-//          .background(.green)
-//          .tint(.white)
-//          .cornerRadius(6)
-//          .frame(maxWidth: .infinity, alignment: .center)
-//        Button("Ower", action: addOwer)
-//          .buttonStyle(BorderlessButtonStyle())
-//          .padding()
-//          .clipShape(Capsule())
-//          .background(.red)
-//          .tint(.white)
-//          .cornerRadius(6)
-//          .frame(maxWidth: .infinity, alignment: .trailing)
-//      }
-//    }
-    
-    HStack(spacing: 0) {
-      Text("\(friend.user_id2)")
-        .frame(maxWidth: .infinity, alignment: .leading)
-      Button("Bill Payer", action: addBillPayer)
-        .buttonStyle(BorderlessButtonStyle())
-        .padding()
-        .clipShape(Capsule())
-        .background(.green)
-        .tint(.white)
-        .cornerRadius(6)
-        .frame(maxWidth: .infinity, alignment: .center)
-      Button("Ower", action: addOwer)
-        .buttonStyle(BorderlessButtonStyle())
-        .padding()
-        .clipShape(Capsule())
-        .background(.red)
-        .tint(.white)
-        .cornerRadius(6)
-        .frame(maxWidth: .infinity, alignment: .trailing)
+    if !addFriendViewModel.addedFriends.contains(where: { $0.friend.user_id2 == friend.user_id2 }) {
+      HStack(spacing: 0) {
+        Text("\(friend.user_id2)")
+          .frame(maxWidth: .infinity, alignment: .leading)
+        Button("Bill Payer", action: addBillPayer)
+          .buttonStyle(BorderlessButtonStyle())
+          .padding()
+          .clipShape(Capsule())
+          .background(.green)
+          .tint(.white)
+          .cornerRadius(6)
+          .frame(maxWidth: .infinity, alignment: .center)
+        Button("Ower", action: addOwer)
+          .buttonStyle(BorderlessButtonStyle())
+          .padding()
+          .clipShape(Capsule())
+          .background(.red)
+          .tint(.white)
+          .cornerRadius(6)
+          .frame(maxWidth: .infinity, alignment: .trailing)
+      }
     }
   }
 }

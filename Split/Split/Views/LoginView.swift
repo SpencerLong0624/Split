@@ -13,7 +13,7 @@ struct LoginView: View {
    @State private var emailAddress: String = ""
    @State private var password: String = ""
    var body: some View {
-      NavigationView {
+      NavigationStack {
                   VStack(spacing: 16) {
                       Picker("", selection: $isLogin) {
                           Text("Log In")

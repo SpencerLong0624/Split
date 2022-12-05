@@ -18,19 +18,18 @@ struct BillItem: Identifiable, Equatable {
   static func ==(lhs: BillItem, rhs: BillItem) -> Bool {
     return lhs.name == rhs.name && lhs.price == rhs.price
   }
-  
 }
 
 extension BillItem {
-    var priceString: String {
-        String(price)
-    }
+  var priceString: String {
+    String(price)
+  }
 }
 
 class BillItems : ObservableObject {
   @Published var bill_items : [BillItem]
   
   init(){
-          self.bill_items = []
-      }
+    self.bill_items = []
+  }
 }
