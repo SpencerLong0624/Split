@@ -17,15 +17,26 @@ struct NewBillView: View {
 
       NavigationView {
          VStack{
-//           NavigationLink
+
             Form{
               if userFriends.isEmpty {
                 Section(header: Text("Friends")){
+                  NavigationLink(destination: AddFriend()) {
+                      Text("Add Friend to Bill")
+                         .foregroundColor(Color.green)
+                      
+                   }
                    Text("No Friends added")
                 }
               } else {
                 Section(header: Text("Friends")){
-                   Text("Friends")
+                  NavigationLink(destination: AddFriend()) {
+                      Text("Add Friend to Bill")
+                         .foregroundColor(Color.green)
+                      
+                   }
+                  ForEach(userFriends) { friend in FriendRowView(friend: friend)
+                  }
                 }
               }
             }
