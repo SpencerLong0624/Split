@@ -17,7 +17,7 @@ struct AccountView: View {
    @State private var phone_number : String = ""
    @State var nameInEditMode = false
    @State var phoneInEditMode = false
-   @ObservedObject var userViewModel = UserViewModel(user: User( balance_owed: 0, balance_owed_to: 0, email: "", full_name: "", password: "", phone_number: ""))
+   @ObservedObject var userViewModel = UserViewModel(user: User( balance_owed: 0, balance_owed_to: 0, email: "", full_name: "", phone_number: ""))
    
    var body: some View {
       VStack{

@@ -16,7 +16,6 @@ struct User: Identifiable, Codable {
   var balance_owed_to: Int
   var email: String
   var full_name: String
-  var password: String
   var phone_number: String
   
   // MARK: Codable
@@ -26,7 +25,6 @@ struct User: Identifiable, Codable {
     case balance_owed_to
     case email
     case full_name
-    case password
     case phone_number
   }
 }
