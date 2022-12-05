@@ -8,13 +8,34 @@
 import SwiftUI
 
 struct AddFriendRowView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  var friend: Friend
+  
+  func addBillPayer() {
+    
+  }
+  
+  func addOwer() {
+    
+  }
+  
+  var body: some View {
+    HStack(spacing: 0) {
+      Text("\(friend.user_id2)")
+        .frame(maxWidth: .infinity, alignment: .leading)
+      Button("Bill Payer", action: addBillPayer)
+        .padding()
+        .clipShape(Capsule())
+        .background(.green)
+        .tint(.white)
+        .cornerRadius(6)
+        .frame(maxWidth: .infinity, alignment: .center)
+      Button("Ower", action: addOwer)
+        .padding()
+        .clipShape(Capsule())
+        .background(.red)
+        .tint(.white)
+        .cornerRadius(6)
+        .frame(maxWidth: .infinity, alignment: .trailing)
     }
-}
-
-struct AddFriendRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddFriendRowView()
-    }
+  }
 }

@@ -17,7 +17,7 @@ struct AddFriend: View {
         Form {
           Section(header: Text(" My Friends")) {
             ForEach(dummyFriends) {
-              friend in FriendRowView(friend: friend)
+              friend in AddFriendRowView(friend: friend)
             }
           }
         }

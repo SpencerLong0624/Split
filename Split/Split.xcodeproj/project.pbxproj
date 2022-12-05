@@ -76,6 +76,7 @@
 		E65E5831293E626900B4AD61 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E5830293E626900B4AD61 /* AddFriend.swift */; };
 		E65E5833293E676300B4AD61 /* FriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E5832293E676300B4AD61 /* FriendRowView.swift */; };
 		E65E5835293E7D8800B4AD61 /* AddFriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E5834293E7D8800B4AD61 /* AddFriendRowView.swift */; };
+		E65E5837293E8AB500B4AD61 /* AddFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E5836293E8AB500B4AD61 /* AddFriendViewModel.swift */; };
 		E66AD681291EBD9B00E355D4 /* EditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66AD680291EBD9B00E355D4 /* EditItem.swift */; };
 		E6CD5AA6291CEAB80039A3AB /* AddOneItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */; };
 /* End PBXBuildFile section */
@@ -124,6 +125,7 @@
 		E65E5830293E626900B4AD61 /* AddFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
 		E65E5832293E676300B4AD61 /* FriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRowView.swift; sourceTree = "<group>"; };
 		E65E5834293E7D8800B4AD61 /* AddFriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendRowView.swift; sourceTree = "<group>"; };
+		E65E5836293E8AB500B4AD61 /* AddFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewModel.swift; sourceTree = "<group>"; };
 		E66AD680291EBD9B00E355D4 /* EditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItem.swift; sourceTree = "<group>"; };
 		E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOneItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,8 +190,8 @@
 			children = (
 				000FE3222915F38F002D7D4A /* SplitApp.swift */,
 				000FE36D291602CA002D7D4A /* DataRepositories */,
-				000FE39429175186002D7D4A /* View Model */,
 				000FE36E291602D2002D7D4A /* Models */,
+				000FE39429175186002D7D4A /* View Model */,
 				000FE3932917510D002D7D4A /* Views */,
 				000FE3262915F38F002D7D4A /* Assets.xcassets */,
 				000FE3342915FA35002D7D4A /* GoogleService-Info.plist */,
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				000FE3992917578A002D7D4A /* ActivityViewModel.swift */,
+				E65E5836293E8AB500B4AD61 /* AddFriendViewModel.swift */,
 				000FE39729175337002D7D4A /* BillViewModel.swift */,
 				AF6717B7291C3289001A937B /* Scanner.swift */,
 				AF6717B9291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift */,
@@ -376,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E65E5837293E8AB500B4AD61 /* AddFriendViewModel.swift in Sources */,
 				000FE38429160432002D7D4A /* User.swift in Sources */,
 				AFDE9E46291CA10D0014ECBB /* Scanned_View.swift in Sources */,
 				000FE38829160464002D7D4A /* Bill.swift in Sources */,

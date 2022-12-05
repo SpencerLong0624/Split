@@ -11,7 +11,7 @@ struct NewBillView: View {
    @State private var title = ""
    @State private var description = ""
    @State private var date = Date()
-  @State private var userFriends: [Friend] = []
+   @State private var userFriends: [Friend] = []
    
    var body: some View {
 
