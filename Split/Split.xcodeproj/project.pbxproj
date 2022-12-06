@@ -60,6 +60,7 @@
 		000FE39829175337002D7D4A /* BillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE39729175337002D7D4A /* BillViewModel.swift */; };
 		000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3992917578A002D7D4A /* ActivityViewModel.swift */; };
 		009277AC293BD12B0099580B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009277AB293BD12B0099580B /* UserViewModel.swift */; };
+		009277AE293EF3560099580B /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009277AD293EF3560099580B /* UsersViewModel.swift */; };
 		AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B1291C31DB001A937B /* AddItemView.swift */; };
 		AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B3291C323C001A937B /* Manually_AddItem.swift */; };
 		AF6717B6291C3259001A937B /* ReceiptScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B5291C3259001A937B /* ReceiptScanView.swift */; };
@@ -109,6 +110,7 @@
 		000FE39729175337002D7D4A /* BillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewModel.swift; sourceTree = "<group>"; };
 		000FE3992917578A002D7D4A /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		009277AB293BD12B0099580B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		009277AD293EF3560099580B /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		AF6717B1291C31DB001A937B /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		AF6717B3291C323C001A937B /* Manually_AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manually_AddItem.swift; sourceTree = "<group>"; };
 		AF6717B5291C3259001A937B /* ReceiptScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanView.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				AF6717B9291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift */,
 				AFE6ABE029370D9400300A06 /* AuthViewModel.swift */,
 				009277AB293BD12B0099580B /* UserViewModel.swift */,
+				009277AD293EF3560099580B /* UsersViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				009277AC293BD12B0099580B /* UserViewModel.swift in Sources */,
 				000FE37A291603A5002D7D4A /* BillListRepository.swift in Sources */,
 				000FE39229175105002D7D4A /* BillDetailsView.swift in Sources */,
+				009277AE293EF3560099580B /* UsersViewModel.swift in Sources */,
 				000FE37229160330002D7D4A /* FriendRepository.swift in Sources */,
 				AFE6ABE729370DCC00300A06 /* AccountView.swift in Sources */,
 				AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */,
