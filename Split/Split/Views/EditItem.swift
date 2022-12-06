@@ -26,38 +26,38 @@ struct EditItem: View {
     billItems.insert(BillItem(name: itemName, price: itemPrice), at: curItemIndex)
   }
   
-    var body: some View {
-      VStack {
-        HStack {
-          Text(billTitle)
-            .font(.title)
-            .frame(maxWidth: .infinity, alignment: .leading)
-          Text(billDate)
-            .frame(maxWidth: .infinity, alignment: .trailing)
-          Spacer()
-            .frame(width: 10)
+  var body: some View {
+    VStack {
+      HStack {
+        Text(billTitle)
+        .font(.title)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        Text(billDate)
+        .frame(maxWidth: .infinity, alignment: .trailing)
+        Spacer()
+        .frame(width: 10)
+      }
+      Text(billDescription)
+      .frame(maxWidth: .infinity, alignment: .leading)
+      Divider()
+      .frame(width: 360, height: 1)
+      .overlay(.black)
+      Form {
+        Section(header: Text("Item Information")){
+          TextField("Current Item Name is: \(curItem.name)", text: $itemName)
+          TextField("Current Value is: \(curItem.price)", text: $itemPrice)
         }
-        Text(billDescription)
-          .frame(maxWidth: .infinity, alignment: .leading)
-        Divider()
-          .frame(width: 360, height: 1)
-          .overlay(.black)
-        Form {
-          Section(header: Text("Item Information")){
-            TextField("Current Item Name is: \(curItem.name)", text: $itemName)
-            TextField("Current Value is: \(curItem.price)", text: $itemPrice)
+        
+        Section(){
+          NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject, addFriendViewModel: addFriendViewModel)) {
+            Text("Edit Item")
           }
-
-          Section(){
-            NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject, addFriendViewModel: addFriendViewModel)) {
-              Text("Edit Item")
-             }
-            .simultaneousGesture(TapGesture().onEnded {
-               changeItem()
-               billItemsObject.bill_items = billItems
-           })
-          }
+          .simultaneousGesture(TapGesture().onEnded {
+            changeItem()
+            billItemsObject.bill_items = billItems
+          })
         }
       }
     }
+  }
 }

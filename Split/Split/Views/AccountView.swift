@@ -8,72 +8,67 @@
 import SwiftUI
 
 struct AccountView: View {
-   @EnvironmentObject private var authModel: AuthViewModel
-   @State private var balance_owed : Int = 0
-   @State private var balance_owed_to : Int = 0
-   @State private var email :String = ""
-   @State private var full_name : String = ""
-   @State private var password : String = ""
-   @State private var phone_number : String = ""
-   @State var nameInEditMode = false
-   @State var phoneInEditMode = false
-   @ObservedObject var userViewModel = UserViewModel(user: User( balance_owed: 0, balance_owed_to: 0, email: "", full_name: "", phone_number: ""))
+  @EnvironmentObject private var authModel: AuthViewModel
+  @State private var balance_owed : Int = 0
+  @State private var balance_owed_to : Int = 0
+  @State private var email :String = ""
+  @State private var full_name : String = ""
+  @State private var password : String = ""
+  @State private var phone_number : String = ""
+  @State var nameInEditMode = false
+  @State var phoneInEditMode = false
+  @ObservedObject var userViewModel = UserViewModel(user: User( balance_owed: 0, balance_owed_to: 0, email: "", full_name: "", phone_number: ""))
    
-   var body: some View {
-      VStack{
-         Image(systemName: "person.circle").resizable().frame(width: 30, height: 30)
+  var body: some View {
+    VStack{
+      Image(systemName: "person.circle").resizable().frame(width: 30, height: 30)
       HStack {
-      
-         if nameInEditMode {
-            TextField("Enter your User Name", text: $full_name).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
-               .autocapitalization(.words)
-               .disableAutocorrection(true)
+        if nameInEditMode {
+          TextField("Enter your User Name", text: $full_name).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+          .autocapitalization(.words)
+          .disableAutocorrection(true)
          } else {
             Text("Username: \(full_name)").font(.system(size: 20))
          }
          
-         Button(action: {
-            self.nameInEditMode.toggle()
-         }) {
-            Text(nameInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
-               .foregroundColor(Color.blue)
-         }
+        Button(action: {
+          self.nameInEditMode.toggle()
+        }) {
+          Text(nameInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
+          .foregroundColor(Color.blue)
+        }
       }
          
-         HStack {
-         
+      HStack {
+        if phoneInEditMode {
+          TextField("Enter your Phone Number", text: $phone_number).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+          .autocapitalization(.words)
+          .disableAutocorrection(true)
+        } else {
+            Text("Phone Number: \(phone_number)").font(.system(size: 20))
+        }
             
-            if phoneInEditMode {
-               TextField("Enter your Phone Number", text: $phone_number).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
-                  .autocapitalization(.words)
-                  .disableAutocorrection(true)
-            } else {
-               Text("Phone Number: \(phone_number)").font(.system(size: 20))
-            }
-            
-            Button(action: {
-               self.phoneInEditMode.toggle()
-               
-            }) {
-               Text(phoneInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
-                  .foregroundColor(Color.blue)
-            }
-         }
-         
-         Text("Email: \(authModel.user?.email ?? "")")
+        Button(action: {
+          self.phoneInEditMode.toggle()
+        }) {
+          Text(phoneInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
+          .foregroundColor(Color.blue)
+        }
+      }
+      Text("Email: \(authModel.user?.email ?? "")")
       }.toolbar {
-         ToolbarItemGroup(placement: .navigationBarLeading) { Button(
-            action: { authModel.signOut()
-            }, label: {
-               Text("Sign Out") .bold().accentColor(.red)
-            })
-         }
+        ToolbarItemGroup(placement: .navigationBarLeading) { Button(
+          action: { authModel.signOut()
+        }, label: {
+          Text("Sign Out") .bold().accentColor(.red)
+        })
       }
-   }
+    }
+  }
 }
 
 struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        AccountView()
-    }
+  static var previews: some View {
+    AccountView()
+  }
 }

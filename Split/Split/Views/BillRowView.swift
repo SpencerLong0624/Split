@@ -16,8 +16,9 @@ struct BillRowView: View {
       label: {
         Text(bill.date)
         Text(bill.title)
-          .fontWeight(.bold)
-          .font(.body)
-      })
+        .fontWeight(.bold)
+        .font(.body)
+      }
+    )
   }
 }

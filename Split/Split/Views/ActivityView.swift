@@ -8,46 +8,43 @@
 import SwiftUI
 
 struct NavigationBarModifier: ViewModifier {
-        
-    var backgroundColor: UIColor?
-    
-    init( backgroundColor: UIColor?) {
-        self.backgroundColor = backgroundColor
-        let coloredAppearance = UINavigationBarAppearance()
-        coloredAppearance.configureWithTransparentBackground()
-        coloredAppearance.backgroundColor = .clear
-        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        UINavigationBar.appearance().standardAppearance = coloredAppearance
-        UINavigationBar.appearance().compactAppearance = coloredAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-        UINavigationBar.appearance().tintColor = .white
 
-    }
+  var backgroundColor: UIColor?
     
-    func body(content: Content) -> some View {
-        ZStack{
-            content
-            VStack {
-                GeometryReader { geometry in
-                    Color(self.backgroundColor ?? .clear)
-                        .frame(height: geometry.safeAreaInsets.top)
-                        .edgesIgnoringSafeArea(.top)
-                    Spacer()
-                }
-            }
+  init( backgroundColor: UIColor?) {
+    self.backgroundColor = backgroundColor
+    let coloredAppearance = UINavigationBarAppearance()
+    coloredAppearance.configureWithTransparentBackground()
+    coloredAppearance.backgroundColor = .clear
+    coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+    coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+    UINavigationBar.appearance().standardAppearance = coloredAppearance
+    UINavigationBar.appearance().compactAppearance = coloredAppearance
+    UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+    UINavigationBar.appearance().tintColor = .white
+  }
+    
+  func body(content: Content) -> some View {
+    ZStack{
+      content
+      VStack {
+        GeometryReader { geometry in
+          Color(self.backgroundColor ?? .clear)
+          .frame(height: geometry.safeAreaInsets.top)
+            .edgesIgnoringSafeArea(.top)
+          Spacer()
         }
+      }
     }
+  }
 }
 
 
 extension View {
- 
-    func navigationBarColor(_ backgroundColor: UIColor?) -> some View {
-        self.modifier(NavigationBarModifier(backgroundColor: backgroundColor))
-    }
-
+ func navigationBarColor(_ backgroundColor: UIColor?) -> some View {
+   self.modifier(NavigationBarModifier(backgroundColor: backgroundColor))
+  }
 }
 
 struct ActivityView: View {
@@ -58,11 +55,8 @@ struct ActivityView: View {
   @State var displayedBills : [BillViewModel] = []
   
   init() {
-
-      UINavigationBar.appearance().backgroundColor = UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255)
-
-       UINavigationBar.appearance().largeTitleTextAttributes = [
-          .foregroundColor: UIColor.white]
+    UINavigationBar.appearance().backgroundColor = UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255)
+    UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
   }
   
   var body: some View {
@@ -74,35 +68,35 @@ struct ActivityView: View {
       self.displayBills()
     })
     
-    NavigationStack {
-      VStack {
-        TextField("search", text: binding)
-        Button(self.filterField) {
-          if filterField == "Filter by Date Ascending" {
-            self.displayedBills = self.displayedBills.sorted {return $0.bill.date < $1.bill.date }
-            self.filterField = "Filter by Date Descending"
-          } else {
-            self.displayedBills = self.displayedBills.sorted {return $0.bill.date > $1.bill.date }
-            self.filterField = "Filter by Date Ascending"
-          }
+  NavigationStack {
+    VStack {
+      TextField("search", text: binding)
+      Button(self.filterField) {
+        if filterField == "Filter by Date Ascending" {
+          self.displayedBills = self.displayedBills.sorted {return $0.bill.date < $1.bill.date }
+          self.filterField = "Filter by Date Descending"
+        } else {
+          self.displayedBills = self.displayedBills.sorted {return $0.bill.date > $1.bill.date }
+          self.filterField = "Filter by Date Ascending"
         }
-        .padding()
-        .foregroundColor(.white)
-        .background(Color(red: 76/255, green: 229/255, blue: 177/255))
-        .clipShape(Capsule())
-        List {
-          ForEach(displayedBills) { billViewModel in
-            BillRowView(bill: billViewModel.bill)
-          }
-        }
-        .navigationBarTitle("Activity")
       }
-      .padding(.top, 1.0)
-      .background(Color(red: 0.949, green: 0.949, blue: 0.97, opacity: 1.0))
-      .onAppear(perform: loadData)
+      .padding()
+      .foregroundColor(.white)
+      .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+      .clipShape(Capsule())
+      List {
+        ForEach(displayedBills) { billViewModel in
+          BillRowView(bill: billViewModel.bill)
+        }
+      }
+      .navigationBarTitle("Activity")
     }
-    .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
+    .padding(.top, 1.0)
+    .background(Color(red: 0.949, green: 0.949, blue: 0.97, opacity: 1.0))
+    .onAppear(perform: loadData)
   }
+    .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
+}
   
   func loadData() {
     self.displayedBills = self.activityViewModel.billViewModels
@@ -115,10 +109,4 @@ struct ActivityView: View {
       self.displayedBills = self.activityViewModel.filteredBillViewModels
     }
   }
-}
-
-struct ActivityView_Previews: PreviewProvider {
-    static var previews: some View {
-        ActivityView()
-    }
 }

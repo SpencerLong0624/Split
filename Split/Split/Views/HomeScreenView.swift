@@ -2,12 +2,9 @@ import SwiftUI
 
 
 struct HomeScreenView: View {
-   var body: some View {
-      
-     
-     
+  var body: some View {
     TabView {
-    
+      
       ActivityView()
       .tabItem {
         Label("Activity", systemImage: "arrow.left.arrow.right")
@@ -21,7 +18,7 @@ struct HomeScreenView: View {
        AccountView()
        .tabItem {
          Label("My Accont", systemImage: "gear")
-       }
+      }
     }
     .onAppear() {
       UITabBar.appearance().backgroundColor = UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255)
@@ -32,7 +29,7 @@ struct HomeScreenView: View {
 
 
 struct HomeScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-      HomeScreenView()
-    }
+  static var previews: some View {
+    HomeScreenView()
   }
+}

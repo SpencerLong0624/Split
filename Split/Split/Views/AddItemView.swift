@@ -21,24 +21,22 @@ struct AddItemView: View {
   }
   
   
-   var body: some View {
-        VStack {
-          Text("How do you want to enter items?")
-            .font(.subheadline)
-            .fontWeight(.bold)
-            .frame(maxHeight: .infinity, alignment: .leading)
-          NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate), billItems: billItems, addFriendViewModel: addFriendViewModel)) {
-           Text("Add Items Manually")
-              .foregroundColor(Color.green)
-           
-        }
-        .frame(maxHeight: .infinity, alignment: .center)
-        NavigationLink(destination: ReceiptScanView(addFriendViewModel: addFriendViewModel, billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate))) {
-           Text("Scan Receipts")
-              .foregroundColor(Color.green)
-           
-        }
-        .frame(maxHeight: .infinity, alignment: .trailing)
-     }
-   }
+  var body: some View {
+    VStack {
+      Text("How do you want to enter items?")
+      .font(.subheadline)
+      .fontWeight(.bold)
+      .frame(maxHeight: .infinity, alignment: .leading)
+      NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate), billItems: billItems, addFriendViewModel: addFriendViewModel)) {
+        Text("Add Items Manually")
+        .foregroundColor(Color.green)
+      }
+      .frame(maxHeight: .infinity, alignment: .center)
+      NavigationLink(destination: ReceiptScanView(addFriendViewModel: addFriendViewModel, billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate))) {
+        Text("Scan Receipts")
+        .foregroundColor(Color.green)
+      }
+      .frame(maxHeight: .infinity, alignment: .trailing)
+    }
+  }
 }

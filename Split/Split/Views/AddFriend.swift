@@ -15,15 +15,15 @@ struct AddFriend: View {
   
   @ObservedObject var addFriendViewModel: AddFriendViewModel
   
-    var body: some View {
-      VStack {
-        Form {
-          Section(header: Text(" My Friends")) {
-            ForEach(dummyFriends) {
-              friend in AddFriendRowView(friend: friend, addFriendViewModel: addFriendViewModel)
-            }
+  var body: some View {
+    VStack {
+      Form {
+        Section(header: Text(" My Friends")) {
+          ForEach(dummyFriends) {
+            friend in AddFriendRowView(friend: friend, addFriendViewModel: addFriendViewModel)
           }
         }
       }
     }
+  }
 }

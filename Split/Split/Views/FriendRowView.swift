@@ -9,18 +9,18 @@ import SwiftUI
 
 struct FriendRowView: View {
   var friendRole: friendRole
-    var body: some View {
-      VStack(alignment: .leading) {
-        Text("\(friendRole.friend.user_id2)")
-        if friendRole.role == "Bill Payer" {
-          Text("\(friendRole.role)")
-            .font(.caption)
-            .foregroundColor(.green)
-        } else {
-          Text("\(friendRole.role)")
-            .font(.caption)
-            .foregroundColor(.red)
-        }
+  var body: some View {
+    VStack(alignment: .leading) {
+      Text("\(friendRole.friend.user_id2)")
+      if friendRole.role == "Bill Payer" {
+        Text("\(friendRole.role)")
+        .font(.caption)
+        .foregroundColor(.green)
+      } else {
+        Text("\(friendRole.role)")
+        .font(.caption)
+        .foregroundColor(.red)
       }
     }
+  }
 }
