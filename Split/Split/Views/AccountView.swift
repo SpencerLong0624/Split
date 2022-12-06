@@ -18,6 +18,11 @@ struct AccountView: View {
   @State var nameInEditMode = false
   @State var phoneInEditMode = false
   @ObservedObject var userViewModel = UserViewModel(user: User( balance_owed: 0, balance_owed_to: 0, email: "", full_name: "", phone_number: ""))
+  
+  init() {
+    UINavigationBar.appearance().backgroundColor = UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255)
+    UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+  }
    
   var body: some View {
     VStack{
@@ -64,6 +69,7 @@ struct AccountView: View {
         })
       }
     }
+    .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
   }
 }
 
