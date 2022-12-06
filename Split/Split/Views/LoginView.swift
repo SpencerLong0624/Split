@@ -39,6 +39,7 @@ struct LoginView: View {
             authModel.loginUser(emailAddress: emailAddress, password: password)
           } else {
             authModel.signUp(emailAddress: emailAddress, password: password)
+             authModel.addUserToFirebase(emailAddress: emailAddress)
           }
         }, label: {
           Text(isLogin ? "Log In" : "Create Account")

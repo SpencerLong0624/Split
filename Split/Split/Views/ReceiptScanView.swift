@@ -28,12 +28,6 @@ struct ReceiptScanView: View {
         .frame(width: 300, height: 300)
       }
                
-      Button("Take a Picture ") {
-        self.sourceType = .camera
-        self.isImagePickerDisplay.toggle()
-      }
-      .padding()
-      .accentColor(.red)
                
       Button("Choose from the galllery") {
         self.sourceType = .photoLibrary
