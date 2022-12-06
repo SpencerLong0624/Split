@@ -42,7 +42,6 @@ class Scanner: ObservableObject {
   
   func getBillItems (_ image: UIImage) -> BillItems {
     let output : [String] = request(image)
-    print(output)
     var start_item_names : Bool = false
     var start_item_prices : Bool = false
     var item_names : [String] = []
@@ -65,7 +64,6 @@ class Scanner: ObservableObject {
         item_names.append(item)
       }
       if start_item_prices {
-        print(item)
         item_prices.append(item)
       }
     }
