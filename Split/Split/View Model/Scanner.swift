@@ -11,9 +11,9 @@ import UIKit
 
 
 class Scanner: ObservableObject {
-   
-  func request(_ image: UIImage) -> [String] {
-    var output : [String] = []
+  var output : [String] = []
+  
+  func request(_ image: UIImage) {
     let recognizeTextRequest = VNRecognizeTextRequest  { (request, error) in
       guard let observations = request.results as? [VNRecognizedTextObservation] else {
         print("Error: \(error! as NSError)")
@@ -24,23 +24,26 @@ class Scanner: ObservableObject {
         if let recognizedText = topCandidate.first {
           //OCR Results
           print(recognizedText.string)
-          output.append(recognizedText.string)
+          self.output.append(recognizedText.string)
         }
       }
     }
     recognizeTextRequest.recognitionLevel = .accurate
-      
+    
     guard let cgImage = image.cgImage else {
-      return []
+      return
     }
     let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-    DispatchQueue.global(qos: .userInitiated).async {
-      do {
-        try handler.perform([recognizeTextRequest])
-      } catch let error as NSError {
-        print("Failed: \(error)")
-      }
+    do {
+      try handler.perform([recognizeTextRequest])
+    } catch let error as NSError {
+      print("Failed: \(error)")
     }
-    return output
+  }
+  
+  func getOutput(_ image: UIImage) -> [String] {
+    request(image)
+    print("here is output: ", self.output)
+    return self.output
   }
 }
