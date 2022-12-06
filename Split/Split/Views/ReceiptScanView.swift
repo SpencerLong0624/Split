@@ -38,7 +38,7 @@ struct ReceiptScanView: View {
               
       //This view call is not correct as of now. I am working on it
       if(selectedImage != nil) {
-        NavigationLink(destination: Scanned_View(scanned_output: scanner.getOutput(selectedImage!))) {
+        NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: scanner.getBillItems(selectedImage!), addFriendViewModel: addFriendViewModel)) {
           Text("Submit Picture for Scan")
           .foregroundColor(Color.green)
         }

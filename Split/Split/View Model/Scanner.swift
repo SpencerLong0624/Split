@@ -9,11 +9,10 @@
 import Vision
 import UIKit
 
-
 class Scanner: ObservableObject {
-  var output : [String] = []
   
-  func request(_ image: UIImage) {
+  func request(_ image: UIImage) -> [String] {
+    var output : [String] = []
     let recognizeTextRequest = VNRecognizeTextRequest  { (request, error) in
       guard let observations = request.results as? [VNRecognizedTextObservation] else {
         print("Error: \(error! as NSError)")
@@ -23,15 +22,14 @@ class Scanner: ObservableObject {
         let topCandidate = currentObservation.topCandidates(1)
         if let recognizedText = topCandidate.first {
           //OCR Results
-          print(recognizedText.string)
-          self.output.append(recognizedText.string)
+          output.append(recognizedText.string)
         }
       }
     }
     recognizeTextRequest.recognitionLevel = .accurate
     
     guard let cgImage = image.cgImage else {
-      return
+      return []
     }
     let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
     do {
@@ -39,11 +37,51 @@ class Scanner: ObservableObject {
     } catch let error as NSError {
       print("Failed: \(error)")
     }
+    return output
   }
   
-  func getOutput(_ image: UIImage) -> [String] {
-    request(image)
-    print("here is output: ", self.output)
-    return self.output
+  func getBillItems (_ image: UIImage) -> BillItems {
+    let output : [String] = request(image)
+    print(output)
+    var start_item_names : Bool = false
+    var start_item_prices : Bool = false
+    var item_names : [String] = []
+    var item_prices : [String] = []
+    for item in output {
+      if item.contains("Your Cashier Today was") {
+        start_item_names = true
+        continue
+      }
+      if item.contains("TAX") {
+        start_item_names = false
+        start_item_prices = true
+        continue
+      }
+      if item.contains("BALANCE") {
+        start_item_prices = false
+        break
+      }
+      if start_item_names {
+        item_names.append(item)
+      }
+      if start_item_prices {
+        print(item)
+        item_prices.append(item)
+      }
+    }
+
+    let billItemsObject : BillItems = BillItems()
+    var billItems: [BillItem] = []
+    
+    for i in 0...(item_names.count - 1) {
+      let item_name : String = item_names[i]
+      var item_price : String = "0.00"
+      if i <= item_prices.count - 1 {
+        item_price = item_prices[i][0...3]
+      }
+      billItems.append(BillItem(name: item_name, price: item_price))
+    }
+    billItemsObject.bill_items = billItems
+    return billItemsObject
   }
 }
