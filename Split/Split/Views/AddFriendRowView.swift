@@ -12,15 +12,15 @@ struct AddFriendRowView: View {
   @ObservedObject var addFriendViewModel: AddFriendViewModel
   
   func addBillPayer() {
-    addFriendViewModel.addFriend(friend, "Bill Payer")
+    addFriendViewModel.addFriend(friend.user_id2, "", "Bill Payer")
   }
   
   func addOwer() {
-    addFriendViewModel.addFriend(friend, "Ower")
+    addFriendViewModel.addFriend(friend.user_id2, "", "Ower")
   }
   
   var body: some View {
-    if !addFriendViewModel.addedFriends.contains(where: { $0.friend.user_id2 == friend.user_id2 }) {
+    if !addFriendViewModel.addedFriends.contains(where: { $0.name == friend.user_id2 }) {
       HStack(spacing: 0) {
         Text("\(friend.user_id2)")
         .frame(maxWidth: .infinity, alignment: .leading)

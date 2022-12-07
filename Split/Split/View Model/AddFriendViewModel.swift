@@ -10,19 +10,20 @@ import Combine
 
 struct friendRole: Identifiable {
   var id = UUID()
-  var friend: Friend
+  var name: String
+  var email: String
   var role: String
+  var assignedItems: [BillItems]
 }
-
 
 class AddFriendViewModel: ObservableObject {
   @Published var addedFriends: [friendRole]
   
   init() {
-    addedFriends = []
+    addedFriends = [friendRole]()
   }
   
-  func addFriend(_ friend: Friend, _ role: String) {
-    addedFriends.append(friendRole(friend: friend, role: role))
+  func addFriend(_ name: String, _ email: String, _ role: String) {
+    addedFriends.append(friendRole(name: name, email: email, role: role, assignedItems: [BillItems]()))
   }
 }
