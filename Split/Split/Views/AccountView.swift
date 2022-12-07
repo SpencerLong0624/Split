@@ -25,12 +25,12 @@ struct AccountView: View {
           .autocapitalization(.words)
           .disableAutocorrection(true)
          } else {
-             Text("Full Name: \(usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user.full_name)").font(.system(size: 20))
+             Text("Full Name: \(usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user.full_name)").font(.system(size: 20))
          }
          
         Button(action: {
           self.nameInEditMode.toggle()
-            var user : User = usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user
+            var user : User = usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user
             user.full_name = full_name
             usersViewModel.userRepository.update(user)
         }) {
@@ -45,12 +45,12 @@ struct AccountView: View {
           .autocapitalization(.words)
           .disableAutocorrection(true)
         } else {
-            Text("Phone Number: \(usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user.phone_number)").font(.system(size: 20))
+            Text("Phone Number: \(usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user.phone_number)").font(.system(size: 20))
         }
             
         Button(action: {
           self.phoneInEditMode.toggle()
-          var user : User = usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user
+          var user : User = usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user
           user.phone_number = phone_number
           usersViewModel.userRepository.update(user)
         }) {
