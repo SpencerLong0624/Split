@@ -21,11 +21,11 @@ struct AccountView: View {
       Image(systemName: "person.circle").resizable().frame(width: 30, height: 30)
       HStack {
         if nameInEditMode {
-          TextField("Enter your User Name", text: $full_name).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+          TextField("Enter your Full Name", text: $full_name).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
           .autocapitalization(.words)
           .disableAutocorrection(true)
          } else {
-             Text("Username: \(usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user.full_name)").font(.system(size: 20))
+             Text("Full Name: \(usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user.full_name)").font(.system(size: 20))
          }
          
         Button(action: {
