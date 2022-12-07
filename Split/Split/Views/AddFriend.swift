@@ -9,8 +9,9 @@ import SwiftUI
 
 struct AddFriend: View {
   @State private var dummyFriends: [Friend] = [
+    Friend(active: true, user_id1: "me", user_id2: "Uzair"),
     Friend(active: true, user_id1: "me", user_id2: "Anthony"),
-    Friend(active: true, user_id1: "me", user_id2: "Uzair")
+    Friend(active: true, user_id1: "me", user_id2: "Spencer")
   ]
   
   @ObservedObject var addFriendViewModel: AddFriendViewModel
@@ -19,7 +20,7 @@ struct AddFriend: View {
     VStack {
       Form {
         Section(header: Text(" My Friends")) {
-          ForEach(dummyFriends) {
+          ForEach(dummyFriends.sorted {$0.user_id2.lowercased() < $1.user_id2.lowercased()}) {
             friend in AddFriendRowView(friend: friend, addFriendViewModel: addFriendViewModel)
           }
         }
