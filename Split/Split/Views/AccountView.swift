@@ -18,6 +18,7 @@ struct AccountView: View {
   @State var nameInEditMode = false
   @State var phoneInEditMode = false
   @ObservedObject var userViewModel = UserViewModel(user: User( balance_owed: 0, balance_owed_to: 0, email: "", full_name: "", phone_number: ""))
+  @ObservedObject var usersViewModel = UsersViewModel()
    
   var body: some View {
     VStack{
@@ -56,6 +57,7 @@ struct AccountView: View {
         }
       }
       Text("Email: \(authModel.user?.email ?? "")")
+      Text("Test: \(usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user.email)")
       }.toolbar {
         ToolbarItemGroup(placement: .navigationBarLeading) { Button(
           action: { authModel.signOut()

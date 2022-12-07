@@ -33,4 +33,11 @@ class UsersViewModel: ObservableObject {
       return userViewModel.user.email.lowercased().contains(searchText.lowercased())
     }
   }
+  
+  func getUser(email: String) -> [UserViewModel] {
+    let user = userViewModels.filter {userViewModel in
+      return userViewModel.user.email.lowercased().contains(email.lowercased())
+    }
+    return user
+  }
 }
