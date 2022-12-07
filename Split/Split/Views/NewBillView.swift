@@ -33,7 +33,7 @@ struct NewBillView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.black)
               }
-              ForEach(addFriendViewModel.addedFriends){
+              ForEach(addFriendViewModel.addedFriends.sorted {($0.role, $0.friend.user_id2) < ($1.role, $1.friend.user_id2)}){
                 friendRole in FriendRowView(friendRole: friendRole)
               }
             }
