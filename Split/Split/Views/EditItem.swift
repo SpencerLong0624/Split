@@ -47,17 +47,19 @@ struct EditItem: View {
           TextField("Current Item Name is: \(curItem.name)", text: $itemName)
           TextField("Current Value is: \(curItem.price)", text: $itemPrice)
         }
-        
-        Section(){
-          NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject, addFriendViewModel: addFriendViewModel)) {
-            Text("Edit Item")
-          }
-          .simultaneousGesture(TapGesture().onEnded {
-            changeItem()
-            billItemsObject.bill_items = billItems
-          })
-        }
       }
+      NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject, addFriendViewModel: addFriendViewModel).navigationBarBackButtonHidden(true)) {
+        Text("Edit Item")
+      }
+      .padding()
+      .foregroundColor(.white)
+      .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+      .clipShape(Capsule())
+      .simultaneousGesture(TapGesture().onEnded {
+        changeItem()
+        billItemsObject.bill_items = billItems
+      })
+      Spacer()
     }
   }
 }
