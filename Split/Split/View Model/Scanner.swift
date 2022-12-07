@@ -9,6 +9,12 @@
 import Vision
 import UIKit
 
+extension StringProtocol {
+    subscript(offset: Int) -> Character {
+        self[index(startIndex, offsetBy: offset)]
+    }
+}
+
 class Scanner: ObservableObject {
   
   func request(_ image: UIImage) -> [String] {
@@ -75,7 +81,15 @@ class Scanner: ObservableObject {
       let item_name : String = item_names[i]
       var item_price : String = "0.00"
       if i <= item_prices.count - 1 {
-        item_price = item_prices[i][0...3]
+        if item_prices[i].count >= 6 {
+          item_price = item_prices[i][0...5]
+          if item_price[5] == " " {
+            item_price = item_price[0...4]
+          }
+          if item_price[4] == " " {
+            item_price = item_price[0...3]
+          }
+        }
       }
       billItems.append(BillItem(name: item_name, price: item_price))
     }
