@@ -40,10 +40,7 @@ struct NewBillView: View {
               }
             }
           }
-        }
-           
-        Form {
-          Section(header: Text("Expense Information")){
+          Section(header: Text("Bill Information")){
             TextField("Enter a Title", text: $title)
             TextField("Enter a description", text: $description)
             DatePicker("Pick a date", selection: $date,displayedComponents: [.date])
@@ -60,12 +57,4 @@ struct NewBillView: View {
     }
     .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
   }
-}
-      
- 
-
-struct NewBillView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewBillView()
-    }
 }

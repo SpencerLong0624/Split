@@ -8,13 +8,54 @@
 import SwiftUI
 
 struct FinalizeBillView: View {
-    var body: some View {
-        Text("Finalize Bill View")
+  var billTitle: String
+  var billDescription: String
+  var billDate: String
+  @ObservedObject var billItems : BillItems
+  @ObservedObject var activityViewModel = ActivityViewModel()
+  @ObservedObject var addFriendViewModel: AddFriendViewModel
+  
+  var body: some View {
+    VStack {
+      Form {
+        Section(header: Text("Bill Information")) {
+          HStack {
+            Text("\(billTitle)")
+              .fontWeight(.medium)
+              .frame(maxWidth: .infinity, alignment: .leading)
+            Text("\(billDate)")
+              .frame(maxWidth: .infinity, alignment: .trailing)
+          }
+          Text("\(billDescription)")
+            .italic()
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        
+        Section(header: Text("Friends")) {
+          ForEach(addFriendViewModel.addedFriends.sorted {($0.role, $0.friend.user_id2) < ($1.role, $1.friend.user_id2)}){
+            friendRole in FriendRowView(friendRole: friendRole)
+          }
+        }
+        
+        Section(header: Text("Items")) {
+          List {
+            HStack {
+              Text("Item Name")
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .leading)
+              Text("Price ($)")
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .center)
+              Text("Person")
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+            ForEach(billItems.bill_items) { Item in
+              BillItemRowView(item: Item)
+            }
+          }
+        }
+      }
     }
-}
-
-struct FinalizeBillView_Previews: PreviewProvider {
-    static var previews: some View {
-        FinalizeBillView()
-    }
+  }
 }

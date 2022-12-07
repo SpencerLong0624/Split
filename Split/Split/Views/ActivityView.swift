@@ -50,7 +50,7 @@ extension View {
 struct ActivityView: View {
   // @EnvironmentObject var library: Library
   @ObservedObject var activityViewModel = ActivityViewModel()
-  @State var searchField: String = "Search"
+  @State var searchField: String = ""
   @State var filterField : String = "Filter by Date Ascending"
   @State var displayedBills : [BillViewModel] = []
   
@@ -70,7 +70,7 @@ struct ActivityView: View {
     
   NavigationStack {
     VStack {
-      TextField("search", text: binding)
+      TextField("Search for a Bill", text: binding)
       Button(self.filterField) {
         if filterField == "Filter by Date Ascending" {
           self.displayedBills = self.displayedBills.sorted {return $0.bill.date < $1.bill.date }

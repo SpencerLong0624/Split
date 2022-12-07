@@ -24,7 +24,7 @@ struct AddItemView: View {
   var body: some View {
     VStack {
       Text("How do you want to enter items?")
-      .font(.subheadline)
+      .font(.headline)
       .fontWeight(.bold)
       .frame(maxHeight: .infinity, alignment: .leading)
       NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate), billItems: billItems, addFriendViewModel: addFriendViewModel)) {
