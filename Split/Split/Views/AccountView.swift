@@ -58,15 +58,13 @@ struct AccountView: View {
           .foregroundColor(Color.blue)
         }
       }
-      Text("Email: \(authModel.user?.email ?? "")")
-      }.toolbar {
-        ToolbarItemGroup(placement: .navigationBarLeading) { Button(
-          action: { authModel.signOut()
-        }, label: {
-          Text("Sign Out") .bold().accentColor(.red)
-        })
+        Text("Email: \(authModel.user?.email ?? "")").padding(.bottom, 100)
+                Button(
+                    action: { authModel.signOut()
+                    }, label: {
+                        Text("Sign Out") .bold().accentColor(.red)
+                    })
       }
-    }
     .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
   }
 }
