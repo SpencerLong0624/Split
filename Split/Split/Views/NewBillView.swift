@@ -56,7 +56,7 @@ struct NewBillView: View {
           }
         }
       }
-      .navigationBarTitle("Add an Expense")
+      .navigationBarTitle("Add a Bill")
     }
     .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
   }
