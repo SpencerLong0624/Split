@@ -19,7 +19,8 @@ struct AccountView: View {
   @State var phoneInEditMode = false
   @ObservedObject var userViewModel = UserViewModel(user: User( balance_owed: 0, balance_owed_to: 0, email: "", full_name: "", phone_number: ""))
   @ObservedObject var usersViewModel = UsersViewModel()
-   
+//  @State var user : User = User()
+
   var body: some View {
     VStack{
       Image(systemName: "person.circle").resizable().frame(width: 30, height: 30)
@@ -51,6 +52,9 @@ struct AccountView: View {
             
         Button(action: {
           self.phoneInEditMode.toggle()
+          var user : User = usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user
+          user.phone_number = phone_number
+          usersViewModel.userRepository.update(user)
         }) {
           Text(phoneInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
           .foregroundColor(Color.blue)
