@@ -80,6 +80,7 @@
 		E65E5837293E8AB500B4AD61 /* AddFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E5836293E8AB500B4AD61 /* AddFriendViewModel.swift */; };
 		E66AD681291EBD9B00E355D4 /* EditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66AD680291EBD9B00E355D4 /* EditItem.swift */; };
 		E6CD5AA6291CEAB80039A3AB /* AddOneItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */; };
+		E6DEF41829405AB000D8BCBB /* FinalizeBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF41729405AB000D8BCBB /* FinalizeBillView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		E65E5836293E8AB500B4AD61 /* AddFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewModel.swift; sourceTree = "<group>"; };
 		E66AD680291EBD9B00E355D4 /* EditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItem.swift; sourceTree = "<group>"; };
 		E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOneItemView.swift; sourceTree = "<group>"; };
+		E6DEF41729405AB000D8BCBB /* FinalizeBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalizeBillView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				E65E5834293E7D8800B4AD61 /* AddFriendRowView.swift */,
 				AF6717B1291C31DB001A937B /* AddItemView.swift */,
 				AF6717B3291C323C001A937B /* Manually_AddItem.swift */,
+				E6DEF41729405AB000D8BCBB /* FinalizeBillView.swift */,
 				E6240C46291D98DA004287FE /* BillItemRowView.swift */,
 				AF6717B5291C3259001A937B /* ReceiptScanView.swift */,
 				AFDE9E45291CA10D0014ECBB /* Scanned_View.swift */,
@@ -423,6 +426,7 @@
 				000FE37C291603C2002D7D4A /* SettleBillRepository.swift in Sources */,
 				AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */,
 				000FE3742916034A002D7D4A /* BillRepository.swift in Sources */,
+				E6DEF41829405AB000D8BCBB /* FinalizeBillView.swift in Sources */,
 				E6CD5AA6291CEAB80039A3AB /* AddOneItemView.swift in Sources */,
 				000FE37029160304002D7D4A /* UserRepository.swift in Sources */,
 			);

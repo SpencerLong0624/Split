@@ -58,17 +58,17 @@ struct Manually_AddItem: View {
             Text("Add Item")
           }
           .buttonStyle(GreenButton())
-          NavigationLink(destination: ActivityView()) {
+          NavigationLink(destination: FinalizeBillView()) {
             Text("Finalize Items")
           }
           .buttonStyle(GreenButton())
-          .simultaneousGesture(TapGesture().onEnded { var items_array : [String] = []
-          for bill_item in billItems.bill_items {
-            items_array.append(bill_item.name)
-            items_array.append(bill_item.price)
-          }
-          let bill : Bill = Bill(bill_owers: [], bill_payers: [], date: billDate, description: billDescription, title: billTitle, items: items_array)
-          activityViewModel.add(bill) })
+//          .simultaneousGesture(TapGesture().onEnded { var items_array : [String] = []
+//          for bill_item in billItems.bill_items {
+//            items_array.append(bill_item.name)
+//            items_array.append(bill_item.price)
+//          }
+//          let bill : Bill = Bill(bill_owers: [], bill_payers: [], date: billDate, description: billDescription, title: billTitle, items: items_array)
+//          activityViewModel.add(bill) })
         }
       }
       List{
