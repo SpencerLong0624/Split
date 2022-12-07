@@ -4,4 +4,5 @@
 
 1. Take a picture of your receipt or download from the Internet (.jpg format) 
 2. Drag the Image in the gallery of the app simmulator 
-  <img width="819" alt="Screenshot 2022-12-06 at 9 58 25 PM" src="https://user-images.githubusercontent.com/54990502/206077487-875c93c3-1d69-4c2b-9a20-b0e240fb10f7.png">
+  
+<img width="1047" alt="Screenshot 2022-12-06 at 10 06 38 PM" src="https://user-images.githubusercontent.com/54990502/206078553-2fc57d8e-34b1-41bf-8679-9908287baa2a.png">
