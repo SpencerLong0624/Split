@@ -12,6 +12,8 @@ struct NewBillView: View {
   @State private var description = ""
   @State private var date = Date()
   @ObservedObject var addFriendViewModel = AddFriendViewModel()
+  @ObservedObject var usersViewModel = UsersViewModel()
+  @EnvironmentObject private var authModel: AuthViewModel
    
   var body: some View {
     NavigationStack {
@@ -19,7 +21,7 @@ struct NewBillView: View {
         Form {
           if addFriendViewModel.addedFriends.isEmpty {
             Section(header: Text("Friends")){
-              NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel)) {
+              NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel, user: usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user)) {
                 Text("Add Friends to Bill")
                 .fontWeight(.bold)
                 .foregroundColor(.black)
@@ -28,7 +30,7 @@ struct NewBillView: View {
             }
           } else {
             Section(header: Text("Friends")){
-              NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel)) {
+              NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel, user: usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user)) {
                 Text("Add Friends to Bill")
                 .fontWeight(.bold)
                 .foregroundColor(.black)

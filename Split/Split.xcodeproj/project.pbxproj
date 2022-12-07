@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0008B9252940F39E00A5B785 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008B9242940F39E00A5B785 /* FriendsView.swift */; };
+		0008B9272940FE5100A5B785 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008B9262940FE5100A5B785 /* UserRowView.swift */; };
+		0008B9292940FF8400A5B785 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008B9282940FF8400A5B785 /* UserDetailsView.swift */; };
 		000FE3232915F38F002D7D4A /* SplitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3222915F38F002D7D4A /* SplitApp.swift */; };
 		000FE3272915F38F002D7D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000FE3262915F38F002D7D4A /* Assets.xcassets */; };
 		000FE32A2915F38F002D7D4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000FE3292915F38F002D7D4A /* Preview Assets.xcassets */; };
@@ -84,6 +87,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0008B9242940F39E00A5B785 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		0008B9262940FE5100A5B785 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
+		0008B9282940FF8400A5B785 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		000FE31F2915F38F002D7D4A /* Split.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Split.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		000FE3222915F38F002D7D4A /* SplitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitApp.swift; sourceTree = "<group>"; };
 		000FE3262915F38F002D7D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -263,6 +269,9 @@
 				AFE6ABE229370DB900300A06 /* LoginView.swift */,
 				AFE6ABE429370DC300300A06 /* HomeScreenView.swift */,
 				AFE6ABE629370DCC00300A06 /* AccountView.swift */,
+				0008B9242940F39E00A5B785 /* FriendsView.swift */,
+				0008B9262940FE5100A5B785 /* UserRowView.swift */,
+				0008B9282940FF8400A5B785 /* UserDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -407,7 +416,9 @@
 				000FE39229175105002D7D4A /* BillDetailsView.swift in Sources */,
 				009277AE293EF3560099580B /* UsersViewModel.swift in Sources */,
 				000FE37229160330002D7D4A /* FriendRepository.swift in Sources */,
+				0008B9272940FE5100A5B785 /* UserRowView.swift in Sources */,
 				AFE6ABE729370DCC00300A06 /* AccountView.swift in Sources */,
+				0008B9292940FF8400A5B785 /* UserDetailsView.swift in Sources */,
 				AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */,
 				AF6717BA291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift in Sources */,
 				000FE38A29160478002D7D4A /* BillList.swift in Sources */,
@@ -415,6 +426,7 @@
 				000FE38C291609D7002D7D4A /* ActivityView.swift in Sources */,
 				AF6717BC291C32F0001A937B /* ImagePicker.swift in Sources */,
 				000FE39029160F7A002D7D4A /* NewBillView.swift in Sources */,
+				0008B9252940F39E00A5B785 /* FriendsView.swift in Sources */,
 				000FE3232915F38F002D7D4A /* SplitApp.swift in Sources */,
 				000FE37E291603D9002D7D4A /* UserItem.swift in Sources */,
 				E6240C47291D98DA004287FE /* BillItemRowView.swift in Sources */,

@@ -15,6 +15,7 @@ struct User: Identifiable, Codable {
   var balance_owed: Int
   var balance_owed_to: Int
   var email: String
+  var friends: [String]
   var full_name: String
   var phone_number: String
   
@@ -24,6 +25,7 @@ struct User: Identifiable, Codable {
     case balance_owed
     case balance_owed_to
     case email
+    case friends
     case full_name
     case phone_number
   }

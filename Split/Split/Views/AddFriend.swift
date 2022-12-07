@@ -13,8 +13,9 @@ struct AddFriend: View {
     Friend(active: true, user_id1: "me", user_id2: "Anthony"),
     Friend(active: true, user_id1: "me", user_id2: "Spencer")
   ]
-  
+
   @ObservedObject var addFriendViewModel: AddFriendViewModel
+  @State var user : User
   
   var body: some View {
     VStack {

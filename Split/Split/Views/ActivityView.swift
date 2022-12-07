@@ -84,6 +84,13 @@ struct ActivityView: View {
       .foregroundColor(.white)
       .background(Color(red: 76/255, green: 229/255, blue: 177/255))
       .clipShape(Capsule())
+      NavigationLink(destination: FriendsView()) {
+        Text("Add Friends")
+      }
+      .padding()
+      .foregroundColor(.white)
+      .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+      .clipShape(Capsule())
       List {
         ForEach(displayedBills) { billViewModel in
           BillRowView(bill: billViewModel.bill)
