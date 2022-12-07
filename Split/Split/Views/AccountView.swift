@@ -9,17 +9,12 @@ import SwiftUI
 
 struct AccountView: View {
   @EnvironmentObject private var authModel: AuthViewModel
-  @State private var balance_owed : Int = 0
-  @State private var balance_owed_to : Int = 0
   @State private var email :String = ""
   @State private var full_name : String = ""
-  @State private var password : String = ""
   @State private var phone_number : String = ""
   @State var nameInEditMode = false
   @State var phoneInEditMode = false
-  @ObservedObject var userViewModel = UserViewModel(user: User( balance_owed: 0, balance_owed_to: 0, email: "", full_name: "", phone_number: ""))
   @ObservedObject var usersViewModel = UsersViewModel()
-//  @State var user : User = User()
 
   var body: some View {
     VStack{
@@ -30,11 +25,14 @@ struct AccountView: View {
           .autocapitalization(.words)
           .disableAutocorrection(true)
          } else {
-            Text("Username: \(full_name)").font(.system(size: 20))
+             Text("Username: \(usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user.full_name)").font(.system(size: 20))
          }
          
         Button(action: {
           self.nameInEditMode.toggle()
+            var user : User = usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user
+            user.full_name = full_name
+            usersViewModel.userRepository.update(user)
         }) {
           Text(nameInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
           .foregroundColor(Color.blue)
@@ -47,7 +45,7 @@ struct AccountView: View {
           .autocapitalization(.words)
           .disableAutocorrection(true)
         } else {
-            Text("Phone Number: \(phone_number)").font(.system(size: 20))
+            Text("Phone Number: \(usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user.phone_number)").font(.system(size: 20))
         }
             
         Button(action: {
@@ -61,7 +59,6 @@ struct AccountView: View {
         }
       }
       Text("Email: \(authModel.user?.email ?? "")")
-      Text("Test: \(usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user.email)")
       }.toolbar {
         ToolbarItemGroup(placement: .navigationBarLeading) { Button(
           action: { authModel.signOut()

@@ -17,7 +17,7 @@ struct HomeScreenView: View {
        
        AccountView()
        .tabItem {
-         Label("My Accont", systemImage: "gear")
+         Label("My Account", systemImage: "gear")
       }
     }
     .onAppear() {
