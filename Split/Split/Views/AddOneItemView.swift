@@ -26,34 +26,36 @@ struct AddOneItemView: View {
     VStack {
       HStack {
         Text(billTitle)
-        .font(.title)
-        .frame(maxWidth: .infinity, alignment: .leading)
+          .font(.title)
+          .frame(maxWidth: .infinity, alignment: .leading)
         Text(billDate)
-        .frame(maxWidth: .infinity, alignment: .trailing)
+          .frame(maxWidth: .infinity, alignment: .trailing)
         Spacer()
-        .frame(width: 10)
+          .frame(width: 10)
       }
       Text(billDescription)
-      .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
       Divider()
-      .frame(width: 360, height: 1)
-      .overlay(.black)
+        .frame(width: 360, height: 1)
+        .overlay(.black)
       Form {
         Section(header: Text("Item Information")){
           TextField("Enter a Title: ", text: $itemName)
           TextField("Enter a price: $", text: $itemPrice)
         }
-          
-        Section(){
-          NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject, addFriendViewModel: addFriendViewModel)) {
-            Text("Add Item")
-          }
-          .simultaneousGesture(TapGesture().onEnded {
-            addItemToArray()
-            billItemsObject.bill_items = billItems
-          })
-        }
       }
+      NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject, addFriendViewModel: addFriendViewModel).navigationBarBackButtonHidden(true)) {
+        Text("Add Item")
+      }
+      .padding()
+      .foregroundColor(.white)
+      .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+      .clipShape(Capsule())
+      .simultaneousGesture(TapGesture().onEnded {
+        addItemToArray()
+        billItemsObject.bill_items = billItems
+      })
+      Spacer()
     }
   }
 }
