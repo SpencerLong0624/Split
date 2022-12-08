@@ -65,6 +65,9 @@
 		000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3992917578A002D7D4A /* ActivityViewModel.swift */; };
 		009277AC293BD12B0099580B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009277AB293BD12B0099580B /* UserViewModel.swift */; };
 		009277AE293EF3560099580B /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009277AD293EF3560099580B /* UsersViewModel.swift */; };
+		183D986129415EAD00C371F7 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D986029415EAD00C371F7 /* SplitTests.swift */; };
+		183D986A2941640D00C371F7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 183D98692941640D00C371F7 /* FirebaseFirestore */; };
+		183D986C2941642200C371F7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 183D986B2941642200C371F7 /* FirebaseAuth */; };
 		AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B1291C31DB001A937B /* AddItemView.swift */; };
 		AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B3291C323C001A937B /* Manually_AddItem.swift */; };
 		AF6717B6291C3259001A937B /* ReceiptScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B5291C3259001A937B /* ReceiptScanView.swift */; };
@@ -86,6 +89,16 @@
 		E6CD5AA6291CEAB80039A3AB /* AddOneItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CD5AA5291CEAB80039A3AB /* AddOneItemView.swift */; };
 		E6DEF41829405AB000D8BCBB /* FinalizeBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF41729405AB000D8BCBB /* FinalizeBillView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		183D986229415EAD00C371F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000FE3172915F38F002D7D4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000FE31E2915F38F002D7D4A;
+			remoteInfo = Split;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0008B9242940F39E00A5B785 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
@@ -120,6 +133,9 @@
 		000FE3992917578A002D7D4A /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		009277AB293BD12B0099580B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		009277AD293EF3560099580B /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		183D985E29415EAD00C371F7 /* SplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		183D986029415EAD00C371F7 /* SplitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitTests.swift; sourceTree = "<group>"; };
+		183D98672941629600C371F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AF6717B1291C31DB001A937B /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		AF6717B3291C323C001A937B /* Manually_AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manually_AddItem.swift; sourceTree = "<group>"; };
 		AF6717B5291C3259001A937B /* ReceiptScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanView.swift; sourceTree = "<group>"; };
@@ -177,6 +193,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		183D985B29415EAD00C371F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183D986A2941640D00C371F7 /* FirebaseFirestore in Frameworks */,
+				183D986C2941642200C371F7 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -185,7 +210,9 @@
 			children = (
 				AF6717BD291C3337001A937B /* ReceiptScanner_Helper.swift */,
 				000FE3212915F38F002D7D4A /* Split */,
+				183D985F29415EAD00C371F7 /* SplitTests */,
 				000FE3202915F38F002D7D4A /* Products */,
+				183D98682941640C00C371F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				000FE31F2915F38F002D7D4A /* Split.app */,
+				183D985E29415EAD00C371F7 /* SplitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,6 +322,22 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		183D985F29415EAD00C371F7 /* SplitTests */ = {
+			isa = PBXGroup;
+			children = (
+				183D98672941629600C371F7 /* Info.plist */,
+				183D986029415EAD00C371F7 /* SplitTests.swift */,
+			);
+			path = SplitTests;
+			sourceTree = "<group>";
+		};
+		183D98682941640C00C371F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,6 +387,28 @@
 			productReference = 000FE31F2915F38F002D7D4A /* Split.app */;
 			productType = "com.apple.product-type.application";
 		};
+		183D985D29415EAD00C371F7 /* SplitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 183D986629415EAD00C371F7 /* Build configuration list for PBXNativeTarget "SplitTests" */;
+			buildPhases = (
+				183D985A29415EAD00C371F7 /* Sources */,
+				183D985B29415EAD00C371F7 /* Frameworks */,
+				183D985C29415EAD00C371F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				183D986329415EAD00C371F7 /* PBXTargetDependency */,
+			);
+			name = SplitTests;
+			packageProductDependencies = (
+				183D98692941640D00C371F7 /* FirebaseFirestore */,
+				183D986B2941642200C371F7 /* FirebaseAuth */,
+			);
+			productName = SplitTests;
+			productReference = 183D985E29415EAD00C371F7 /* SplitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -355,6 +421,10 @@
 				TargetAttributes = {
 					000FE31E2915F38F002D7D4A = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					183D985D29415EAD00C371F7 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 000FE31E2915F38F002D7D4A;
 					};
 				};
 			};
@@ -375,6 +445,7 @@
 			projectRoot = "";
 			targets = (
 				000FE31E2915F38F002D7D4A /* Split */,
+				183D985D29415EAD00C371F7 /* SplitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -387,6 +458,13 @@
 				000FE32A2915F38F002D7D4A /* Preview Assets.xcassets in Resources */,
 				000FE3272915F38F002D7D4A /* Assets.xcassets in Resources */,
 				000FE3352915FA35002D7D4A /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		183D985C29415EAD00C371F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +526,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		183D985A29415EAD00C371F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183D986129415EAD00C371F7 /* SplitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		183D986329415EAD00C371F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000FE31E2915F38F002D7D4A /* Split */;
+			targetProxy = 183D986229415EAD00C371F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		000FE32B2915F38F002D7D4A /* Debug */ = {
@@ -623,6 +717,44 @@
 			};
 			name = Release;
 		};
+		183D986429415EAD00C371F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SplitTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cmu.SplitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Split.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Split";
+			};
+			name = Debug;
+		};
+		183D986529415EAD00C371F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SplitTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cmu.SplitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Split.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Split";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -640,6 +772,15 @@
 			buildConfigurations = (
 				000FE32E2915F38F002D7D4A /* Debug */,
 				000FE32F2915F38F002D7D4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		183D986629415EAD00C371F7 /* Build configuration list for PBXNativeTarget "SplitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				183D986429415EAD00C371F7 /* Debug */,
+				183D986529415EAD00C371F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -792,6 +933,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 000FE3362915FAC5002D7D4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		183D98692941640D00C371F7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 000FE3362915FAC5002D7D4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		183D986B2941642200C371F7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 000FE3362915FAC5002D7D4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
