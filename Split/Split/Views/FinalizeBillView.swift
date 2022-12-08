@@ -76,9 +76,9 @@ struct FinalizeBillView: View {
         var bill_payers_array : [String] = []
         for friend_role in addFriendViewModel.addedFriends {
           if friend_role.role == "Ower" {
-            bill_owers_array.append(friend_role.user.email)
+            bill_owers_array.append(friend_role.user.full_name)
           } else if friend_role.role == "Bill Payer" {
-            bill_payers_array.append(friend_role.user.email)
+            bill_payers_array.append(friend_role.user.full_name)
           }
         }
         let bill : Bill = Bill(bill_owers: bill_owers_array, bill_payers: bill_payers_array, date: billDate, description: billDescription, title: billTitle, items: items_array)

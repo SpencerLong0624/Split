@@ -63,6 +63,7 @@
 		000FE396291752C1002D7D4A /* BillRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE395291752C1002D7D4A /* BillRowView.swift */; };
 		000FE39829175337002D7D4A /* BillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE39729175337002D7D4A /* BillViewModel.swift */; };
 		000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3992917578A002D7D4A /* ActivityViewModel.swift */; };
+		0055F237294265E20006B04F /* BillDetailsItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0055F236294265E20006B04F /* BillDetailsItemRowView.swift */; };
 		009277AC293BD12B0099580B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009277AB293BD12B0099580B /* UserViewModel.swift */; };
 		009277AE293EF3560099580B /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009277AD293EF3560099580B /* UsersViewModel.swift */; };
 		183D986129415EAD00C371F7 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D986029415EAD00C371F7 /* SplitTests.swift */; };
@@ -137,6 +138,7 @@
 		000FE395291752C1002D7D4A /* BillRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillRowView.swift; sourceTree = "<group>"; };
 		000FE39729175337002D7D4A /* BillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewModel.swift; sourceTree = "<group>"; };
 		000FE3992917578A002D7D4A /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
+		0055F236294265E20006B04F /* BillDetailsItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailsItemRowView.swift; sourceTree = "<group>"; };
 		009277AB293BD12B0099580B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		009277AD293EF3560099580B /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		183D985E29415EAD00C371F7 /* SplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +321,7 @@
 				0008B9262940FE5100A5B785 /* UserRowView.swift */,
 				0008B9282940FF8400A5B785 /* UserDetailsView.swift */,
 				0008B92A2941317E00A5B785 /* NewBillCreatedView.swift */,
+				0055F236294265E20006B04F /* BillDetailsItemRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				E63BB276294194B700FA628F /* AssignItemsRowView.swift in Sources */,
 				AFE6ABE529370DC300300A06 /* HomeScreenView.swift in Sources */,
 				000FE38E29160F3A002D7D4A /* AppView.swift in Sources */,
+				0055F237294265E20006B04F /* BillDetailsItemRowView.swift in Sources */,
 				000FE37829160385002D7D4A /* UserItemRepository.swift in Sources */,
 				E65E5835293E7D8800B4AD61 /* AddFriendRowView.swift in Sources */,
 				000FE380291603F0002D7D4A /* BillItem.swift in Sources */,
