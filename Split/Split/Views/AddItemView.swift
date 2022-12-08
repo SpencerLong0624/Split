@@ -24,19 +24,20 @@ struct AddItemView: View {
   var body: some View {
     VStack {
       Text("How do you want to enter items?")
-      .font(.headline)
-      .fontWeight(.bold)
-      .frame(maxHeight: .infinity, alignment: .leading)
+        .font(.title3)
+        .fontWeight(.bold)
+        .frame(maxHeight: .infinity, alignment: .leading)
       NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate), billItems: billItems, addFriendViewModel: addFriendViewModel)) {
         Text("Add Items Manually")
-        .foregroundColor(Color.green)
+        .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
       }
       .frame(maxHeight: .infinity, alignment: .center)
       NavigationLink(destination: ReceiptScanView(addFriendViewModel: addFriendViewModel, billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate))) {
         Text("Scan Receipts")
-        .foregroundColor(Color.green)
+        .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
       }
       .frame(maxHeight: .infinity, alignment: .trailing)
     }
+    .background(Color(.systemGroupedBackground))
   }
 }

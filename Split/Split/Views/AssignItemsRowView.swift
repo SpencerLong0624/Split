@@ -51,6 +51,7 @@ struct AssignItemsRowView: View {
           .frame(maxWidth: .infinity, alignment: .leading)
         Text(item.price)
           .frame(maxWidth: .infinity, alignment: .center)
+        Spacer()
         if selected {
           Button(action: {
               chooseItem()
@@ -70,7 +71,7 @@ struct AssignItemsRowView: View {
                   .fontWeight(.bold)
                   .frame(width: 25, height: 25)
                   .foregroundColor(Color.white)
-                  .background(Color.gray)
+                  .background(Color(red: 76/255, green: 229/255, blue: 177/255))
                   .clipShape(Circle())
           }
         }

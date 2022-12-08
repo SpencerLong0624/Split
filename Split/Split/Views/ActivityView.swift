@@ -71,6 +71,7 @@ struct ActivityView: View {
   NavigationStack {
     VStack {
       TextField("Search for a Bill", text: binding)
+        .tint(.black)
       Button(self.filterField) {
         if filterField == "Filter by Date Ascending" {
           self.displayedBills = self.displayedBills.sorted {return $0.bill.date < $1.bill.date }

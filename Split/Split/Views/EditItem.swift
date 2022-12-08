@@ -28,38 +28,42 @@ struct EditItem: View {
   
   var body: some View {
     VStack {
-      HStack {
-        Text(billTitle)
-        .font(.title)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        Text(billDate)
-        .frame(maxWidth: .infinity, alignment: .trailing)
-        Spacer()
-        .frame(width: 10)
-      }
-      Text(billDescription)
-      .frame(maxWidth: .infinity, alignment: .leading)
-      Divider()
-      .frame(width: 360, height: 1)
-      .overlay(.black)
       Form {
+        Section(header: Text("Bill Information")) {
+          HStack {
+            Text("\(billTitle)")
+              .fontWeight(.medium)
+              .frame(maxWidth: .infinity, alignment: .leading)
+            Text("\(billDate)")
+              .frame(maxWidth: .infinity, alignment: .trailing)
+          }
+          Text("\(billDescription)")
+            .italic()
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        
         Section(header: Text("Item Information")){
           TextField("Current Item Name is: \(curItem.name)", text: $itemName)
+            .tint(.black)
           TextField("Current Value is: \(curItem.price)", text: $itemPrice)
+            .tint(.black)
+        }
+        
+        Section {
+        } footer: {
+          NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject, addFriendViewModel: addFriendViewModel).navigationBarBackButtonHidden(true)) {
+            Text("Edit Item")
+          }
+          .padding()
+          .foregroundColor(.white)
+          .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+          .clipShape(Capsule())
+          .simultaneousGesture(TapGesture().onEnded {
+            changeItem()
+            billItemsObject.bill_items = billItems
+          })
         }
       }
-      NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItemsObject, addFriendViewModel: addFriendViewModel).navigationBarBackButtonHidden(true)) {
-        Text("Edit Item")
-      }
-      .padding()
-      .foregroundColor(.white)
-      .background(Color(red: 76/255, green: 229/255, blue: 177/255))
-      .clipShape(Capsule())
-      .simultaneousGesture(TapGesture().onEnded {
-        changeItem()
-        billItemsObject.bill_items = billItems
-      })
-      Spacer()
     }
   }
 }

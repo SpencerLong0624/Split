@@ -10,7 +10,7 @@ import SwiftUI
 struct FriendsView: View {
   @ObservedObject var usersViewModel = UsersViewModel()
   @EnvironmentObject private var authModel: AuthViewModel
-  @State var searchField: String = "Search"
+  @State var searchField: String = ""
   @State var displayedUsers : [UserViewModel] = []
   
   var body: some View {
@@ -24,7 +24,8 @@ struct FriendsView: View {
     
     NavigationStack {
       VStack {
-        TextField("search", text: binding)
+        TextField("Search for a friend with their email", text: binding)
+          .tint(.black)
         List {
           ForEach(displayedUsers) { userViewModel in
             UserRowView(curr_user: usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user, friend_user: userViewModel.user)

@@ -21,7 +21,9 @@ struct AccountView: View {
       Image(systemName: "person.circle").resizable().frame(width: 30, height: 30)
       HStack {
         if nameInEditMode {
-          TextField("Enter your Full Name", text: $full_name).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+          TextField("Enter your Full Name", text: $full_name)
+            .tint(.black)
+            .textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
           .autocapitalization(.words)
           .disableAutocorrection(true)
          } else {
@@ -41,7 +43,9 @@ struct AccountView: View {
          
       HStack {
         if phoneInEditMode {
-          TextField("Enter your Phone Number", text: $phone_number).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+          TextField("Enter your Phone Number", text: $phone_number)
+            .tint(.black)
+            .textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
           .autocapitalization(.words)
           .disableAutocorrection(true)
         } else {

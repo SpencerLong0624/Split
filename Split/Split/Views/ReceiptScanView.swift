@@ -40,7 +40,7 @@ struct ReceiptScanView: View {
       if(selectedImage != nil) {
         NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: scanner.getBillItems(selectedImage!), addFriendViewModel: addFriendViewModel)) {
           Text("Submit Picture for Scan")
-          .foregroundColor(Color.green)
+          .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
         }
       }
     }

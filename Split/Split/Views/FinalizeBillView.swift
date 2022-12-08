@@ -36,6 +36,7 @@ struct FinalizeBillView: View {
         Section {
           NavigationLink(destination: NewBillCreatedView()) {
             Text("Complete Bill")
+              .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
           }
         }
         

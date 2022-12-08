@@ -15,7 +15,7 @@ struct FriendRowView: View {
       if friendRole.role == "Bill Payer" {
         Text("\(friendRole.role)")
         .font(.caption)
-        .foregroundColor(.green)
+        .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
       } else {
         Text("\(friendRole.role)")
         .font(.caption)

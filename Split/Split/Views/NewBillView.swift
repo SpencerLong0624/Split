@@ -24,7 +24,7 @@ struct NewBillView: View {
               NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel, user: usersViewModel.getUser(email: authModel.user?.email ?? "anthonylees@gmail.com")[0].user)) {
                 Text("Add Friends to Bill")
                 .fontWeight(.bold)
-                .foregroundColor(.black)
+                .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
               }
               Text("No Friends added")
             }
@@ -32,8 +32,7 @@ struct NewBillView: View {
             Section(header: Text("Friends")){
               NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel, user: usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user)) {
                 Text("Add Friends to Bill")
-                .fontWeight(.bold)
-                .foregroundColor(.black)
+                .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
               }
               ForEach(addFriendViewModel.addedFriends.sorted {($0.role, $0.user.full_name) < ($1.role, $1.user.full_name)}){
                 friendRole in FriendRowView(friendRole: friendRole)
@@ -42,13 +41,15 @@ struct NewBillView: View {
           }
           Section(header: Text("Bill Information")){
             TextField("Enter a Title", text: $title)
+              .tint(.black)
             TextField("Enter a description", text: $description)
+              .tint(.black)
             DatePicker("Pick a date", selection: $date,displayedComponents: [.date])
             .padding()
                 
             NavigationLink(destination: AddItemView(billTitle: title, billDescription: description, billDate: date, addFriendViewModel: addFriendViewModel)) {
               Text("Create Expense")
-              .foregroundColor(Color.green)
+              .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
             }
           }
         }

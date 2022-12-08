@@ -24,6 +24,7 @@ struct LoginView: View {
         .pickerStyle(SegmentedPickerStyle())
         .padding()
         TextField("Email", text: $emailAddress)
+        .tint(.black)
         .keyboardType(.emailAddress)
         .disableAutocorrection(true)
         .autocapitalization(.none)

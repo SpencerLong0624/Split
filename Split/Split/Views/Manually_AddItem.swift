@@ -58,7 +58,7 @@ struct Manually_AddItem: View {
             NavigationLink(destination: FinalizeBillView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItems, addFriendViewModel: addFriendViewModel)) {
               Text("Finalize Items")
             }
-            .foregroundColor(.green)
+            .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
           }
           
           Section {
