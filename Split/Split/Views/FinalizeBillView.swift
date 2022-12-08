@@ -31,15 +31,6 @@ struct FinalizeBillView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         
-        // Anthony, add your code here. This 'CreateAnotherBillVIew is the view asking the user if they want to create a new bill
-        // or not. I think you said you wanted to do this.
-        Section {
-          NavigationLink(destination: NewBillCreatedView()) {
-            Text("Complete Bill")
-              .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
-          }
-        }
-        
         Section{
           Text("Click on a person to add Items they got.")
             .fontWeight(.bold)
@@ -67,18 +58,32 @@ struct FinalizeBillView: View {
           }
         }
       }
+      NavigationLink(destination: NewBillCreatedView()) {
+        Text("Complete Bill")
+      }
+      .padding()
+      .foregroundColor(.white)
+      .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+      .clipShape(Capsule())
+      .simultaneousGesture(TapGesture().onEnded {
+        var items_array : [String] = []
+        for bill_item in billItems.bill_items {
+          items_array.append(bill_item.name)
+          items_array.append(bill_item.price)
+          items_array.append(bill_item.email)
+        }
+        var bill_owers_array : [String] = []
+        var bill_payers_array : [String] = []
+        for friend_role in addFriendViewModel.addedFriends {
+          if friend_role.role == "Ower" {
+            bill_owers_array.append(friend_role.user.email)
+          } else if friend_role.role == "Bill Payer" {
+            bill_payers_array.append(friend_role.user.email)
+          }
+        }
+        let bill : Bill = Bill(bill_owers: bill_owers_array, bill_payers: bill_payers_array, date: billDate, description: billDescription, title: billTitle, items: items_array)
+        activityViewModel.add(bill)
+      })
     }
   }
 }
-
-
-
-// Anthony Previous Code for adding to DB
-//            .simultaneousGesture(TapGesture().onEnded { var items_array : [String] = []
-//              for bill_item in billItems.bill_items {
-//                items_array.append(bill_item.name)
-//                items_array.append(bill_item.price)
-//              }
-//              let bill : Bill = Bill(bill_owers: [], bill_payers: [], date: billDate, description: billDescription, title: billTitle, items: items_array)
-//              activityViewModel.add(bill) })
-//          }
