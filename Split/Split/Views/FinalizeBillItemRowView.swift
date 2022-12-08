@@ -16,7 +16,7 @@ struct FinalizeBillItemRowView: View {
       .frame(maxWidth: .infinity, alignment: .leading)
       Text("$\(item.price)")
       .frame(maxWidth: .infinity, alignment: .center)
-      Text(item.assignedPerson.personName)
+      Text(item.user_full_name)
       .frame(maxWidth: .infinity, alignment: .center)
     }
   }

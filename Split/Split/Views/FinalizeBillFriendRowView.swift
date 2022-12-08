@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FinalizeBillFriendRowView: View {
-  var friendRole: friendRole
+  @State var friendRole: friendRole
   
   var billTitle: String
   var billDescription: String
@@ -31,7 +31,6 @@ struct FinalizeBillFriendRowView: View {
             .font(.caption)
             .foregroundColor(.red)
           }
-
         }
       }
     )

@@ -34,7 +34,7 @@ struct FinalizeBillView: View {
         // Anthony, add your code here. This 'CreateAnotherBillVIew is the view asking the user if they want to create a new bill
         // or not. I think you said you wanted to do this.
         Section {
-          NavigationLink(destination: CreateAnotherBillView()) {
+          NavigationLink(destination: NewBillCreatedView()) {
             Text("Complete Bill")
           }
         }

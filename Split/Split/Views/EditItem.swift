@@ -23,7 +23,7 @@ struct EditItem: View {
   
   func changeItem() {
     billItems.remove(at: curItemIndex)
-    billItems.insert(BillItem(name: itemName, price: itemPrice, assignedPerson: assignedPerson(personName: "", email: "")), at: curItemIndex)
+    billItems.insert(BillItem(email: "", name: itemName, price: itemPrice, user_full_name: ""), at: curItemIndex)
   }
   
   var body: some View {

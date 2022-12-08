@@ -8,20 +8,21 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct assignedPerson: Identifiable {
-  var id = UUID()
-  var personName: String
-  var email: String
-}
+//struct assignedPerson: Identifiable {
+//  var id = UUID()
+//  var personName: String
+//  var email: String
+//}
 
 //class BillItem: Identifiable, Equatable, ObservableObject {
 struct BillItem: Identifiable, Equatable {
 
   // MARK: Fields
   var id = UUID()
+  var email: String
   var name: String
   var price: String
-  var assignedPerson: assignedPerson
+  var user_full_name: String
 //  @Published var assignedPerson: assignedPerson
 //
 //  init(name: String, price: String) {

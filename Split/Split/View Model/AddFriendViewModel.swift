@@ -8,11 +8,15 @@
 import Foundation
 import Combine
 
-struct friendRole: Identifiable {
+struct friendRole: Identifiable, Equatable {
   var id = UUID()
   var user: User
   var role: String
-  var assignedItems: [BillItems]
+  var assignedItems: [BillItem]
+  
+  static func ==(lhs: friendRole, rhs: friendRole) -> Bool {
+    return lhs.user.email == rhs.user.email
+    }
 }
 
 class AddFriendViewModel: ObservableObject {
@@ -23,6 +27,6 @@ class AddFriendViewModel: ObservableObject {
   }
   
   func addFriend(_ user: User, _ role: String) {
-    addedFriends.append(friendRole(user: user, role: role, assignedItems: [BillItems]()))
+    addedFriends.append(friendRole(user: user, role: role, assignedItems: [BillItem]()))
   }
 }
