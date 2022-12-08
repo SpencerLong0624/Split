@@ -77,22 +77,24 @@ class Scanner: ObservableObject {
     let billItemsObject : BillItems = BillItems()
     var billItems: [BillItem] = []
     
-    for i in 0...(item_names.count - 1) {
-      let item_name : String = item_names[i]
-      var item_price : String = "0.00"
-      if i <= item_prices.count - 1 {
-        if item_prices[i].count >= 6 {
-          item_price = item_prices[i][0...5]
-          if item_price[5] == " " {
-            item_price = item_price[0...4]
+      if(item_names.count != 0){
+          for i in 0...(item_names.count - 1) {
+              let item_name : String = item_names[i]
+              var item_price : String = "0.00"
+              if i <= item_prices.count - 1 {
+                  if item_prices[i].count >= 6 {
+                      item_price = item_prices[i][0...5]
+                      if item_price[5] == " " {
+                          item_price = item_price[0...4]
+                      }
+                      if item_price[4] == " " {
+                          item_price = item_price[0...3]
+                      }
+                  }
+              }
+              billItems.append(BillItem(email: "", name: item_name, price: item_price, user_full_name: ""))
           }
-          if item_price[4] == " " {
-            item_price = item_price[0...3]
-          }
-        }
       }
-      billItems.append(BillItem(email: "", name: item_name, price: item_price, user_full_name: ""))
-    }
     billItemsObject.bill_items = billItems
     return billItemsObject
   }

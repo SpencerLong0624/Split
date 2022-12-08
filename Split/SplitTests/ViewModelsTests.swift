@@ -42,5 +42,32 @@ final class ViewModelsTest: XCTestCase {
         XCTAssertNoThrow(activityviewmodel.add(bill))
         XCTAssertNoThrow(activityviewmodel.search(searchText: "test"))
     }
+    
+    func testBillRepository() {
+        var bill = Bill(bill_owers: [], bill_payers: [], date: "", description: "", title: "test", items: [])
+        var billrepo = BillRepository()
+        var bills = billrepo.get()
+        XCTAssertNotNil(bills)
+        XCTAssertNoThrow(billrepo.add(bill))
+        bill.title = "test_update"
+        XCTAssertEqual(bill.title, "test_update")
+        XCTAssertNoThrow(billrepo.update(bill))
+        XCTAssertNoThrow(billrepo.remove(bill))
+
+    }
+    
+    func testuserRepository() {
+        var user = User(balance_owed: 0, balance_owed_to: 0, email: "", friends: [], full_name: "test_user", phone_number: "")
+        let userRepo = UserRepository()
+        var all_users = userRepo.get()
+        XCTAssertNotNil(all_users)
+        XCTAssertNoThrow(userRepo.add(user))
+        user.phone_number = "70402567"
+        XCTAssertNoThrow(userRepo.update(user))
+        XCTAssertNoThrow(userRepo.remove(user))
+
+    }
+    
+    
 
 }
