@@ -68,6 +68,8 @@
 		183D986129415EAD00C371F7 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D986029415EAD00C371F7 /* SplitTests.swift */; };
 		183D986A2941640D00C371F7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 183D98692941640D00C371F7 /* FirebaseFirestore */; };
 		183D986C2941642200C371F7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 183D986B2941642200C371F7 /* FirebaseAuth */; };
+		183D9872294184AB00C371F7 /* ViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D9871294184AB00C371F7 /* ViewsTests.swift */; };
+		183D9874294184D400C371F7 /* ViewModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D9873294184D400C371F7 /* ViewModelsTests.swift */; };
 		AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B1291C31DB001A937B /* AddItemView.swift */; };
 		AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B3291C323C001A937B /* Manually_AddItem.swift */; };
 		AF6717B6291C3259001A937B /* ReceiptScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6717B5291C3259001A937B /* ReceiptScanView.swift */; };
@@ -137,6 +139,8 @@
 		183D985E29415EAD00C371F7 /* SplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		183D986029415EAD00C371F7 /* SplitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitTests.swift; sourceTree = "<group>"; };
 		183D98672941629600C371F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		183D9871294184AB00C371F7 /* ViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsTests.swift; sourceTree = "<group>"; };
+		183D9873294184D400C371F7 /* ViewModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsTests.swift; sourceTree = "<group>"; };
 		AF6717B1291C31DB001A937B /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		AF6717B3291C323C001A937B /* Manually_AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manually_AddItem.swift; sourceTree = "<group>"; };
 		AF6717B5291C3259001A937B /* ReceiptScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanView.swift; sourceTree = "<group>"; };
@@ -330,6 +334,8 @@
 			children = (
 				183D98672941629600C371F7 /* Info.plist */,
 				183D986029415EAD00C371F7 /* SplitTests.swift */,
+				183D9871294184AB00C371F7 /* ViewsTests.swift */,
+				183D9873294184D400C371F7 /* ViewModelsTests.swift */,
 			);
 			path = SplitTests;
 			sourceTree = "<group>";
@@ -534,6 +540,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183D9874294184D400C371F7 /* ViewModelsTests.swift in Sources */,
+				183D9872294184AB00C371F7 /* ViewsTests.swift in Sources */,
 				183D986129415EAD00C371F7 /* SplitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
