@@ -23,12 +23,25 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Split.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>000FE31E2915F38F002D7D4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>183D985D29415EAD00C371F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
