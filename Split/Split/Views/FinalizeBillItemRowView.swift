@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct FinalizeBillItemRowView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  var item: BillItem
+  
+  var body: some View {
+    HStack {
+      Text(item.name)
+      .frame(maxWidth: .infinity, alignment: .leading)
+      Text("$\(item.price)")
+      .frame(maxWidth: .infinity, alignment: .center)
+      Text("Anthony Lees")
+      .frame(maxWidth: .infinity, alignment: .center)
     }
-}
-
-struct FinalizeBillItemRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        FinalizeBillItemRowView()
-    }
+  }
 }

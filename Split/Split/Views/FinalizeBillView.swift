@@ -51,7 +51,7 @@ struct FinalizeBillView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
             ForEach(billItems.bill_items) { Item in
-              BillItemRowView(item: Item)
+              FinalizeBillItemRowView(item: Item)
             }
           }
         }

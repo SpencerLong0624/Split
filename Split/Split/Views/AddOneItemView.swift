@@ -19,7 +19,7 @@ struct AddOneItemView: View {
   @State private var itemPrice: String = ""
   
   func addItemToArray() {
-    billItems.append(BillItem(name: itemName, price: itemPrice))
+    billItems.append(BillItem(name: itemName, price: itemPrice, assignedPerson: assignedPerson(personName: "", email: "")))
   }
   
   var body: some View {

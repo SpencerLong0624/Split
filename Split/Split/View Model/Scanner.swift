@@ -91,7 +91,7 @@ class Scanner: ObservableObject {
           }
         }
       }
-      billItems.append(BillItem(name: item_name, price: item_price))
+      billItems.append(BillItem(name: item_name, price: item_price, assignedPerson: assignedPerson(personName: "", email: "")))
     }
     billItemsObject.bill_items = billItems
     return billItemsObject

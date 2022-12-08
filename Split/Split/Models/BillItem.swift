@@ -8,12 +8,18 @@
 import Foundation
 import FirebaseFirestoreSwift
 
+struct assignedPerson {
+  var personName: String
+  var email: String
+}
+
 struct BillItem: Identifiable, Equatable {
 
   // MARK: Fields
   var id = UUID()
   var name: String
   var price: String
+  var assignedPerson: assignedPerson
   
   static func ==(lhs: BillItem, rhs: BillItem) -> Bool {
     return lhs.name == rhs.name && lhs.price == rhs.price

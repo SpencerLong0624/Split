@@ -15,7 +15,7 @@ struct Manually_AddItem: View {
   @ObservedObject var addFriendViewModel: AddFriendViewModel
   
   @State var editIsActive = false
-  @State var changedItem: BillItem = BillItem(name: "", price: "")
+  @State var changedItem: BillItem = BillItem(name: "", price: "", assignedPerson: assignedPerson(personName: "", email: ""))
   @State var changedItemIndex = 0
   
   func deleteItem(at offsets: IndexSet) {

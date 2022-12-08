@@ -19,4 +19,3 @@ struct BillItemRowView: View {
     }
   }
 }
-
