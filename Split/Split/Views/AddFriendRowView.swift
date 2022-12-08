@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct AddFriendRowView: View {
-  var friend: Friend
+  var friend: User
   @ObservedObject var addFriendViewModel: AddFriendViewModel
   
   func addBillPayer() {
-    addFriendViewModel.addFriend(friend.user_id2, "", "Bill Payer")
+    addFriendViewModel.addFriend(friend, "Bill Payer")
   }
   
   func addOwer() {
-    addFriendViewModel.addFriend(friend.user_id2, "", "Ower")
+    addFriendViewModel.addFriend(friend, "Ower")
   }
   
   var body: some View {
-    if !addFriendViewModel.addedFriends.contains(where: { $0.name == friend.user_id2 }) {
+    if !addFriendViewModel.addedFriends.contains(where: { $0.user.email == friend.email }) {
       HStack(spacing: 0) {
-        Text("\(friend.user_id2)")
+        Text("\(friend.full_name)")
         .frame(maxWidth: .infinity, alignment: .leading)
         Button("Bill Payer", action: addBillPayer)
         .buttonStyle(BorderlessButtonStyle())

@@ -7,22 +7,25 @@
 
 import SwiftUI
 
+extension String: Identifiable {
+    public typealias ID = Int
+    public var id: Int {
+        return hash
+    }
+}
+
 struct AddFriend: View {
-  @State private var dummyFriends: [Friend] = [
-    Friend(active: true, user_id1: "me", user_id2: "Uzair"),
-    Friend(active: true, user_id1: "me", user_id2: "Anthony"),
-    Friend(active: true, user_id1: "me", user_id2: "Spencer")
-  ]
 
   @ObservedObject var addFriendViewModel: AddFriendViewModel
   @State var user : User
+  @ObservedObject var usersViewModel = UsersViewModel()
   
   var body: some View {
     VStack {
       Form {
         Section(header: Text(" My Friends")) {
-          ForEach(dummyFriends.sorted {$0.user_id2.lowercased() < $1.user_id2.lowercased()}) {
-            friend in AddFriendRowView(friend: friend, addFriendViewModel: addFriendViewModel)
+          ForEach(user.friends.sorted()) {
+            friend in AddFriendRowView(friend: usersViewModel.getUser(email: friend)[0].user, addFriendViewModel: addFriendViewModel)
           }
         }
       }

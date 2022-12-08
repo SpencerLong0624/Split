@@ -39,7 +39,7 @@ struct Manually_AddItem: View {
         }
         
         Section(header: Text("Friends")) {
-          ForEach(addFriendViewModel.addedFriends.sorted {($0.role, $0.name) < ($1.role, $1.name)}){
+          ForEach(addFriendViewModel.addedFriends.sorted {($0.role, $0.user.full_name) < ($1.role, $1.user.full_name)}){
             friendRole in FriendRowView(friendRole: friendRole)
           }
         }

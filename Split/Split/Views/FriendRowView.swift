@@ -11,7 +11,7 @@ struct FriendRowView: View {
   var friendRole: friendRole
   var body: some View {
     VStack(alignment: .leading) {
-      Text("\(friendRole.name)")
+      Text("\(friendRole.user.full_name)")
       if friendRole.role == "Bill Payer" {
         Text("\(friendRole.role)")
         .font(.caption)
