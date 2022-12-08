@@ -107,14 +107,26 @@ struct ActivityView: View {
 }
   
   func loadData() {
-    self.displayedBills = self.activityViewModel.billViewModels
+    if filterField == "Filter by Date Ascending" {
+      self.displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date > $1.bill.date }
+    } else {
+      self.displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date < $1.bill.date }
+    }
   }
   
   func displayBills() {
     if searchField == "" {
-      self.displayedBills = self.activityViewModel.billViewModels
+      if filterField == "Filter by Date Ascending" {
+        self.displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date > $1.bill.date }
+      } else {
+        self.displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date < $1.bill.date }
+      }
     } else {
-      self.displayedBills = self.activityViewModel.filteredBillViewModels
+      if filterField == "Filter by Date Ascending" {
+        self.displayedBills = self.activityViewModel.filteredBillViewModels.sorted {return $0.bill.date > $1.bill.date }
+      } else {
+        self.displayedBills = self.activityViewModel.filteredBillViewModels.sorted {return $0.bill.date < $1.bill.date }
+      }
     }
   }
 }
