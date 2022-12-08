@@ -19,7 +19,7 @@ struct AssignItemsView: View {
     VStack {
       List {
         ForEach(billItems.bill_items) { Item in
-          AssignItemsRowView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, item: Item, friendRole: friendRole, billItems: billItems, addFriendViewModel: addFriendViewModel).navigationBarBackButtonHidden(true)
+          AssignItemsRowView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, item: Item, friendRole: friendRole, billItems: billItems, addFriendViewModel: addFriendViewModel, selected: friendRole.user.email == Item.email).navigationBarBackButtonHidden(true)
         }
       }
       NavigationLink(destination: FinalizeBillView(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: billItems, addFriendViewModel: addFriendViewModel)) {

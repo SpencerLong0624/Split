@@ -16,13 +16,11 @@ struct AssignItemsRowView: View {
   var friendRole: friendRole
   @State var billItems : BillItems
   @ObservedObject var addFriendViewModel: AddFriendViewModel
-  
-  @State var selected: Bool = false
-  
+  @State var selected: Bool
+    
   func chooseItem() {
-    selected.toggle()
     let curr_index : Int = billItems.bill_items.firstIndex(of: item)!
-    if item.email == friendRole.user.email {
+    if billItems.bill_items[curr_index].email == friendRole.user.email {
       print("removing item from person")
       billItems.bill_items[curr_index].email = ""
       billItems.bill_items[curr_index].user_full_name = ""
@@ -32,6 +30,8 @@ struct AssignItemsRowView: View {
           addFriendViewModel.addedFriends[friendIndex].assignedItems.remove(at: itemIndex)
         }
       }
+      selected.toggle()
+      return
     } else {
       billItems.bill_items[curr_index].email = friendRole.user.email
       billItems.bill_items[curr_index].user_full_name = friendRole.user.full_name
@@ -39,6 +39,8 @@ struct AssignItemsRowView: View {
         addFriendViewModel.addedFriends[friendIndex].assignedItems.append(item)
       }
       print("adding item to person")
+      selected.toggle()
+      return
     }
   }
   
@@ -49,7 +51,7 @@ struct AssignItemsRowView: View {
           .frame(maxWidth: .infinity, alignment: .leading)
         Text(item.price)
           .frame(maxWidth: .infinity, alignment: .center)
-        if selected == true {
+        if selected {
           Button(action: {
               chooseItem()
               }) {
