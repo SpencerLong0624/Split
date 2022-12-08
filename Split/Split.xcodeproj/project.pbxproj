@@ -84,6 +84,10 @@
 		AFE6ABE729370DCC00300A06 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6ABE629370DCC00300A06 /* AccountView.swift */; };
 		E6240C47291D98DA004287FE /* BillItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6240C46291D98DA004287FE /* BillItemRowView.swift */; };
 		E63BB2702941821600FA628F /* FinalizeBillItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BB26F2941821600FA628F /* FinalizeBillItemRowView.swift */; };
+		E63BB27229418CC800FA628F /* FinalizeBillFriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BB27129418CC800FA628F /* FinalizeBillFriendRowView.swift */; };
+		E63BB2742941904200FA628F /* AssignItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BB2732941904200FA628F /* AssignItemsView.swift */; };
+		E63BB276294194B700FA628F /* AssignItemsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BB275294194B700FA628F /* AssignItemsRowView.swift */; };
+		E63BB2782941A65E00FA628F /* CreateAnotherBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BB2772941A65E00FA628F /* CreateAnotherBillView.swift */; };
 		E65E5831293E626900B4AD61 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E5830293E626900B4AD61 /* AddFriend.swift */; };
 		E65E5833293E676300B4AD61 /* FriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E5832293E676300B4AD61 /* FriendRowView.swift */; };
 		E65E5835293E7D8800B4AD61 /* AddFriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E5834293E7D8800B4AD61 /* AddFriendRowView.swift */; };
@@ -155,6 +159,10 @@
 		AFE6ABE629370DCC00300A06 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		E6240C46291D98DA004287FE /* BillItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemRowView.swift; sourceTree = "<group>"; };
 		E63BB26F2941821600FA628F /* FinalizeBillItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalizeBillItemRowView.swift; sourceTree = "<group>"; };
+		E63BB27129418CC800FA628F /* FinalizeBillFriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalizeBillFriendRowView.swift; sourceTree = "<group>"; };
+		E63BB2732941904200FA628F /* AssignItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignItemsView.swift; sourceTree = "<group>"; };
+		E63BB275294194B700FA628F /* AssignItemsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignItemsRowView.swift; sourceTree = "<group>"; };
+		E63BB2772941A65E00FA628F /* CreateAnotherBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnotherBillView.swift; sourceTree = "<group>"; };
 		E65E5830293E626900B4AD61 /* AddFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
 		E65E5832293E676300B4AD61 /* FriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRowView.swift; sourceTree = "<group>"; };
 		E65E5834293E7D8800B4AD61 /* AddFriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendRowView.swift; sourceTree = "<group>"; };
@@ -298,6 +306,10 @@
 				AF6717B1291C31DB001A937B /* AddItemView.swift */,
 				AF6717B3291C323C001A937B /* Manually_AddItem.swift */,
 				E6DEF41729405AB000D8BCBB /* FinalizeBillView.swift */,
+				E63BB2772941A65E00FA628F /* CreateAnotherBillView.swift */,
+				E63BB27129418CC800FA628F /* FinalizeBillFriendRowView.swift */,
+				E63BB2732941904200FA628F /* AssignItemsView.swift */,
+				E63BB275294194B700FA628F /* AssignItemsRowView.swift */,
 				E63BB26F2941821600FA628F /* FinalizeBillItemRowView.swift */,
 				E6240C46291D98DA004287FE /* BillItemRowView.swift */,
 				AF6717B5291C3259001A937B /* ReceiptScanView.swift */,
@@ -489,6 +501,7 @@
 				AFDE9E46291CA10D0014ECBB /* Scanned_View.swift in Sources */,
 				000FE38829160464002D7D4A /* Bill.swift in Sources */,
 				E65E5831293E626900B4AD61 /* AddFriend.swift in Sources */,
+				E63BB276294194B700FA628F /* AssignItemsRowView.swift in Sources */,
 				AFE6ABE529370DC300300A06 /* HomeScreenView.swift in Sources */,
 				000FE38E29160F3A002D7D4A /* AppView.swift in Sources */,
 				000FE37829160385002D7D4A /* UserItemRepository.swift in Sources */,
@@ -511,6 +524,7 @@
 				0008B9292940FF8400A5B785 /* UserDetailsView.swift in Sources */,
 				E63BB2702941821600FA628F /* FinalizeBillItemRowView.swift in Sources */,
 				AF6717B4291C323C001A937B /* Manually_AddItem.swift in Sources */,
+				E63BB2742941904200FA628F /* AssignItemsView.swift in Sources */,
 				AF6717BA291C32CB001A937B /* ImagePicker_Coordinator_ViewController.swift in Sources */,
 				000FE38A29160478002D7D4A /* BillList.swift in Sources */,
 				000FE396291752C1002D7D4A /* BillRowView.swift in Sources */,
@@ -526,8 +540,10 @@
 				000FE38629160450002D7D4A /* SettleBill.swift in Sources */,
 				AF6717B6291C3259001A937B /* ReceiptScanView.swift in Sources */,
 				AF6717BE291C3337001A937B /* ReceiptScanner_Helper.swift in Sources */,
+				E63BB2782941A65E00FA628F /* CreateAnotherBillView.swift in Sources */,
 				000FE37629160369002D7D4A /* BillItemRepository.swift in Sources */,
 				000FE37C291603C2002D7D4A /* SettleBillRepository.swift in Sources */,
+				E63BB27229418CC800FA628F /* FinalizeBillFriendRowView.swift in Sources */,
 				AF6717B2291C31DB001A937B /* AddItemView.swift in Sources */,
 				000FE3742916034A002D7D4A /* BillRepository.swift in Sources */,
 				E6DEF41829405AB000D8BCBB /* FinalizeBillView.swift in Sources */,
