@@ -38,6 +38,11 @@ class UsersViewModel: ObservableObject {
     let user = userViewModels.filter {userViewModel in
       return userViewModel.user.email.lowercased().contains(email.lowercased())
     }
+    print("new")
+    for item in userViewModels {
+      print ("user: ", item.user.email)
+    }
+    print("friend: ", email)
     return user
   }
 }

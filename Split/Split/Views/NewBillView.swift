@@ -21,7 +21,7 @@ struct NewBillView: View {
         Form {
           if addFriendViewModel.addedFriends.isEmpty {
             Section(header: Text("Friends")){
-              NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel, user: usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user)) {
+              NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel, user: usersViewModel.getUser(email: authModel.user?.email ?? "anthonylees@gmail.com")[0].user)) {
                 Text("Add Friends to Bill")
                 .fontWeight(.bold)
                 .foregroundColor(.black)
