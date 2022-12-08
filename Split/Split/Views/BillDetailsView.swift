@@ -15,24 +15,41 @@ extension [String]: Identifiable {
 
 struct BillDetailsView: View {
   var bill: Bill
+  @ObservedObject var usersViewModel = UsersViewModel()
   
   var body: some View {
     VStack {
-      Text(bill.title)
-        .font(.title)
-        .fontWeight(.black)
-        .padding([.top], 40)
-      Text(bill.description)
-        .font(.title3)
-        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-        .padding(5)
-      Text("Date: \(bill.date)")
-        .font(.headline)
-        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-        .foregroundColor(.secondary)
-        .padding(20)
-      Section() {
-        List {
+      Form {
+        Section(header: Text("Bill Information")) {
+          HStack {
+            Text(bill.title)
+              .fontWeight(.medium)
+              .frame(maxWidth: .infinity, alignment: .leading)
+            Text(bill.date)
+              .frame(maxWidth: .infinity, alignment: .trailing)
+          }
+          Text(bill.description)
+            .italic()
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        
+        Section(header: Text("Money Owed")) {
+          List {
+            HStack {
+              Text("Person")
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .leading)
+              Text("Amount")
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .center)
+            }
+            ForEach(generateUserTotals(bill)) { user_group in
+              BillDetailsUserRowView(user_group: user_group)
+            }
+          }
+        }
+
+        Section(header: Text("Items")) {
           HStack {
             Text("Item Name")
               .fontWeight(.bold)
@@ -49,7 +66,6 @@ struct BillDetailsView: View {
           }
         }
       }
-      Spacer()
     }
     .navigationBarTitle("Bill Details")
   }
@@ -66,5 +82,23 @@ struct BillDetailsView: View {
     }
     
     return item_array
+  }
+  
+  func generateUserTotals(_ bill: Bill) -> [[String]] {
+    var user_array : [[String]] = []
+    for email in bill.bill_owers {
+      let name : String = usersViewModel.getUser(email: email)[0].user.full_name
+      var curr_user_group : [String] = [name]
+      var curr_sum : Float = 0.00
+      for i in stride(from: 2, to: bill.items.count, by: 3) {
+        if (bill.items[i] == name) {
+          curr_sum += Float(bill.items[i - 1])!
+        }
+      }
+      curr_user_group.append(String(curr_sum))
+      user_array.append(curr_user_group)
+    }
+    
+    return user_array
   }
 }
