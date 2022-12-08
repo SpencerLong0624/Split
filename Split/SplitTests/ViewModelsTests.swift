@@ -38,8 +38,9 @@ final class ViewModelsTest: XCTestCase {
     func testActivityViewModel(){
         let activityviewmodel = ActivityViewModel()
         let bill = Bill(bill_owers: [], bill_payers: [], date: "", description: "", title: "test", items: [])
+        activityviewmodel.add(bill)
         XCTAssertNoThrow(activityviewmodel.add(bill))
-        XCTAssertNoThrow(activityviewmodel.search(searchText: ""))
+        XCTAssertNoThrow(activityviewmodel.search(searchText: "test"))
     }
 
 }
