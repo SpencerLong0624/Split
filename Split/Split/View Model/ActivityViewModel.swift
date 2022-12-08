@@ -11,7 +11,6 @@ import Combine
 class ActivityViewModel: ObservableObject {
   @Published var billViewModels: [BillViewModel] = []
   private var cancellables: Set<AnyCancellable> = []
-
   @Published var billRepository = BillRepository()
   @Published var activity: [Bill] = []
   @Published var filteredBillViewModels: [BillViewModel] = []
@@ -23,14 +22,21 @@ class ActivityViewModel: ObservableObject {
     .assign(to: \.billViewModels, on: self)
     .store(in: &cancellables)
   }
-
+  
   func add(_ bill: Bill) {
     billRepository.add(bill)
   }
-
+  
   func search(searchText: String) {
     self.filteredBillViewModels = self.billViewModels.filter { billViewModel in
       return billViewModel.bill.title.lowercased().contains(searchText.lowercased())
+    }
+  }
+  
+  func filterUserAssociatedBills(email: String) {
+    self.billViewModels = self.billViewModels.filter { billViewModel in
+      print(billViewModel.bill.bill_owers.contains(email) || billViewModel.bill.bill_payers.contains(email))
+      return billViewModel.bill.bill_owers.contains(email) || billViewModel.bill.bill_payers.contains(email)
     }
   }
 }

@@ -48,11 +48,11 @@ extension View {
 }
 
 struct ActivityView: View {
-  // @EnvironmentObject var library: Library
   @ObservedObject var activityViewModel = ActivityViewModel()
   @State var searchField: String = ""
   @State var filterField : String = "Filter by Date Ascending"
   @State var displayedBills : [BillViewModel] = []
+  @EnvironmentObject private var authModel: AuthViewModel
   
   init() {
     UINavigationBar.appearance().backgroundColor = UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255)
@@ -103,10 +103,11 @@ struct ActivityView: View {
     .background(Color(red: 0.949, green: 0.949, blue: 0.97, opacity: 1.0))
     .onAppear(perform: loadData)
   }
-    .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
+  .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
 }
   
   func loadData() {
+    self.activityViewModel.filterUserAssociatedBills(email: authModel.user?.email ?? "testtest@gmail.com")
     if filterField == "Filter by Date Ascending" {
       self.displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date > $1.bill.date }
     } else {
@@ -115,6 +116,7 @@ struct ActivityView: View {
   }
   
   func displayBills() {
+    self.activityViewModel.filterUserAssociatedBills(email: authModel.user?.email ?? "testtest@gmail.com")
     if searchField == "" {
       if filterField == "Filter by Date Ascending" {
         self.displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date > $1.bill.date }
