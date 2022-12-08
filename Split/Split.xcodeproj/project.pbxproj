@@ -65,6 +65,7 @@
 		000FE39A2917578A002D7D4A /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FE3992917578A002D7D4A /* ActivityViewModel.swift */; };
 		0055F237294265E20006B04F /* BillDetailsItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0055F236294265E20006B04F /* BillDetailsItemRowView.swift */; };
 		0055F239294299920006B04F /* BillDetailsUserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0055F238294299920006B04F /* BillDetailsUserRowView.swift */; };
+		0055F23B29429EA30006B04F /* BillDetailFriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0055F23A29429EA30006B04F /* BillDetailFriendRowView.swift */; };
 		009277AC293BD12B0099580B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009277AB293BD12B0099580B /* UserViewModel.swift */; };
 		009277AE293EF3560099580B /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009277AD293EF3560099580B /* UsersViewModel.swift */; };
 		183D986129415EAD00C371F7 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D986029415EAD00C371F7 /* SplitTests.swift */; };
@@ -141,6 +142,7 @@
 		000FE3992917578A002D7D4A /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		0055F236294265E20006B04F /* BillDetailsItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailsItemRowView.swift; sourceTree = "<group>"; };
 		0055F238294299920006B04F /* BillDetailsUserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailsUserRowView.swift; sourceTree = "<group>"; };
+		0055F23A29429EA30006B04F /* BillDetailFriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailFriendRowView.swift; sourceTree = "<group>"; };
 		009277AB293BD12B0099580B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		009277AD293EF3560099580B /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		183D985E29415EAD00C371F7 /* SplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +303,7 @@
 				000FE38B291609D7002D7D4A /* ActivityView.swift */,
 				000FE395291752C1002D7D4A /* BillRowView.swift */,
 				000FE39129175105002D7D4A /* BillDetailsView.swift */,
+				0055F23A29429EA30006B04F /* BillDetailFriendRowView.swift */,
 				000FE38F29160F7A002D7D4A /* NewBillView.swift */,
 				E65E5832293E676300B4AD61 /* FriendRowView.swift */,
 				E65E5830293E626900B4AD61 /* AddFriend.swift */,
@@ -508,6 +511,7 @@
 				AFE6ABE529370DC300300A06 /* HomeScreenView.swift in Sources */,
 				000FE38E29160F3A002D7D4A /* AppView.swift in Sources */,
 				0055F237294265E20006B04F /* BillDetailsItemRowView.swift in Sources */,
+				0055F23B29429EA30006B04F /* BillDetailFriendRowView.swift in Sources */,
 				000FE37829160385002D7D4A /* UserItemRepository.swift in Sources */,
 				E65E5835293E7D8800B4AD61 /* AddFriendRowView.swift in Sources */,
 				000FE380291603F0002D7D4A /* BillItem.swift in Sources */,

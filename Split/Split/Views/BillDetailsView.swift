@@ -33,15 +33,27 @@ struct BillDetailsView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         
+        Section(header: Text("Bill Payers")) {
+          ForEach(bill.bill_payers.sorted()) { billPayer in
+            BillDetailFriendRowView(person: billPayer, usersViewModel: usersViewModel)
+          }
+        }
+        
+        Section(header: Text("Bill Owers")) {
+          ForEach(bill.bill_owers.sorted()) { billOwer in
+            BillDetailFriendRowView(person: billOwer, usersViewModel: usersViewModel)
+          }
+        }
+        
         Section(header: Text("Money Owed")) {
           List {
             HStack {
               Text("Person")
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, alignment: .leading)
-              Text("Amount")
+              Text("Total Amount")
                 .fontWeight(.bold)
-                .frame(maxWidth: .infinity, alignment: .center)
+                .frame(maxWidth: .infinity, alignment: .trailing)
             }
             ForEach(generateUserTotals(bill)) { user_group in
               BillDetailsUserRowView(user_group: user_group)
