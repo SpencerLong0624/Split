@@ -31,7 +31,7 @@ struct BillDetailsView: View {
         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
         .foregroundColor(.secondary)
         .padding(20)
-      Section(header: Text("Items")) {
+      Section() {
         List {
           HStack {
             Text("Item Name")
