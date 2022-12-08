@@ -19,12 +19,19 @@ struct AddFriend: View {
   @ObservedObject var addFriendViewModel: AddFriendViewModel
   @State var user : User
   @ObservedObject var usersViewModel = UsersViewModel()
+  @State var allUsers : [String] = []
+  
+  func addCurrUser(curr_friends : [String]) -> [String] {
+    var res : [String] = curr_friends
+    res.append(user.email)
+    return res
+  }
   
   var body: some View {
     VStack {
       Form {
         Section(header: Text(" My Friends")) {
-          ForEach(user.friends.sorted()) {
+          ForEach(addCurrUser(curr_friends: user.friends).sorted()) {
             friend in AddFriendRowView(friend: usersViewModel.getUser(email: friend)[0].user, addFriendViewModel: addFriendViewModel)
           }
         }
