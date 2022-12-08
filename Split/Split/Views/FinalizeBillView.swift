@@ -70,15 +70,15 @@ struct FinalizeBillView: View {
         for bill_item in billItems.bill_items {
           items_array.append(bill_item.name)
           items_array.append(bill_item.price)
-          items_array.append(bill_item.email)
+          items_array.append(bill_item.user_full_name)
         }
         var bill_owers_array : [String] = []
         var bill_payers_array : [String] = []
         for friend_role in addFriendViewModel.addedFriends {
           if friend_role.role == "Ower" {
-            bill_owers_array.append(friend_role.user.full_name)
+            bill_owers_array.append(friend_role.user.email)
           } else if friend_role.role == "Bill Payer" {
-            bill_payers_array.append(friend_role.user.full_name)
+            bill_payers_array.append(friend_role.user.email)
           }
         }
         let bill : Bill = Bill(bill_owers: bill_owers_array, bill_payers: bill_payers_array, date: billDate, description: billDescription, title: billTitle, items: items_array)
