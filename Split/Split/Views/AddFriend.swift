@@ -30,7 +30,7 @@ struct AddFriend: View {
   var body: some View {
     VStack {
       Form {
-        Section(header: Text(" My Friends")) {
+        Section(header: Text("My Friends")) {
           ForEach(addCurrUser(curr_friends: user.friends).sorted()) {
             friend in AddFriendRowView(friend: usersViewModel.getUser(email: friend)[0].user, addFriendViewModel: addFriendViewModel)
           }

@@ -10,7 +10,7 @@ import Combine
 
 struct friendRole: Identifiable {
   var id = UUID()
-  var user : User
+  var user: User
   var role: String
   var assignedItems: [BillItems]
 }
