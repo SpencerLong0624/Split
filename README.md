@@ -29,8 +29,8 @@ Make sure the email is valid and the password is atleast 6 characters in length 
 * Drag the Image in the gallery of the app simmulator 
 <img width="1047" alt="Screenshot 2022-12-06 at 10 06 38 PM" src="https://user-images.githubusercontent.com/54990502/206078553-2fc57d8e-34b1-41bf-8679-9908287baa2a.png"> 
   <br/>
-* If you are testing on your device, the app will open the phone gallery and you can select the image of the receipt for scan. 
-* The receipt we used to build the receipt scanner is as follows: 
+* If you are testing on your device, the app will open the phone gallery and you can select the image of the receipt for scan. <br/>
+* The receipt we used to build the receipt scanner is as follows: <br/>
 5. If the output from the scanner lists unwanted items, feel free to delete them by swiping left on the item.
 6. Complete the bill. Go back to acitivty page to see who owe/is owed how much in each bill. <br/>
   
