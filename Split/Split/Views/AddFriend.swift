@@ -25,8 +25,12 @@ struct AddFriend: View {
     VStack {
       Form {
         Section(header: Text("My Friends")) {
-          ForEach(allUsers) {
-            friend in AddFriendRowView(friend: friend, addFriendViewModel: addFriendViewModel)
+          if addFriendViewModel.addedFriends.count == allUsers.count {
+            Text("All friends have been added.")
+          } else {
+            ForEach(allUsers) {
+              friend in AddFriendRowView(friend: friend, addFriendViewModel: addFriendViewModel)
+            }
           }
         }
       }

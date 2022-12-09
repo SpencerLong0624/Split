@@ -30,7 +30,7 @@ struct NewBillView: View {
             }
           } else {
             Section(header: Text("Friends")){
-              NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel, user: usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user)) {
+              NavigationLink(destination: AddFriend(addFriendViewModel: addFriendViewModel, user: usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user)) {
                 Text("Add Friends to Bill")
                 .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
               }
@@ -46,15 +46,17 @@ struct NewBillView: View {
               .tint(.black)
             DatePicker("Pick a date", selection: $date,displayedComponents: [.date])
             .padding()
-                
-            NavigationLink(destination: AddItemView(billTitle: title, billDescription: description, billDate: date, addFriendViewModel: addFriendViewModel)) {
-              Text("Create Expense")
-              .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
+            
+            if (addFriendViewModel.addedFriends.count > 0 && title != "" && description != "") {
+              NavigationLink(destination: AddItemView(billTitle: title, billDescription: description, billDate: date, addFriendViewModel: addFriendViewModel)) {
+                Text("Create Bill")
+                .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
+              }
             }
           }
         }
       }
-      .navigationBarTitle("Add a Bill")
+      .navigationBarTitle("Create a Bill")
     }
     .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
   }

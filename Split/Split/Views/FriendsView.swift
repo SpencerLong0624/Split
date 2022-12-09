@@ -32,7 +32,7 @@ struct FriendsView: View {
           }
         }
       }
-      .navigationBarTitle("Search User")
+      .navigationBarTitle("Add Friends")
     }
     .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
   }

@@ -61,5 +61,6 @@ struct AddOneItemView: View {
         }
       }
     }
+    .navigationBarTitle("Add an Item")
   }
 }
