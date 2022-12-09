@@ -25,6 +25,7 @@ class ActivityViewModel: ObservableObject {
   
   func add(_ bill: Bill) {
     billRepository.add(bill)
+    billViewModels.append(BillViewModel(bill: bill))
   }
   
   func search(searchText: String) {
