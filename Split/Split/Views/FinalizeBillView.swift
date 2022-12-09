@@ -13,7 +13,7 @@ struct FinalizeBillView: View {
   var billDate: String
   @ObservedObject var billItems : BillItems
   @ObservedObject var addFriendViewModel: AddFriendViewModel
-  @ObservedObject var activityViewModel = ActivityViewModel(email: dummyAuthModel.user?.email ?? "anthony@gmail.com")
+  @ObservedObject var activityViewModel = ActivityViewModel()
     
   var body: some View {
     VStack {

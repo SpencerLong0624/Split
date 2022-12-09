@@ -15,9 +15,9 @@ class ActivityViewModel: ObservableObject {
   @Published var activity: [Bill] = []
   @Published var filteredBillViewModels: [BillViewModel] = []
   
-  init(email: String) {
+  init() {
     billRepository.$bills.map { bills in
-      bills.filter{bill in return bill.bill_owers.contains(email) || bill.bill_payers.contains(email)}.map(BillViewModel.init)
+      bills.map(BillViewModel.init)
     }
     .assign(to: \.billViewModels, on: self)
     .store(in: &cancellables)
@@ -36,6 +36,7 @@ class ActivityViewModel: ObservableObject {
   
   func filterUserAssociatedBills(email: String) {
     self.billViewModels = self.billViewModels.filter { billViewModel in
+      print(billViewModel.bill.bill_owers.contains(email) || billViewModel.bill.bill_payers.contains(email))
       return billViewModel.bill.bill_owers.contains(email) || billViewModel.bill.bill_payers.contains(email)
     }
   }

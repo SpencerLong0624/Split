@@ -47,12 +47,11 @@ extension View {
   }
 }
 
-var dummyAuthModel: AuthViewModel = AuthViewModel()
-
 struct ActivityView: View {
-  @ObservedObject var activityViewModel = ActivityViewModel(email: dummyAuthModel.user?.email ?? "anthony@gmail.com")
+  @ObservedObject var activityViewModel = ActivityViewModel()
   @State var searchField: String = ""
   @State var filterField : String = "Filter by Date Ascending"
+  @State var displayedBills : [BillViewModel] = []
   @EnvironmentObject private var authModel: AuthViewModel
   
   init() {
@@ -66,6 +65,7 @@ struct ActivityView: View {
     }, set: {
       self.searchField = $0
       self.activityViewModel.search(searchText: self.searchField)
+      self.displayBills()
     })
     
   NavigationStack {
@@ -74,8 +74,10 @@ struct ActivityView: View {
         .tint(.black)
       Button(self.filterField) {
         if filterField == "Filter by Date Ascending" {
+          self.displayedBills = self.displayedBills.sorted {return $0.bill.date < $1.bill.date }
           self.filterField = "Filter by Date Descending"
         } else {
+          self.displayedBills = self.displayedBills.sorted {return $0.bill.date > $1.bill.date }
           self.filterField = "Filter by Date Ascending"
         }
       }
@@ -91,7 +93,7 @@ struct ActivityView: View {
       .background(Color(red: 76/255, green: 229/255, blue: 177/255))
       .clipShape(Capsule())
       List {
-        ForEach(displayBills()) { billViewModel in
+        ForEach(displayedBills) { billViewModel in
           BillRowView(bill: billViewModel.bill)
         }
       }
@@ -99,26 +101,34 @@ struct ActivityView: View {
     }
     .padding(.top, 1.0)
     .background(Color(red: 0.949, green: 0.949, blue: 0.97, opacity: 1.0))
+    .onAppear(perform: loadData)
   }
   .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
 }
   
-  func displayBills() -> [BillViewModel] {
-    var displayedBills : [BillViewModel] = []
+  func loadData() {
+    self.activityViewModel.filterUserAssociatedBills(email: authModel.user?.email ?? "testtest@gmail.com")
+    if filterField == "Filter by Date Ascending" {
+      self.displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date > $1.bill.date }
+    } else {
+      self.displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date < $1.bill.date }
+    }
+  }
+  
+  func displayBills() {
+    self.activityViewModel.filterUserAssociatedBills(email: authModel.user?.email ?? "testtest@gmail.com")
     if searchField == "" {
       if filterField == "Filter by Date Ascending" {
-        displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date > $1.bill.date }
+        self.displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date > $1.bill.date }
       } else {
-        displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date < $1.bill.date }
+        self.displayedBills = self.activityViewModel.billViewModels.sorted {return $0.bill.date < $1.bill.date }
       }
     } else {
       if filterField == "Filter by Date Ascending" {
-        displayedBills = self.activityViewModel.filteredBillViewModels.sorted {return $0.bill.date > $1.bill.date }
+        self.displayedBills = self.activityViewModel.filteredBillViewModels.sorted {return $0.bill.date > $1.bill.date }
       } else {
-        displayedBills = self.activityViewModel.filteredBillViewModels.sorted {return $0.bill.date < $1.bill.date }
+        self.displayedBills = self.activityViewModel.filteredBillViewModels.sorted {return $0.bill.date < $1.bill.date }
       }
     }
-    
-    return displayedBills
   }
 }
