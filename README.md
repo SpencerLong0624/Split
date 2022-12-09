@@ -5,7 +5,7 @@
 ### You can use existing accounts in the database to play around with features
 * uzair@gmail.com
 Password: 123456
-* anthony@gmail.com Password: 123456
+* anthony@gmail.com Password: helloworld
 * spencer@gmail.com Password: 123456
 
 ### Account Creation
