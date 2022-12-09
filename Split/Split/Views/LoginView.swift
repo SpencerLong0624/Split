@@ -13,6 +13,7 @@ struct LoginView: View {
   @State private var emailAddress: String = ""
   @State private var password: String = ""
   @State private var full_name: String = ""
+  @State private var phone_number: String = ""
 
   var body: some View {
     NavigationStack {
@@ -43,6 +44,13 @@ struct LoginView: View {
           .autocapitalization(.none)
           .textFieldStyle(.roundedBorder)
           .frame(width: 280, height: 45, alignment: .center)
+          TextField("Phone Number", text: $phone_number)
+          .tint(.black)
+          .keyboardType(.emailAddress)
+          .disableAutocorrection(true)
+          .autocapitalization(.none)
+          .textFieldStyle(.roundedBorder)
+          .frame(width: 280, height: 45, alignment: .center)
         }
         Spacer()
         Button(action: {
@@ -51,7 +59,7 @@ struct LoginView: View {
             authModel.loginUser(emailAddress: emailAddress, password: password)
           } else {
             authModel.signUp(emailAddress: emailAddress, password: password)
-            authModel.addUserToFirebase(emailAddress: emailAddress, full_name: full_name)
+            authModel.addUserToFirebase(emailAddress: emailAddress, full_name: full_name, phone_number: phone_number)
           }
         }, label: {
           Text(isLogin ? "Log In" : "Create Account")
