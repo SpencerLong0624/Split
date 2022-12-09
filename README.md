@@ -1,5 +1,7 @@
 # How to use our Split App  
 
+## Note: There is a bug with search bar in our current version of the app. To list all the bills on the acitivty page and to list all users on the 'Add friend' page, just click on the search bar and all the data will show up. 
+
 ### You can use existing accounts in the database to play around with features
 * uzair@gmail.com
 Password: 123456
