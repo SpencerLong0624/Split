@@ -65,5 +65,6 @@ struct EditItem: View {
         }
       }
     }
+    .navigationBarTitle("Edit Item")
   }
 }

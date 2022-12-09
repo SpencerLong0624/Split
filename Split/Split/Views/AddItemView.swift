@@ -38,6 +38,12 @@ struct AddItemView: View {
       }
       .frame(maxHeight: .infinity, alignment: .trailing)
     }
+    .frame(
+          minWidth: 0,
+          maxWidth: .infinity,
+          minHeight: 0,
+          maxHeight: .infinity
+        )
     .background(Color(.systemGroupedBackground))
   }
 }

@@ -49,5 +49,6 @@ struct AssignItemsView: View {
         }
       }
     }
+    .navigationBarTitle("\(friendRole.user.full_name)'s Items")
   }
 }

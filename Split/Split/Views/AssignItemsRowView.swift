@@ -49,29 +49,38 @@ struct AssignItemsRowView: View {
           .frame(maxWidth: .infinity, alignment: .leading)
         Text(item.price)
           .frame(maxWidth: .infinity, alignment: .center)
-        Spacer()
-        if selected {
-          Button(action: {
-              chooseItem()
-              }) {
-                Text("-")
-                  .fontWeight(.bold)
-                  .frame(width: 25, height: 25)
-                  .foregroundColor(Color.white)
-                  .background(Color.gray)
-                  .clipShape(Circle())
+        
+        if (item.email == friendRole.user.email || item.email == "") {
+          if selected {
+            Button(action: {
+                chooseItem()
+                }) {
+                  Text("-")
+                    .fontWeight(.bold)
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(Color.white)
+                    .background(Color.gray)
+                    .clipShape(Circle())
+            }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+          } else {
+            Button(action: {
+                chooseItem()
+                }) {
+                  Text("+")
+                    .fontWeight(.bold)
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(Color.white)
+                    .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+                    .clipShape(Circle())
+            }
+                .frame(maxWidth: .infinity, alignment: .trailing)
           }
+
         } else {
-          Button(action: {
-              chooseItem()
-              }) {
-                Text("+")
-                  .fontWeight(.bold)
-                  .frame(width: 25, height: 25)
-                  .foregroundColor(Color.white)
-                  .background(Color(red: 76/255, green: 229/255, blue: 177/255))
-                  .clipShape(Circle())
-          }
+          Text("\(item.name) has been assigned to \(item.user_full_name)")
+            .font(.caption2)
+            .frame(maxWidth: .infinity, alignment: .trailing)
         }
       }
     }

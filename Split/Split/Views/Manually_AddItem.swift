@@ -105,5 +105,6 @@ struct Manually_AddItem: View {
         }
       }
     }
+    .navigationBarTitle("Add Items")
   }
 }
