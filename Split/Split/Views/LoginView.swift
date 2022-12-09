@@ -12,6 +12,8 @@ struct LoginView: View {
   @State private var isLogin = false
   @State private var emailAddress: String = ""
   @State private var password: String = ""
+  @State private var full_name: String = ""
+
   var body: some View {
     NavigationStack {
       VStack(spacing: 16) {
@@ -33,6 +35,15 @@ struct LoginView: View {
         SecureField("Password", text: $password)
         .textFieldStyle(.roundedBorder)
         .frame(width: 280, height: 45, alignment: .center)
+        if !isLogin {
+          TextField("Full Name", text: $full_name)
+          .tint(.black)
+          .keyboardType(.emailAddress)
+          .disableAutocorrection(true)
+          .autocapitalization(.none)
+          .textFieldStyle(.roundedBorder)
+          .frame(width: 280, height: 45, alignment: .center)
+        }
         Spacer()
         Button(action: {
           // TODO
@@ -40,7 +51,7 @@ struct LoginView: View {
             authModel.loginUser(emailAddress: emailAddress, password: password)
           } else {
             authModel.signUp(emailAddress: emailAddress, password: password)
-             authModel.addUserToFirebase(emailAddress: emailAddress)
+            authModel.addUserToFirebase(emailAddress: emailAddress, full_name: full_name)
           }
         }, label: {
           Text(isLogin ? "Log In" : "Create Account")

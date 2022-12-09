@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct UserRowView: View {
-  @State var curr_user : User
-  @State var friend_user: User
+  var curr_user : User
+  var friend_user: User
     var body: some View {
       NavigationLink(
         destination: UserDetailsView(curr_user: curr_user, friend_user: friend_user),

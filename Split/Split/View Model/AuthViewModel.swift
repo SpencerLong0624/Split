@@ -45,9 +45,9 @@ final class AuthViewModel: ObservableObject {
     }
   }
    
-   func addUserToFirebase( emailAddress: String){
+  func addUserToFirebase(emailAddress: String, full_name: String){
      let friends : [String] = []
-     let user : User = User( balance_owed: 0, balance_owed_to: 0, email: emailAddress, friends: friends, full_name: "", phone_number: "")
+     let user : User = User( balance_owed: 0, balance_owed_to: 0, email: emailAddress, friends: friends, full_name: full_name, phone_number: "")
      @ObservedObject var userViewModel = UserViewModel(user: user)
      userViewModel.add(user)
    }
