@@ -2,8 +2,9 @@
 
 ### You can use existing accounts in the database to play around with features
 * uzair@gmail.com
-* anthony@gmail.com
-* spencer@gmail.com
+Password: 123456
+* anthony@gmail.com Password: 123456
+* spencer@gmail.com Password: 123456
 
 ### Account Creation
 1. Create your own account <br/>
