@@ -31,7 +31,7 @@ Make sure the email is valid and the password is atleast 6 characters in length 
   <br/>
 * If you are testing on your device, the app will open the phone gallery and you can select the image of the receipt for scan. <br/>
 * The receipt we used to build the receipt scanner is as follows: <br/>
-* <img width="200" alt="Screenshot 2022-12-08 at 9 55 26 PM" src="https://user-images.githubusercontent.com/54990502/206614590-4012f173-9273-4e2e-9386-4cf844cc791c.png">
+<img width="200" alt="Screenshot 2022-12-08 at 9 55 26 PM" src="https://user-images.githubusercontent.com/54990502/206614590-4012f173-9273-4e2e-9386-4cf844cc791c.png">
 
 5. If the output from the scanner lists unwanted items, feel free to delete them by swiping left on the item.
 6. Complete the bill. Go back to acitivty page to see who owe/is owed how much in each bill. <br/>
