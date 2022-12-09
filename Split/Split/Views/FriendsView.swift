@@ -39,13 +39,22 @@ struct FriendsView: View {
   
   func loadData() {
     self.displayedUsers = self.usersViewModel.userViewModels
+    self.displayedUsers = self.displayedUsers.filter {
+      $0.user.email != authModel.user?.email!
+    }
   }
   
   func displayBills() {
     if searchField == "" {
       self.displayedUsers = self.usersViewModel.userViewModels
+      self.displayedUsers = self.displayedUsers.filter {
+        $0.user.email != authModel.user?.email!
+      }
     } else {
       self.displayedUsers = self.usersViewModel.filteredUserViewModels
+      self.displayedUsers = self.displayedUsers.filter {
+        $0.user.email != authModel.user?.email!
+      }
     }
   }
 }
