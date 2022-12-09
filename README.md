@@ -15,10 +15,13 @@ Make sure the email is valid and the password is atleast 6 characters in length 
 ### Create a new Bill
 1. To create a new bill, pick one friend as a Bill Payer and other as bill owers <br/>
 2. Swipe left to edit or delete an item <br/>
-![image](https://user-images.githubusercontent.com/54990502/206605712-68e5dc81-5663-4bc0-90db-8524fa90e74e.png 
-3. Assign items to friends by clicking on each Friend in the bill <br/>
-4. For current version of the app, each item can be assigned to only one user. 
-5. Scanning a receipt <br/>
+<img width="200" alt="Screenshot 2022-12-08 at 8 50 33 PM" src="https://user-images.githubusercontent.com/54990502/206608537-276baac7-ca3c-44fa-8f36-fa300f93bd6b.png">
+
+3. To assign items to Friends, click on a Friend and assign items using the radio button. <br/>
+<img width="200" alt="Screenshot 2022-12-08 at 9 17 49 PM" src="https://user-images.githubusercontent.com/54990502/206609043-4d7328ae-c77b-4b2a-8aa6-a4d3fb070d6f.png">
+
+5. For current version of the app, each item can be assigned to only one friend. 
+6. Scanning a receipt <br/>
 <b> Note: Receipt Images with only .jpg format will work </b> <br/>
 <b> Our Receipt Scanner works best with 'Giant Eagle' receipts. Its best to use a Giant Eagle receipt when testing, though other receipts will give a fairly accurate output too </b> <br/>
   * Take a picture of your receipt or download from the Internet (.jpg format) 
