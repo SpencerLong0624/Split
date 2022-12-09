@@ -21,7 +21,6 @@ struct AssignItemsRowView: View {
   func chooseItem() {
     let curr_index : Int = billItems.bill_items.firstIndex(of: item)!
     if billItems.bill_items[curr_index].email == friendRole.user.email {
-      print("removing item from person")
       billItems.bill_items[curr_index].email = ""
       billItems.bill_items[curr_index].user_full_name = ""
       
@@ -38,7 +37,6 @@ struct AssignItemsRowView: View {
       if let friendIndex = addFriendViewModel.addedFriends.firstIndex(of: friendRole) {
         addFriendViewModel.addedFriends[friendIndex].assignedItems.append(item)
       }
-      print("adding item to person")
       selected.toggle()
       return
     }
