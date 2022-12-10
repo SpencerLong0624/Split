@@ -41,6 +41,6 @@ Make sure the email is valid and the password is atleast 6 characters in length 
   
 ### My Account
 1. Each user has to enter their full name and phone number for the first time they log into the app
-2. Feel free to edit your username and phone number later.
+2. Feel free to edit your full name and phone number later.
 
 
