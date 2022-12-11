@@ -68,6 +68,14 @@ final class ViewModelsTest: XCTestCase {
 
     }
     
+    func testBillViewModel() {
+        var bill = Bill(bill_owers: [], bill_payers: [], date: "", description: "", title: "test", items: [])
+        let billviewmodel = BillViewModel(bill: bill)
+        bill.title = "new"
+        XCTAssertNoThrow(billviewmodel.update(bill: bill))
+        XCTAssertNoThrow(billviewmodel.remove())
+    }
+    
     
 
 }

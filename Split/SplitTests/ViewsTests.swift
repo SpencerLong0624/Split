@@ -39,10 +39,7 @@ final class ViewsTests: XCTestCase {
         XCTAssertNoThrow(authmodel.addUserToFirebase(emailAddress: "TEST@gmail.com"))
     }
     
-    func testdisplaybILL(){
-        let activity = ActivityView()
-        XCTAssertNotNil(activity.displayBills())
-    }
+  
     
 
 }
