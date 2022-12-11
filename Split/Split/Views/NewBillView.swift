@@ -36,6 +36,15 @@ struct NewBillView: View {
               }
               ForEach(addFriendViewModel.addedFriends.sorted {($0.role, $0.user.full_name) < ($1.role, $1.user.full_name)}){
                 friendRole in FriendRowView(friendRole: friendRole)
+                  .swipeActions(allowsFullSwipe: false) {
+                    Button(role: .destructive) {
+                      if let index = addFriendViewModel.addedFriends.firstIndex(of: friendRole) {
+                        addFriendViewModel.addedFriends.remove(at: index)
+                      }
+                    } label: {
+                      Label("Delete", systemImage: "trash.fill")
+                  }
+                }
               }
             }
           }
