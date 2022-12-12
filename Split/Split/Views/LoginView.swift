@@ -25,27 +25,36 @@ struct LoginView: View {
           .tag(false)
         }
         .pickerStyle(SegmentedPickerStyle())
+        .colorMultiply(Color(red: 76/255, green: 229/255, blue: 177/255))
         .padding()
+          
+          Image("Icon").resizable()
+              .scaledToFit()
+              .frame(width: 250, height: 250)
+
         TextField("Email", text: $emailAddress)
-        .tint(.black)
+          
+        .tint(.green)
         .keyboardType(.emailAddress)
+          
         .disableAutocorrection(true)
         .autocapitalization(.none)
         .textFieldStyle(.roundedBorder)
         .frame(width: 280, height: 45, alignment: .center)
         SecureField("Password", text: $password)
         .textFieldStyle(.roundedBorder)
+          
         .frame(width: 280, height: 45, alignment: .center)
         if !isLogin {
           TextField("Full Name", text: $full_name)
-          .tint(.black)
+          .tint(.green)
           .keyboardType(.emailAddress)
           .disableAutocorrection(true)
           .autocapitalization(.none)
           .textFieldStyle(.roundedBorder)
           .frame(width: 280, height: 45, alignment: .center)
           TextField("Phone Number", text: $phone_number)
-          .tint(.black)
+          .tint(.green)
           .keyboardType(.emailAddress)
           .disableAutocorrection(true)
           .autocapitalization(.none)
@@ -65,10 +74,12 @@ struct LoginView: View {
           Text(isLogin ? "Log In" : "Create Account")
           .foregroundColor(.white)
           }).frame(width: 280, height: 45, alignment: .center)
-          .background(Color.blue)
+          .background(Color(red: 76/255, green: 229/255, blue: 177/255))
           .cornerRadius(8)
         }.navigationTitle(isLogin ? "Welcome Back" : "Welcome")
+            .background(Color(red: 0.949, green: 0.949, blue: 0.97, opacity: 1.0))
       }
+      
    }
 }
 

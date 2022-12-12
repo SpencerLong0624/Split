@@ -19,16 +19,23 @@ struct AccountView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                Image(systemName: "person.circle").resizable().frame(width: 30, height: 30)
+                Divider()
+
+                Text("Email: \(authModel.user?.email ?? "")")
+                    .font(.system(size: 20))
+                    .padding(10)
+                Divider()
+                
                 HStack {
                     if nameInEditMode {
                         TextField("Enter your Full Name", text: $full_name)
-                            .tint(.black)
-                            .textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+                            .tint(.green)
+                            .textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 4).font(.system(size: 20))
                             .autocapitalization(.words)
                             .disableAutocorrection(true)
                     } else {
                         Text("Full Name: \(usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user.full_name)").font(.system(size: 20))
+                            .padding(10)
                     }
                     
                     Button(action: {
@@ -37,20 +44,23 @@ struct AccountView: View {
                         user.full_name = full_name
                         usersViewModel.userRepository.update(user)
                     }) {
+                        Image(systemName: "pencil")
+                            .foregroundColor(Color.blue)
                         Text(nameInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
                             .foregroundColor(Color.blue)
                     }
                 }
-                
+                Divider()
                 HStack {
                     if phoneInEditMode {
                         TextField("Enter your Phone Number", text: $phone_number)
-                            .tint(.black)
+                            .tint(.green)
                             .textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
                             .autocapitalization(.words)
                             .disableAutocorrection(true)
                     } else {
                         Text("Phone Number: \(usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user.phone_number)").font(.system(size: 20))
+                            .padding(10)
                     }
                     
                     Button(action: {
@@ -59,11 +69,16 @@ struct AccountView: View {
                         user.phone_number = phone_number
                         usersViewModel.userRepository.update(user)
                     }) {
+                        Image(systemName: "pencil")
+                            .foregroundColor(Color.blue)
                         Text(phoneInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
                             .foregroundColor(Color.blue)
                     }
                 }
-                Text("Email: \(authModel.user?.email ?? "")").padding(.bottom, 100)
+                Divider()
+                .padding(.bottom, 150)
+
+               
                 Button(
                     action: { authModel.signOut()
                     }, label: {
