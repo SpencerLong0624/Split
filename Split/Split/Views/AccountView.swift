@@ -71,6 +71,8 @@ struct AccountView: View {
                     })
             }.navigationTitle("My Account")
             .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
+            .background(Color(red: 0.949, green: 0.949, blue: 0.97, opacity: 1.0))
+
         }
     }
 }
