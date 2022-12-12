@@ -21,26 +21,27 @@ struct AddFriendRowView: View {
   
   var body: some View {
     if !addFriendViewModel.addedFriends.contains(where: { $0.user.email == friend.email }) {
-      HStack(spacing: 0) {
-        Text("\(friend.full_name)")
-        .frame(maxWidth: .infinity, alignment: .leading)
-        Button("Bill Payer", action: addBillPayer)
-        .buttonStyle(BorderlessButtonStyle())
-        .padding()
-        .clipShape(Capsule())
-        .background(.green)
-        .tint(.white)
-        .cornerRadius(6)
-        .frame(maxWidth: .infinity, alignment: .center)
-        Button("Ower", action: addOwer)
-        .buttonStyle(BorderlessButtonStyle())
-        .padding()
-        .clipShape(Capsule())
-        .background(.red)
-        .tint(.white)
-        .cornerRadius(6)
-        .frame(maxWidth: .infinity, alignment: .trailing)
-      }
+      Text("\(friend.full_name)")
+//      HStack(spacing: 0) {
+//        Text("\(friend.full_name)")
+//        .frame(maxWidth: .infinity, alignment: .leading)
+//        Button("Bill Payer", action: addBillPayer)
+//        .buttonStyle(BorderlessButtonStyle())
+//        .padding()
+//        .clipShape(Capsule())
+//        .background(.green)
+//        .tint(.white)
+//        .cornerRadius(6)
+//        .frame(maxWidth: .infinity, alignment: .center)
+//        Button("Ower", action: addOwer)
+//        .buttonStyle(BorderlessButtonStyle())
+//        .padding()
+//        .clipShape(Capsule())
+//        .background(.red)
+//        .tint(.white)
+//        .cornerRadius(6)
+//        .frame(maxWidth: .infinity, alignment: .trailing)
+//      }
     }
   }
 }

@@ -30,6 +30,21 @@ struct AddFriend: View {
           } else {
             ForEach(allUsers) {
               friend in AddFriendRowView(friend: friend, addFriendViewModel: addFriendViewModel)
+                .swipeActions(allowsFullSwipe: false) {
+                  Button {
+                    addFriendViewModel.addFriend(friend, "Ower")
+                  } label: {
+                    Label("Ower", systemImage: "")
+                }
+                  .tint(.red)
+
+                  Button {
+                    addFriendViewModel.addFriend(friend, "Bill Payer")
+                  } label: {
+                    Label("Bill Payer", systemImage: "")
+                }
+                  .tint(.green)
+              }
             }
           }
         }
