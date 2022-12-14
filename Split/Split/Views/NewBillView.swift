@@ -54,6 +54,9 @@ struct NewBillView: View {
             TextField("Enter a description", text: $description)
               .tint(.black)
             DatePicker("Pick a date", selection: $date,displayedComponents: [.date])
+                  .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
+                  .accentColor(Color(red: 76/255, green: 229/255, blue: 177/255))
+
             .padding()
             
             if (addFriendViewModel.addedFriends.count > 0 && title != "" && description != "") {

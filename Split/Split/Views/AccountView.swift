@@ -19,65 +19,66 @@ struct AccountView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                Divider()
-
-                Text("Email: \(authModel.user?.email ?? "")")
+                Text("EMAIL")
                     .font(.system(size: 20))
-                    .padding(10)
-                Divider()
-                
-                HStack {
-                    if nameInEditMode {
-                        TextField("Enter your Full Name", text: $full_name)
-                            .tint(.green)
-                            .textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 4).font(.system(size: 20))
-                            .autocapitalization(.words)
-                            .disableAutocorrection(true)
-                    } else {
-                        Text("Full Name: \(usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user.full_name)").font(.system(size: 20))
-                            .padding(10)
-                    }
-                    
-                    Button(action: {
-                        self.nameInEditMode.toggle()
-                        var user : User = usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user
-                        user.full_name = full_name
-                        usersViewModel.userRepository.update(user)
-                    }) {
-                        Image(systemName: "pencil")
-                            .foregroundColor(Color.blue)
-                        Text(nameInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
-                            .foregroundColor(Color.blue)
+                    .multilineTextAlignment(.leading)
+                Form{
+                    Text("\(authModel.user?.email ?? "")")
+                        .font(.system(size: 20))
+                }
+                Text("FULL NAME")
+                Form{
+                    HStack {
+                        if nameInEditMode {
+                            TextField("Enter your Full Name", text: $full_name)
+                                .tint(.green)
+                                .textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 4).font(.system(size: 20))
+                                .autocapitalization(.words)
+                                .disableAutocorrection(true)
+                        } else {
+                            Text("\(usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user.full_name)").font(.system(size: 20))
+                        }
+                        
+                        Button(action: {
+                            self.nameInEditMode.toggle()
+                            var user : User = usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user
+                            user.full_name = full_name
+                            usersViewModel.userRepository.update(user)
+                        }) {
+                            Image(systemName: "pencil")
+                                .foregroundColor(Color.blue)
+                            Text(nameInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
+                                .foregroundColor(Color.blue)
+                        }
                     }
                 }
-                Divider()
-                HStack {
-                    if phoneInEditMode {
-                        TextField("Enter your Phone Number", text: $phone_number)
-                            .tint(.green)
-                            .textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
-                            .autocapitalization(.words)
-                            .disableAutocorrection(true)
-                    } else {
-                        Text("Phone Number: \(usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user.phone_number)").font(.system(size: 20))
-                            .padding(10)
-                    }
-                    
-                    Button(action: {
-                        self.phoneInEditMode.toggle()
-                        var user : User = usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user
-                        user.phone_number = phone_number
-                        usersViewModel.userRepository.update(user)
-                    }) {
-                        Image(systemName: "pencil")
-                            .foregroundColor(Color.blue)
-                        Text(phoneInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
-                            .foregroundColor(Color.blue)
+                Text("PHONE NUMBER")
+                    .font(.system(size: 20))
+                Form{
+                    HStack {
+                        if phoneInEditMode {
+                            TextField("Enter your Phone Number", text: $phone_number)
+                                .tint(.green)
+                                .textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+                                .autocapitalization(.words)
+                                .disableAutocorrection(true)
+                        } else {
+                            Text("\(usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user.phone_number)").font(.system(size: 20))
+                        }
+                        
+                        Button(action: {
+                            self.phoneInEditMode.toggle()
+                            var user : User = usersViewModel.getUser(email: authModel.user?.email ?? "anthony@gmail.com")[0].user
+                            user.phone_number = phone_number
+                            usersViewModel.userRepository.update(user)
+                        }) {
+                            Image(systemName: "pencil")
+                                .foregroundColor(Color.blue)
+                            Text(phoneInEditMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
+                                .foregroundColor(Color.blue)
+                        }
                     }
                 }
-                Divider()
-                .padding(.bottom, 150)
-
                
                 Button(
                     action: { authModel.signOut()
