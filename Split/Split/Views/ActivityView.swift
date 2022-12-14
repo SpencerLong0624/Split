@@ -71,25 +71,37 @@ struct ActivityView: View {
     })
     
   NavigationStack {
-    VStack {
+    VStack(alignment: .leading) {
       HStack {
-        TextField("Search for a Bill", text: binding)
-          .tint(.black)
-        Button(
-            action: {
-              if filterField == "Filter by Date Ascending" {
-                self.filterField = "Filter by Date Descending"
-              } else {
-                self.filterField = "Filter by Date Ascending"
-              }
-            },
-            label: {
-                Text("Sort")
-                .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
-                Image(systemName: "arrow.up.arrow.down")
-                .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
-            }
-        )
+        ZStack {
+          Rectangle()
+            .foregroundColor(.white)
+          HStack {
+            Image(systemName: "magnifyingglass")
+            TextField("Search", text: binding)
+            Button(
+                action: {
+                  if filterField == "Filter by Date Ascending" {
+                    self.filterField = "Filter by Date Descending"
+                  } else {
+                    self.filterField = "Filter by Date Ascending"
+                  }
+                },
+                label: {
+                    Text("Sort by Date")
+                    .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
+                    Image(systemName: "arrow.up.arrow.down")
+                    .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
+                }
+            )
+           }
+          .foregroundColor(.gray)
+          .padding(.leading, 13)
+          .padding(.trailing, 20)
+         }
+        .frame(height: 40)
+        .cornerRadius(13)
+        .padding()
       }
 
       List {

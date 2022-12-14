@@ -19,11 +19,26 @@ struct FriendsView: View {
       self.searchField = $0
       self.usersViewModel.search(searchText: self.searchField)
     })
+
     ZStack {
       Color(UIColor.systemGray6).edgesIgnoringSafeArea(.all)
       NavigationStack {
         VStack {
-          TextField("Search for a friend with their email", text: binding)
+          HStack {
+            ZStack {
+              Rectangle()
+                .foregroundColor(.white)
+              HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("Search", text: binding)
+               }
+              .foregroundColor(.gray)
+              .padding(.leading, 13)
+             }
+            .frame(height: 40)
+            .cornerRadius(13)
+            .padding()
+          }
           List {
             ForEach(displayUsers()) { userViewModel in
               UserRowView(curr_user: usersViewModel.getUser(email: authModel.user?.email ?? "")[0].user, friend_user: userViewModel.user)
