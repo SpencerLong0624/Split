@@ -100,7 +100,6 @@ struct ActivityView: View {
     }
     .padding(.top, 1.0)
     .background(Color(red: 0.949, green: 0.949, blue: 0.97, opacity: 1.0))
-//    .onAppear(perform: loadData)
     .navigationBarTitle("Activity")
     .toolbar {
       ToolbarItemGroup() {
