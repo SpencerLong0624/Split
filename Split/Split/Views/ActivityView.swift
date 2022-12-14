@@ -97,7 +97,7 @@ struct ActivityView: View {
            }
           .foregroundColor(.gray)
           .padding(.leading, 13)
-          .padding(.trailing, 20)
+          .padding(.trailing, 13)
          }
         .frame(height: 40)
         .cornerRadius(13)
