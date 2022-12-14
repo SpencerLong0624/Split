@@ -86,7 +86,6 @@ struct BillDetailsView: View {
     var item_array : [[String]] = []
     for i in stride(from: 2, to: bill.items.count, by: 3) {
       var curr_item_group : [String] = []
-      print(i)
       curr_item_group.append(bill.items[i - 2])
       curr_item_group.append(bill.items[i - 1])
       curr_item_group.append(bill.items[i])

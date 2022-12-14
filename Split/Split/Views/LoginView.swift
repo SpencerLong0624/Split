@@ -17,6 +17,9 @@ struct LoginView: View {
   
   init() {
     UINavigationBar.appearance().backgroundColor = .systemGray6
+    UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
+    UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+    UINavigationBar.appearance().tintColor = .black
   }
 
   var body: some View {
