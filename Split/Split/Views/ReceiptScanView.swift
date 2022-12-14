@@ -34,14 +34,19 @@ struct ReceiptScanView: View {
         self.isImagePickerDisplay.toggle()
       }
       .padding()
-      .accentColor(.red)
+      .foregroundColor(.white)
+      .background(.red)
+      .clipShape(Capsule())
               
       //This view call is not correct as of now. I am working on it
       if(selectedImage != nil) {
         NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: billDate, billItems: scanner.getBillItems(selectedImage!), addFriendViewModel: addFriendViewModel)) {
           Text("Submit Picture for Scan")
-          .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
         }
+        .padding()
+        .foregroundColor(.white)
+        .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+        .clipShape(Capsule())
       }
     }
     .navigationBarTitle("Scan A Receipt")

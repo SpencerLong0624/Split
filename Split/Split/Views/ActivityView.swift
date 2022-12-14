@@ -70,38 +70,45 @@ struct ActivityView: View {
     
   NavigationStack {
     VStack {
-      TextField("Search for a Bill", text: binding)
-        .tint(.black)
-      Button(self.filterField) {
-        if filterField == "Filter by Date Ascending" {
-          self.displayedBills = self.displayedBills.sorted {return $0.bill.date < $1.bill.date }
-          self.filterField = "Filter by Date Descending"
-        } else {
-          self.displayedBills = self.displayedBills.sorted {return $0.bill.date > $1.bill.date }
-          self.filterField = "Filter by Date Ascending"
-        }
+      HStack {
+        TextField("Search for a Bill", text: binding)
+          .tint(.black)
+        Button(
+            action: {
+              if filterField == "Filter by Date Ascending" {
+                self.displayedBills = self.displayedBills.sorted {return $0.bill.date < $1.bill.date }
+                self.filterField = "Filter by Date Descending"
+              } else {
+                self.displayedBills = self.displayedBills.sorted {return $0.bill.date > $1.bill.date }
+                self.filterField = "Filter by Date Ascending"
+              }
+            },
+            label: {
+                Text("Sort")
+                .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
+                Image(systemName: "arrow.up.arrow.down")
+                .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
+            }
+        )
       }
-      .padding()
-      .foregroundColor(.white)
-      .background(Color(red: 76/255, green: 229/255, blue: 177/255))
-      .clipShape(Capsule())
-      NavigationLink(destination: FriendsView()) {
-        Text("Add Friends")
-      }
-      .padding()
-      .foregroundColor(.white)
-      .background(Color(red: 76/255, green: 229/255, blue: 177/255))
-      .clipShape(Capsule())
+
       List {
         ForEach(displayedBills) { billViewModel in
           BillRowView(bill: billViewModel.bill)
         }
       }
-      .navigationBarTitle("Activity")
     }
     .padding(.top, 1.0)
     .background(Color(red: 0.949, green: 0.949, blue: 0.97, opacity: 1.0))
     .onAppear(perform: loadData)
+    .navigationBarTitle("Activity")
+    .toolbar {
+      ToolbarItemGroup() {
+        NavigationLink(destination: FriendsView()) {
+          Text("Add Friends")
+        }
+      }
+    }
   }
   .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
 }

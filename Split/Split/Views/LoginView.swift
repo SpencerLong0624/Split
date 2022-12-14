@@ -14,6 +14,10 @@ struct LoginView: View {
   @State private var password: String = ""
   @State private var full_name: String = ""
   @State private var phone_number: String = ""
+  
+  init() {
+    UINavigationBar.appearance().backgroundColor = .gray
+  }
 
   var body: some View {
     NavigationStack {

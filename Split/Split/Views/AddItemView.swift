@@ -29,13 +29,19 @@ struct AddItemView: View {
         .frame(maxHeight: .infinity, alignment: .leading)
       NavigationLink(destination: Manually_AddItem(billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate), billItems: billItems, addFriendViewModel: addFriendViewModel)) {
         Text("Add Items Manually")
-        .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
       }
+      .padding()
+      .foregroundColor(.white)
+      .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+      .clipShape(Capsule())
       .frame(maxHeight: .infinity, alignment: .center)
       NavigationLink(destination: ReceiptScanView(addFriendViewModel: addFriendViewModel, billTitle: billTitle, billDescription: billDescription, billDate: DateToString(date: billDate))) {
         Text("Scan Receipts")
-        .foregroundColor(Color(red: 76/255, green: 229/255, blue: 177/255))
       }
+      .padding()
+      .foregroundColor(.white)
+      .background(Color(red: 76/255, green: 229/255, blue: 177/255))
+      .clipShape(Capsule())
       .frame(maxHeight: .infinity, alignment: .trailing)
     }
     .frame(
