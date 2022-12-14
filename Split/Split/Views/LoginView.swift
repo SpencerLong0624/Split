@@ -16,7 +16,7 @@ struct LoginView: View {
   @State private var phone_number: String = ""
   
   init() {
-    UINavigationBar.appearance().backgroundColor = .gray
+    UINavigationBar.appearance().backgroundColor = .systemGray6
   }
 
   var body: some View {
