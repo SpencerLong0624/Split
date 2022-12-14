@@ -85,8 +85,9 @@ struct LoginView: View {
           .cornerRadius(8)
         }.navigationTitle(isLogin ? "Welcome Back" : "Welcome")
             .background(Color(red: 0.949, green: 0.949, blue: 0.97, opacity: 1.0))
+            .foregroundColor(.black)
       }
-      
+    .navigationBarColor(.systemGray6, UIColor.black)
    }
 }
 

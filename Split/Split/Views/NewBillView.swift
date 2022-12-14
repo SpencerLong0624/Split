@@ -70,6 +70,6 @@ struct NewBillView: View {
       }
       .navigationBarTitle("Create a Bill")
     }
-    .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
+    .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255), UIColor.white)
   }
 }

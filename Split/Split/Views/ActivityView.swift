@@ -10,12 +10,15 @@ import SwiftUI
 struct NavigationBarModifier: ViewModifier {
 
   var backgroundColor: UIColor?
+  var textColor: UIColor?
     
-  init( backgroundColor: UIColor?) {
+  init( backgroundColor: UIColor?, textColor: UIColor?) {
     self.backgroundColor = backgroundColor
     let coloredAppearance = UINavigationBarAppearance()
     coloredAppearance.configureWithTransparentBackground()
     coloredAppearance.backgroundColor = .clear
+    coloredAppearance.titleTextAttributes = [.foregroundColor: textColor!]
+    coloredAppearance.largeTitleTextAttributes = [.foregroundColor: textColor!]
         
     UINavigationBar.appearance().standardAppearance = coloredAppearance
     UINavigationBar.appearance().compactAppearance = coloredAppearance
@@ -40,8 +43,8 @@ struct NavigationBarModifier: ViewModifier {
 
 
 extension View {
- func navigationBarColor(_ backgroundColor: UIColor?) -> some View {
-   self.modifier(NavigationBarModifier(backgroundColor: backgroundColor))
+ func navigationBarColor(_ backgroundColor: UIColor?, _ textColor: UIColor) -> some View {
+   self.modifier(NavigationBarModifier(backgroundColor: backgroundColor, textColor: textColor))
   }
 }
 
@@ -109,7 +112,7 @@ struct ActivityView: View {
       }
     }
   }
-  .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255))
+  .navigationBarColor(UIColor(red: 76/255, green: 229/255, blue: 177/255, alpha: 255/255), UIColor.white)
 }
   
   func loadData() {
