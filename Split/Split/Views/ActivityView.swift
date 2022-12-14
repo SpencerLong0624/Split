@@ -78,10 +78,8 @@ struct ActivityView: View {
         Button(
             action: {
               if filterField == "Filter by Date Ascending" {
-                self.displayedBills = self.displayedBills.sorted {return $0.bill.date < $1.bill.date }
                 self.filterField = "Filter by Date Descending"
               } else {
-                self.displayedBills = self.displayedBills.sorted {return $0.bill.date > $1.bill.date }
                 self.filterField = "Filter by Date Ascending"
               }
             },
