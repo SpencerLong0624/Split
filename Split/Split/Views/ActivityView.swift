@@ -79,6 +79,7 @@ struct ActivityView: View {
           HStack {
             Image(systemName: "magnifyingglass")
             TextField("Search", text: binding)
+            .tint(.gray)
             Button(
                 action: {
                   if filterField == "Filter by Date Ascending" {

@@ -31,6 +31,7 @@ struct FriendsView: View {
               HStack {
                 Image(systemName: "magnifyingglass")
                 TextField("Search", text: binding)
+                .tint(.gray)
                }
               .foregroundColor(.gray)
               .padding(.leading, 13)
