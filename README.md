@@ -2,6 +2,8 @@
 
 ## Enable Light mode on your device when testing our app
 
+## Currently, our codebase is not scaled for larger bills containing a lot of items. When dealing with bills that contain a larger amount of items, sufficient breaks between each user interaction should be allowed in order for the operation to be fully completed on the backend side. The following three operations are slow in a bill with a lot of items: editing an item from a bill, deleting an item from a bill, and assiging an item to a user in a bill. A concrete use flow of this example is: After deleting an item from a large bill, some time is needed for backend operations to fully complete before trying to delete another item.
+
 ### You can use existing accounts in the database to play around with features
 * uzair@gmail.com
 Password: 123456
@@ -32,9 +34,13 @@ Make sure the email is valid and the password is atleast 6 characters in length 
 <img width="1047" alt="Screenshot 2022-12-06 at 10 06 38 PM" src="https://user-images.githubusercontent.com/54990502/206078553-2fc57d8e-34b1-41bf-8679-9908287baa2a.png"> 
   <br/>
 * If you are testing on your device, the app will open the phone gallery and you can select the image of the receipt for scan. <br/>
-* The receipt we used to build the receipt scanner is as follows: <br/>
+* The receipts we used to build the receipt scanner is as follows: <br/>
 <br/>
 <img width="200" alt="Screenshot 2022-12-08 at 9 55 26 PM" src="https://user-images.githubusercontent.com/54990502/206614590-4012f173-9273-4e2e-9386-4cf844cc791c.png">
+
+<img width="200" alt="Screenshot 2022-12-08 at 9 17 49 PM" src="https://user-images.githubusercontent.com/89931915/207776925-39a69c00-dca4-4d79-a408-fed14a31fb73.jpg">
+
+<img width="200" alt="Screenshot 2022-12-08 at 9 17 49 PM" src="https://user-images.githubusercontent.com/89931915/207776967-544e3cbf-64ca-492c-8bcb-2a829215cd65.PNG">
 
 5. If the output from the scanner lists unwanted items, feel free to delete them by swiping left on the item.
 6. Complete the bill. Go back to acitivty page to see who owe/is owed how much in each bill. <br/>
