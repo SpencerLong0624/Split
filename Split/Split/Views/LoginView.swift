@@ -70,7 +70,6 @@ struct LoginView: View {
         }
         Spacer()
         Button(action: {
-          // TODO
           if isLogin {
             authModel.loginUser(emailAddress: emailAddress, password: password)
           } else {
