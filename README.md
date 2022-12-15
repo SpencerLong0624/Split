@@ -1,3 +1,21 @@
+# A and B Level Use Cases
+A Level:
+* Receipts should have metadata associated with them: name, date, and description
+* Users have access to a catalog of all their associated bills.
+* Users can create receipts by scanning a receipt through their camera.
+* Users can create receipts by manually entering the items within the bill.
+* Users can edit/delete bill items when creating a new bill.
+
+B Level:
+* Users can login or signup and view their profile identified with specific username and password (also include email and phone number).
+* Users can edit their account information.
+* Users can add another user as a friend.
+* Users can add other users associated with a bill.
+* Users will be able to view which items they are owed/owe and how much it is for a given bill.
+* Users can choose which items they owe money for.
+* Users can filter their bills catalog based on chronological order.
+* Users can search for a specific bill given the bill name.
+
 # How to use our Split App  
 
 ## Enable Light mode on your device when testing our app
@@ -18,7 +36,7 @@ Make sure the email is valid and the password is atleast 6 characters in length 
 1. You can search for a bill, filter bills and add new friends in your account. Search for friends using their email.
 
 ### Create a new Bill
-1. To create a new bill, pick one friend as a Bill Payer and other as bill owers <br/>
+1. To create a new bill, pick one friend as a Bill Payer and other as bill owers. If you made a mistake, you can swipe on the person's name to delete them from the list of friends added to the bill. <br/>
 2. Swipe left to edit or delete an item <br/>
 <img width="200" alt="Screenshot 2022-12-08 at 8 50 33 PM" src="https://user-images.githubusercontent.com/54990502/206608537-276baac7-ca3c-44fa-8f36-fa300f93bd6b.png">
 
@@ -27,8 +45,8 @@ Make sure the email is valid and the password is atleast 6 characters in length 
 
 5. For current version of the app, each item can be assigned to only one friend. 
 6. Scanning a receipt <br/>
-<b> Note: Receipt Images with only .jpg format will work </b> <br/>
-<b> Our Receipt Scanner works best with 'Giant Eagle' receipts. Its best to use a Giant Eagle receipt when testing, though other receipts will give a fairly accurate output too </b> <br/>
+<b> Note: Receipt Scanning peformance differs between file types and receipt structure.</b> <br/>
+<b> We found that our Receipt Scanner works best with 'Giant Eagle' receipts and jpg files. Its best to use a Giant Eagle receipt when testing, though other receipts will give a fairly accurate output too. Apple saves images as .png or .jpeg, which should output relatively accurate results. </b> <br/>
   * Take a picture of your receipt or download from the Internet (.jpg format) 
 * Drag the Image in the gallery of the app simmulator 
 <img width="1047" alt="Screenshot 2022-12-06 at 10 06 38 PM" src="https://user-images.githubusercontent.com/54990502/206078553-2fc57d8e-34b1-41bf-8679-9908287baa2a.png"> 
